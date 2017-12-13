@@ -21,6 +21,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
+import java.sql.SQLException;
+
+import db.Database;
+
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
@@ -44,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         lon = (EditText) findViewById(R.id.lon);
 
         gestureObject = new  GestureDetectorCompat(this, new CustomGestures());
+
     }
 
     @Override
@@ -68,6 +73,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     public void drawPoly(View v) {
         mMap.clear();
+
+        Database tmp = new Database();
+        tmp.select();
 
         Polyline polyline1 = mMap.addPolyline(new PolylineOptions()
                 .clickable(false)
