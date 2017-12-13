@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">LPP</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_navigation">navigationActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- seznam avtobusov -->
+    <string-array name="busList">
+        <item>1</item>
+        <item>6</item>
+        <item>18</item>
+    </string-array>
+</resources>
