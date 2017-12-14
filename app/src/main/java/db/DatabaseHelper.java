@@ -1,6 +1,8 @@
 package db;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -9,10 +11,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
+import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.Hashtable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -21,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static String DB_NAME = "lppDB.db";
 
-    private SQLiteDatabase myDataBase;
+    private SQLiteDatabase db;
 
     private final Context myContext;
 
@@ -104,11 +106,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public void openDB() throws SQLException {
+        db = SQLiteDatabase.openDatabase(DB_PATH + DB_NAME, null, SQLiteDatabase.OPEN_READONLY);
+    }
+
     @Override
     public synchronized void close() {
 
-        if(myDataBase != null)
-            myDataBase.close();
+        if(db != null)
+            db.close();
 
         super.close();
 
@@ -124,22 +130,49 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public Connection connect() {
-        String url = "jdbc:sqlite:\\data\\data\\com.lppapp.ioi.lpp\\databases\\lppDB.db";
-        Connection conn = null;
+    /**
+     * Selects all stops from database, returns ArrayList<String>
+     * */
+    public ArrayList<Dictionary<String, String>> selectAllStops() {
+        ArrayList<Dictionary<String, String>> list = new ArrayList<>();
 
         try {
-            Properties config = new Properties();
-            config.setProperty("open_mode", "1");
-            //TODO: can't open db (read-only file system) even though directory has a+rw permissions
-            conn = DriverManager.getConnection(url, config);
+            openDB();
+            Cursor res = db.rawQuery("SELECT * FROM stops", null);
+            res.moveToFirst();
 
-            System.out.println("Connection successful.");
+            while(!res.isAfterLast()) {
+                Dictionary<String, String> d = new Hashtable<>();
+
+                d.put("stop_id", res.getString(res.getColumnIndex("stop_id")));
+                d.put("stop_name", res.getString(res.getColumnIndex("stop_name")));
+                d.put("latitude", res.getString(res.getColumnIndex("latitude")));
+                d.put("longitude", res.getString(res.getColumnIndex("longitude")));
+                d.put("stop_buses", res.getString(res.getColumnIndex("stop_buses")));
+
+                list.add(d);
+                res.moveToNext();
+            }
+
         } catch (SQLException e) {
-            System.out.println("Connection failed.");
             System.out.println(e.getMessage());
         }
 
-        return conn;
+        return list;
+    }
+
+    public int numRows(String tableName) {
+        int numRows = -1;
+        
+        try {
+            openDB();
+            numRows = (int) DatabaseUtils.queryNumEntries(db, tableName);
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        close();
+
+        return numRows;
     }
 }

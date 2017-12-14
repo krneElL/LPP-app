@@ -19,6 +19,8 @@ import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Dictionary;
 
 import db.DatabaseHelper;
 
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private EditText lon;
 
     private GestureDetectorCompat gestureObject;
+
+    private DatabaseHelper db;
 
 
     @Override
@@ -46,6 +50,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         gestureObject = new  GestureDetectorCompat(this, new CustomGestures());
 
+        //init databaseHelper
+        db = new DatabaseHelper(this);
+        try {
+            db.createDataBase();
+        } catch (IOException ioe) {
+            System.out.println("Unable to create database");
+        }
     }
 
     @Override
@@ -71,16 +82,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void drawPoly(View v) {
         mMap.clear();
 
-        DatabaseHelper db = new DatabaseHelper(this);
-        try {
-
-            db.createDataBase();
-            db.connect();
-        } catch (IOException ioe) {
-
-            System.out.println("Unable to create database");
-
-        }
+        ArrayList<Dictionary<String, String>> allStops =  db.selectAllStops();
+        System.out.println(db.numRows("stops"));
 
         Polyline polyline1 = mMap.addPolyline(new PolylineOptions()
                 .clickable(false)
