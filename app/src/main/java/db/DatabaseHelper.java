@@ -12,6 +12,7 @@ import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -87,6 +88,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         //Open the empty db as the output stream
         OutputStream myOutput = new FileOutputStream(outFileName);
+        //FileOutputStream myOutput = myContext.openFileOutput(DB_NAME, Context.MODE_PRIVATE);
 
         //transfer bytes from the inputfile to the outputfile
         byte[] buffer = new byte[1024];
@@ -123,14 +125,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Connection connect() {
-        String url = "jdbc:sqlite:" + DB_PATH + DB_NAME;
+        String url = "jdbc:sqlite:\\data\\data\\com.lppapp.ioi.lpp\\databases\\lppDB.db";
         Connection conn = null;
 
         try {
-            conn = DriverManager.getConnection(url);
+            Properties config = new Properties();
+            config.setProperty("open_mode", "1");
+            //TODO: can't open db (read-only file system) even though directory has a+rw permissions
+            conn = DriverManager.getConnection(url, config);
+
             System.out.println("Connection successful.");
         } catch (SQLException e) {
             System.out.println("Connection failed.");
+            System.out.println(e.getMessage());
         }
 
         return conn;

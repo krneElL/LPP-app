@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         try {
 
             db.createDataBase();
-            //db.connect();
+            db.connect();
         } catch (IOException ioe) {
 
             System.out.println("Unable to create database");
