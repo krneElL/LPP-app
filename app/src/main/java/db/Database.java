@@ -1,5 +1,7 @@
 package db;
 
+import android.os.Environment;
+
 import org.sqlite.SQLiteConfig;
 
 import java.sql.*;
@@ -10,8 +12,8 @@ import java.util.Properties;
  */
 
 public class Database {
-    final static String url = "jdbc:sqlite:\\app\\src\\database\\lppDB.db";
-
+    final static String url = "jdbc:sqlite:\\app\\src\\main\\database\\lppDB.db";
+    
     public static Connection connect() throws SQLException {
         Connection conn = DriverManager.getConnection(url);
         conn.setReadOnly(true);
@@ -21,6 +23,10 @@ public class Database {
     public static void select() {
         String sql = "SELECT * FROM routes r" +
                 "WHERE r.int_id = '332'";
+        //TODO can't open db -- read only
+        String extStorageState = Environment.getExternalStorageState();
+        System.out.println(Environment.MEDIA_MOUNTED.equals(extStorageState));
+        System.out.println(Environment.MEDIA_MOUNTED_READ_ONLY.equals(extStorageState));
 
         try (Connection conn = connect()) {
             System.out.println("Connected");
