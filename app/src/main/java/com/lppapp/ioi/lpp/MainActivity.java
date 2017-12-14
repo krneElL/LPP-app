@@ -18,6 +18,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Dictionary;
@@ -83,6 +87,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.clear();
 
         ArrayList<Dictionary<String, String>> allStops =  db.selectAllStops();
+        try {
+            JSONArray jsonList = new JSONArray(allStops.get(0).get("stop_buses"));
+            System.out.println(allStops.get(0).get("stop_name"));
+            for(int i=0; i<jsonList.length(); i++) {
+                JSONObject tmp = jsonList.getJSONObject(i);
+                System.out.println(tmp.get("route_group_number") + " " + tmp.get("route_name"));
+            }
+
+        } catch (JSONException e) {
+            System.out.println(e.getMessage());
+        }
+
+        String x = allStops.get(0).get("stop_buses");
         System.out.println(db.numRows("stops"));
 
         Polyline polyline1 = mMap.addPolyline(new PolylineOptions()

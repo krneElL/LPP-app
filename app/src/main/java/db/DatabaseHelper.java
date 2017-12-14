@@ -163,7 +163,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public int numRows(String tableName) {
         int numRows = -1;
-        
+
         try {
             openDB();
             numRows = (int) DatabaseUtils.queryNumEntries(db, tableName);
