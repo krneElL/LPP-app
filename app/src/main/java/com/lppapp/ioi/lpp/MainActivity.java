@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -14,16 +13,14 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.Cap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
-import java.sql.SQLException;
+import java.io.IOException;
 
-import db.Database;
+import db.DatabaseHelper;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -74,8 +71,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void drawPoly(View v) {
         mMap.clear();
 
-        Database tmp = new Database();
-        tmp.select();
+        DatabaseHelper db = new DatabaseHelper(this);
+        try {
+
+            db.createDataBase();
+            //db.connect();
+        } catch (IOException ioe) {
+
+            System.out.println("Unable to create database");
+
+        }
 
         Polyline polyline1 = mMap.addPolyline(new PolylineOptions()
                 .clickable(false)
