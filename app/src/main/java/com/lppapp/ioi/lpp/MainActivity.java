@@ -1,5 +1,6 @@
 package com.lppapp.ioi.lpp;
 
+import android.graphics.Color;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Dictionary;
 
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GestureDetectorCompat gestureObject;
 
     private DatabaseHelper db;
+
+    private SpinnerShape spinnerShape = new SpinnerShape(this);
 
 
     @Override
@@ -72,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     public void populateSpinnerShapes() {
         Spinner spinnerShapes = (Spinner) findViewById(R.id.spinnerShapesList);
-        spinnerShapes.setOnItemSelectedListener(new SpinnerShape());
+        spinnerShapes.setOnItemSelectedListener(/*new SpinnerShape(this)*/spinnerShape);
 
         ArrayList<Shape> shapes = new ArrayList<>();
         ArrayList<Dictionary<String, String>> allShapes = db.selectAllShapes();
@@ -108,8 +112,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     public void drawPoly(View v) {
         mMap.clear();
-        
-        Polyline polyline1 = mMap.addPolyline(new PolylineOptions()
+
+        ArrayList<LatLng> drawPoints = spinnerShape.points;
+
+        PolylineOptions polyOptions = new PolylineOptions().clickable(false).addAll(drawPoints).color(Color.BLUE);
+        Polyline polyline1 = mMap.addPolyline(polyOptions);
+
+
+        /*Polyline polyline1 = mMap.addPolyline(new PolylineOptions()
                 .clickable(false)
                 .add(
 
@@ -151,10 +161,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         new LatLng(46.0399894751914,14.4900285559011),
                         new LatLng(46.0370365822691,14.4909987364079),
                         new LatLng(46.033591339787,14.4771826473382),
-                        new LatLng(46.030744472085,14.4734995546733)));
+                        new LatLng(46.030744472085,14.4734995546733)));*/
 
         mMap.moveCamera(CameraUpdateFactory.zoomBy(10));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(46.1002804775196,14.4589648133762)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(drawPoints.get(drawPoints.size()/2)));
     }
 
     //work in progress

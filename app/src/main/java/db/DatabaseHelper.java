@@ -194,4 +194,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return list;
     }
+
+    public String getShapePointsByShapeId(String shapeId) {
+        String result = "";
+
+        try {
+            openDB();
+            Cursor cursor = db.rawQuery("SELECT points FROM shapes WHERE shape_id = ?", new String[] {shapeId});
+            cursor.moveToFirst();
+
+            result = cursor.getString(0);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return result;
+    }
 }
