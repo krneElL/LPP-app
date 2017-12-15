@@ -31,6 +31,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Dictionary;
 
+import api.LiveBusArrivalCall;
 import customSpinners.Shape;
 import customSpinners.SpinnerShape;
 import db.DatabaseHelper;
@@ -112,6 +113,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     public void drawPoly(View v) {
         mMap.clear();
+
+        new LiveBusArrivalCall().execute("1934");
 
         ArrayList<LatLng> drawPoints = spinnerShape.points;
 
