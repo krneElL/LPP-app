@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     public void populateSpinnerShapes() {
         Spinner spinnerShapes = (Spinner) findViewById(R.id.spinnerShapesList);
-        spinnerShapes.setOnItemSelectedListener(/*new SpinnerShape(this)*/spinnerShape);
+        spinnerShapes.setOnItemSelectedListener(spinnerShape);
 
         ArrayList<Shape> shapes = new ArrayList<>();
         ArrayList<Dictionary<String, String>> allShapes = db.selectAllShapes();
@@ -116,19 +116,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void drawPoly(View v) {
         mMap.clear();
         mMap.moveCamera(CameraUpdateFactory.zoomBy(10));
+
+        //TODO: api call test
         new LiveBusArrivalCall().execute("1934");
-        /*
-        ArrayList<LatLng> drawPoints = spinnerShape.points;
-
-        PolylineOptions polyOptions = new PolylineOptions().clickable(false).addAll(drawPoints).color(Color.BLUE);
-        mMap.addPolyline(polyOptions);
-
-
-        mMap.moveCamera(CameraUpdateFactory.zoomBy(10));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(drawPoints.get(drawPoints.size()/2))); */
     }
 
-    //work in progress
+    //TODO: gestures work in progress
     class CustomGestures extends GestureDetector.SimpleOnGestureListener {
 
         @Override
