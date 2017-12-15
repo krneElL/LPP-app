@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://C:\FRI\MAG\1. letnik\Interaktivnost in oblikovanje informacij\lpp_git\LPP-app\LPP.iml" filepath="C:\FRI\MAG\1. letnik\Interaktivnost in oblikovanje informacij\lpp_git\LPP-app\LPP.iml" />
       <module fileurl="file://$PROJECT_DIR$/LPP-app.iml" filepath="$PROJECT_DIR$/LPP-app.iml" />
+      <module fileurl="file://C:\Users\susni\AndroidStudioProjects\LPP\LPP-app\LPP-app.iml" filepath="C:\Users\susni\AndroidStudioProjects\LPP\LPP-app\LPP-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\susni\AndroidStudioProjects\LPP\LPP-app\app\app.iml" filepath="C:\Users\susni\AndroidStudioProjects\LPP\LPP-app\app\app.iml" />
     </modules>
   </component>
 </project>

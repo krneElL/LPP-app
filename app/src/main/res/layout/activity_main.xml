@@ -17,7 +17,8 @@
             android:id="@+id/map3"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="361dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
             tools:context="com.lppapp.ioi.lpp.MapsActivity"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="16dp" />
@@ -27,23 +28,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/lat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Latitude" />
-
-            <EditText
-                android:id="@+id/lon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="longitude" />
         </LinearLayout>
 
         <LinearLayout
@@ -63,23 +47,7 @@
                 android:layout_height="44dp"
                 android:layout_weight="1" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="drawPoly"
-                android:text="Nariši poligon" />
-
         </LinearLayout>
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="findLocation"
-            android:text="Najdi"
-            tools:layout_editor_absoluteX="280dp"
-            tools:layout_editor_absoluteY="447dp" />
 
     </LinearLayout>
 
