@@ -1,4 +1,4 @@
-package customSpinners;
+package tables;
 
 /**
  * Created by Citrus on 15.12.2017.

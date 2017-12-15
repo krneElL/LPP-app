@@ -204,6 +204,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             cursor.moveToFirst();
 
             result = cursor.getString(0);
+            cursor.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return result;
+    }
+
+    public String getStopsByShapeId(String shapeId) {
+        String result = "";
+
+        try {
+            openDB();
+            Cursor cursor = db.rawQuery("SELECT stops FROM shapes_stops WHERE shape_id = ?", new String[] {shapeId});
+            cursor.moveToFirst();
+
+            result = cursor.getString(0);
+            cursor.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return result;
+    }
+
+    /**
+     * Returns json_encoded String of all buses on stop_id
+     * */
+    public String getBusesOnStop(int stopId) {
+        String result = "";
+
+        try {
+            openDB();
+            Cursor cursor = db.rawQuery("SELECT stop_buses FROM stops WHERE stop_id = ?", new String[] {Integer.toString(stopId)});
+            cursor.moveToFirst();
+
+            result = cursor.getString(0);
+            cursor.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
