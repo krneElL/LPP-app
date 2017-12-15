@@ -50,29 +50,34 @@
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="findLocation"
             android:text="Najdi"
             tools:layout_editor_absoluteX="280dp"
-            tools:layout_editor_absoluteY="447dp"
-            android:onClick="findLocation" />
+            tools:layout_editor_absoluteY="447dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <Spinner
+            <!-- <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:entries="@array/busList"
+                android:layout_weight="1" />-->
+            <Spinner
+                android:id="@+id/spinnerShapesList"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
                 android:layout_weight="1" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Nariši poligon"
-                android:onClick="drawPoly"/>
+                android:onClick="drawPoly"
+                android:text="Nariši poligon" />
 
         </LinearLayout>
 

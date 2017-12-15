@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -26,6 +29,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Dictionary;
 
+import customSpinners.Shape;
+import customSpinners.SpinnerShape;
 import db.DatabaseHelper;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
@@ -61,6 +66,23 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         } catch (IOException ioe) {
             System.out.println("Unable to create database");
         }
+
+        populateSpinnerShapes();
+    }
+
+    public void populateSpinnerShapes() {
+        Spinner spinnerShapes = (Spinner) findViewById(R.id.spinnerShapesList);
+        spinnerShapes.setOnItemSelectedListener(new SpinnerShape());
+
+        ArrayList<Shape> shapes = new ArrayList<>();
+        ArrayList<Dictionary<String, String>> allShapes = db.selectAllShapes();
+
+        for(Dictionary<String, String> row : allShapes) {
+            shapes.add(new Shape(row.get("shape_id"), row.get("route_name"), row.get("trip_headsign")));
+        }
+
+        ArrayAdapter spinnerAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, shapes);
+        spinnerShapes.setAdapter(spinnerAdapter);
     }
 
     @Override
@@ -68,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap = googleMap;
         //mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);  //satelitska slika
     }
+
 
     public void findLocation(View v) {
         mMap.clear();
@@ -85,23 +108,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     public void drawPoly(View v) {
         mMap.clear();
-
-        ArrayList<Dictionary<String, String>> allStops =  db.selectAllStops();
-        try {
-            JSONArray jsonList = new JSONArray(allStops.get(0).get("stop_buses"));
-            System.out.println(allStops.get(0).get("stop_name"));
-            for(int i=0; i<jsonList.length(); i++) {
-                JSONObject tmp = jsonList.getJSONObject(i);
-                System.out.println(tmp.get("route_group_number") + " " + tmp.get("route_name"));
-            }
-
-        } catch (JSONException e) {
-            System.out.println(e.getMessage());
-        }
-
-        String x = allStops.get(0).get("stop_buses");
-        System.out.println(db.numRows("stops"));
-
+        
         Polyline polyline1 = mMap.addPolyline(new PolylineOptions()
                 .clickable(false)
                 .add(

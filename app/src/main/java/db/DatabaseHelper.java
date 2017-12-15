@@ -20,11 +20,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //The Android's default system path of your application database.
     private static String DB_PATH = "/data/data/com.lppapp.ioi.lpp/databases/";
-
     private static String DB_NAME = "lppDB.db";
 
     private SQLiteDatabase db;
-
     private final Context myContext;
 
     /**
@@ -39,7 +37,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * Creates a empty database on the system and rewrites it with your own database.
+     * Creates an empty database on the system and rewrites it with your own database.
      * */
     public void createDataBase() throws IOException {
 
@@ -54,13 +52,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             this.getReadableDatabase();
 
             try {
-
                 copyDataBase();
-
             } catch (IOException e) {
-
                 throw new Error("Error copying database");
-
             }
         }
 
@@ -90,9 +84,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         //Open the empty db as the output stream
         OutputStream myOutput = new FileOutputStream(outFileName);
-        //FileOutputStream myOutput = myContext.openFileOutput(DB_NAME, Context.MODE_PRIVATE);
 
-        //transfer bytes from the inputfile to the outputfile
+        //Transfer bytes from the inputfile to the outputfile
         byte[] buffer = new byte[1024];
         int length;
         while ((length = myInput.read(buffer))>0){
@@ -106,7 +99,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void openDB() throws SQLException {
+    private void openDB() throws SQLException {
         db = SQLiteDatabase.openDatabase(DB_PATH + DB_NAME, null, SQLiteDatabase.OPEN_READONLY);
     }
 
@@ -174,5 +167,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         close();
 
         return numRows;
+    }
+
+    public ArrayList<Dictionary<String, String>> selectAllShapes() {
+        ArrayList<Dictionary<String, String>> list = new ArrayList<>();
+
+        try {
+            openDB();
+            Cursor res = db.rawQuery("SELECT * FROM shapes ORDER BY cast(shapes.route_name as integer)", null);
+            res.moveToFirst();
+
+            while(!res.isAfterLast()) {
+                Dictionary<String, String> d = new Hashtable<>();
+
+                d.put("shape_id", res.getString(res.getColumnIndex("shape_id")));
+                d.put("route_name", res.getString(res.getColumnIndex("route_name")));
+                d.put("trip_headsign", res.getString(res.getColumnIndex("trip_headsign")));
+
+                list.add(d);
+                res.moveToNext();
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return list;
     }
 }
