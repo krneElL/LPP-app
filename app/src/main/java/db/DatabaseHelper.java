@@ -1,10 +1,12 @@
 package db;
 
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -18,12 +20,12 @@ import java.util.Hashtable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    //The Android's default system path of your application database.
-    private static String DB_PATH = "/data/data/com.lppapp.ioi.lpp/databases/";
+    //private static String DB_PATH = "/data/data/com.lppapp.ioi.lpp/databases/";
     private static String DB_NAME = "lppDB.db";
 
     private SQLiteDatabase db;
     private final Context myContext;
+    private ContextWrapper contextWrapper;
 
     /**
      * Constructor
@@ -31,22 +33,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * @param context
      */
     public DatabaseHelper(Context context) {
-
         super(context, DB_NAME, null, 1);
         this.myContext = context;
+        this.contextWrapper = new ContextWrapper(this.myContext);
     }
 
     /**
      * Creates an empty database on the system and rewrites it with your own database.
      * */
     public void createDataBase() throws IOException {
-
         boolean dbExist = checkDataBase();
 
         if(dbExist){
             //do nothing - database already exist
         }else{
-
             //By calling this method an empty database will be created into the default system path
             //of your application so we are gonna be able to overwrite that database with our database.
             this.getReadableDatabase();
@@ -54,7 +54,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             try {
                 copyDataBase();
             } catch (IOException e) {
-                throw new Error("Error copying database");
+                Log.e("ERROR", "Error copying database.");
+            } finally {
+                this.close();
             }
         }
 
@@ -80,7 +82,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         InputStream myInput = myContext.getAssets().open(DB_NAME);
 
         // Path to the just created empty db
-        String outFileName = DB_PATH + DB_NAME;
+        //String outFileName = DB_PATH + DB_NAME;
+        String outFileName = contextWrapper.getDatabasePath(DB_NAME).toString();
 
         //Open the empty db as the output stream
         OutputStream myOutput = new FileOutputStream(outFileName);
@@ -100,17 +103,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     private void openDB() throws SQLException {
-        db = SQLiteDatabase.openDatabase(DB_PATH + DB_NAME, null, SQLiteDatabase.OPEN_READONLY);
+        //db = SQLiteDatabase.openDatabase(DB_PATH + DB_NAME, null, SQLiteDatabase.OPEN_READONLY);
+        db = SQLiteDatabase.openDatabase(contextWrapper.getDatabasePath(DB_NAME).toString(), null, SQLiteDatabase.OPEN_READONLY);
     }
 
     @Override
     public synchronized void close() {
-
         if(db != null)
             db.close();
 
         super.close();
-
     }
 
     @Override
@@ -147,8 +149,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 res.moveToNext();
             }
 
+            res.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+        } finally {
+            this.close();
         }
 
         return list;
@@ -163,8 +168,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+        } finally {
+            this.close();
         }
-        close();
 
         return numRows;
     }
@@ -188,9 +194,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 res.moveToNext();
             }
 
+            res.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+        } finally {
+            this.close();
         }
+
 
         return list;
     }
@@ -207,7 +217,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             cursor.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+        } finally {
+            this.close();
         }
+
 
         return result;
     }
@@ -224,6 +237,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             cursor.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+        } finally {
+            this.close();
         }
 
         return result;
@@ -241,10 +256,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             cursor.moveToFirst();
 
             result = cursor.getString(0);
+
             cursor.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+        } finally {
+            this.close();
         }
+
 
         return result;
     }
