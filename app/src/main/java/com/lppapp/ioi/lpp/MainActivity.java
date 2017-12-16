@@ -1,9 +1,12 @@
 package com.lppapp.ioi.lpp;
 
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.GestureDetector;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -39,6 +42,22 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private SpinnerShape spinnerShape = new SpinnerShape(this);
 
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.test1:
+                    return true;
+                case R.id.test2:
+                    return true;
+                case R.id.test3:
+                    return true;
+            }
+            return false;
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,9 +68,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map3);
         mapFragment.getMapAsync(this);
-
-        //lat = (EditText) findViewById(R.id.lat);
-       //lon = (EditText) findViewById(R.id.lon);
 
         gestureObject = new  GestureDetectorCompat(this, new CustomGestures());
 
@@ -64,6 +80,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
 
         populateSpinnerShapes();
+
+        //tabs
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
     public void populateSpinnerShapes() {
