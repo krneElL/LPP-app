@@ -13,18 +13,17 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * Created by Citrus on 15.12.2017.
+ * Created by Citrus on 16.12.2017.
  */
 
-public class LiveBusArrivalCall extends AsyncTask<String, Void, String> {
+public class StationsInRangeCall extends AsyncTask<String, Void, String> {
 
-    private final String API_URL = "http://data.lpp.si/timetables/liveBusArrival";
+    private final String API_URL = "http://data.lpp.si/stations/stationsInRange";
 
     @Override
-    protected String doInBackground(String... station_id) {
-
+    protected String doInBackground(String... params) {
         try {
-            URL url = new URL(API_URL + "?station_int_id=" + station_id[0]);
+            URL url = new URL(API_URL + "?radius=" + params[0] + "&lat=" + params[1] + "&lon=" + params[2]);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
             try {
@@ -57,7 +56,7 @@ public class LiveBusArrivalCall extends AsyncTask<String, Void, String> {
                 JSONArray data = json.getJSONArray("data");
                 for(int i=0; i<data.length(); i++) {
                     JSONObject row = data.getJSONObject(i);
-                    //System.out.println(row);
+                    System.out.println(row);
                 }
             }
         } catch (JSONException e) {

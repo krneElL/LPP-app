@@ -19,6 +19,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import api.LiveBusArrivalCall;
+import api.StationsInRangeCall;
 import tables.Shape;
 import db.DatabaseHelper;
 import tables.Stop;
@@ -71,6 +73,7 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener {
 
             //TODO: tuki dobis list postaj, treba dt v MarkerOptions. EXAMPLE spodi
             ArrayList<Stop> stops = getShapeStops();
+            new LiveBusArrivalCall().execute("1934");
             //---------------------------------------------------------------------------------------------------------------
             MarkerOptions markerOpt = new MarkerOptions().position(new LatLng(stops.get(0).latitude, stops.get(0).longitude))
                                                          .title(stops.get(0).stop_name);

@@ -32,6 +32,7 @@ import java.util.ArrayList;
 import java.util.Dictionary;
 
 import api.LiveBusArrivalCall;
+import api.StationsInRangeCall;
 import tables.Shape;
 import customSpinners.SpinnerShape;
 import db.DatabaseHelper;
@@ -164,6 +165,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         //TODO: api call test
         new LiveBusArrivalCall().execute("1934");
+        new StationsInRangeCall().execute(new String[] {"200", "46.0772932", "14.4731961"});
     }
 
     //TODO: gestures work in progress
