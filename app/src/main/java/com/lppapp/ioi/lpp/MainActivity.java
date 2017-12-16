@@ -2,7 +2,12 @@ package com.lppapp.ioi.lpp;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.GestureDetectorCompat;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.GestureDetector;
@@ -10,6 +15,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -33,14 +39,17 @@ import db.DatabaseHelper;
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private EditText lat;
-    private EditText lon;
 
     private GestureDetectorCompat gestureObject;
 
     private DatabaseHelper db;
 
     private SpinnerShape spinnerShape = new SpinnerShape(this);
+
+    //public EditText lat;
+    private static final int NUM_PAGES = 1;
+    private ViewPager mPager;
+    private PagerAdapter mPagerAdapter;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -49,15 +58,20 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.test1:
+                    //ScreenSlidePageFragment.lat.setText("busi");
+
                     return true;
                 case R.id.test2:
+                    //ScreenSlidePageFragment.lat.setText("postaje");
                     return true;
                 case R.id.test3:
+                    //ScreenSlidePageFragment.lat.setText("blizina");
                     return true;
             }
             return false;
         }
     };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +98,26 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         //tabs
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        // initialize fragmet View
+        //mPager = (ViewPager) findViewById(R.id.vp);
+        //mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+        //mPager.setAdapter(mPagerAdapter);
+
+
     }
+
+   /* @Override
+    public void onBackPressed() {
+        if (mPager.getCurrentItem() == 0) {
+            // If the user is currently looking at the first step, allow the system to handle the
+            // Back button. This calls finish() on this activity and pops the back stack.
+            super.onBackPressed();
+        } else {
+            // Otherwise, select the previous step.
+            mPager.setCurrentItem(mPager.getCurrentItem() - 1);
+        }
+    } */
 
     public void populateSpinnerShapes() {
         Spinner spinnerShapes = (Spinner) findViewById(R.id.spinnerShapesList);
@@ -110,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
 
-    public void findLocation(View v) {
+    /*public void findLocation(View v) {
         mMap.clear();
 
         try {
@@ -123,6 +156,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             toast.show();
         }
     }
+    */
 
     public void drawPoly(View v) {
         mMap.clear();
@@ -150,6 +184,23 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             return false;
         }
     }
+
+    /**
+     * A simple pager adapter that represents 1 ScreenSlidePageFragment object.
+     */
+    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
+        public ScreenSlidePagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return new ScreenSlidePageFragment();
+        }
+
+        @Override
+        public int getCount() {
+            return NUM_PAGES;
+        }
+    }
 }
-
-

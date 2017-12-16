@@ -33,17 +33,25 @@
                 android:id="@+id/map3"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_weight="1"
                 tools:context="com.lppapp.ioi.lpp.MapsActivity"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="16dp" />
 
+            <!-- no fragment required
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp"
+                android:layout_width="match_parent"
+                android:layout_height="250dp" />
+                -->
+
             <Spinner
                 android:id="@+id/spinnerShapesList"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_weight="0" />
+                android:layout_weight="0"
+                android:gravity="center" />
 
         </LinearLayout>
     </RelativeLayout>
