@@ -13,7 +13,10 @@ import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -48,6 +51,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private ViewPager mPager;
     private PagerAdapter mPagerAdapter;
 
+    //animation
+    private LinearLayout l1;
+    private Animation sDown, sUp;
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -56,9 +63,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             switch (item.getItemId()) {
                 case R.id.avtobusi:
                     resetCameraView();
+                    l1.startAnimation(sDown);
+
+                    //l1.setTranslationY(150);
                     return true;
                 case R.id.postaje:
                     resetCameraView();
+                    l1.startAnimation(sUp);
+                    //l1.setTranslationY(-150);
+
                     return true;
                 case R.id.blizina:
                     resetCameraView();
@@ -94,6 +107,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         //init tabs
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        //load animation for layout
+        sDown = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slidedown);
+        sUp = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slideup);
+
+        l1 = (LinearLayout) findViewById(R.id.subMenu);
+        //l1.setAnimation(sDown);
 
         // initialize fragmet View
         //mPager = (ViewPager) findViewById(R.id.vp);
