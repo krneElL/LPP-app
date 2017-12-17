@@ -24,8 +24,6 @@ public class ScreenSlidePageFragment extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
                 R.layout.fragment, container, false);
 
-        //lat = (EditText) rootView.findViewById(R.id.lat);
-        //lat.setText("test");
         return rootView;
     }
 }

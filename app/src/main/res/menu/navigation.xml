@@ -3,9 +3,11 @@
 
     <item
         android:id="@+id/avtobusi"
+        android:icon="@drawable/trola"
         android:title="Avtobusi" />
     <item
         android:id="@+id/postaje"
+        android:icon="@drawable/busstops1"
         android:title="Postaje" />
     <item
         android:id="@+id/blizina"
