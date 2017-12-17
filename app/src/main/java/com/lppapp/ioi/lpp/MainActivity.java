@@ -13,10 +13,7 @@ import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MenuItem;
 import android.view.MotionEvent;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -25,7 +22,6 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -58,15 +54,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.test1:
-                    //ScreenSlidePageFragment.lat.setText("busi");
-
+                case R.id.avtobusi:
+                    resetCameraView();
                     return true;
-                case R.id.test2:
-                    //ScreenSlidePageFragment.lat.setText("postaje");
+                case R.id.postaje:
+                    resetCameraView();
                     return true;
-                case R.id.test3:
-                    //ScreenSlidePageFragment.lat.setText("blizina");
+                case R.id.blizina:
+                    resetCameraView();
                     return true;
             }
             return false;
@@ -96,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         populateSpinnerShapes();
 
-        //tabs
+        //init tabs
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
@@ -108,17 +103,18 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     }
 
-   /* @Override
-    public void onBackPressed() {
-        if (mPager.getCurrentItem() == 0) {
-            // If the user is currently looking at the first step, allow the system to handle the
-            // Back button. This calls finish() on this activity and pops the back stack.
-            super.onBackPressed();
-        } else {
-            // Otherwise, select the previous step.
-            mPager.setCurrentItem(mPager.getCurrentItem() - 1);
-        }
-    } */
+    /* @Override
+     public void onBackPressed() {
+         if (mPager.getCurrentItem() == 0) {
+             // If the user is currently looking at the first step, allow the system to handle the
+             // Back button. This calls finish() on this activity and pops the back stack.
+             super.onBackPressed();
+         } else {
+             // Otherwise, select the previous step.
+             mPager.setCurrentItem(mPager.getCurrentItem() - 1);
+         }
+     } */
+
 
     public void populateSpinnerShapes() {
         Spinner spinnerShapes = (Spinner) findViewById(R.id.spinnerShapesList);
@@ -138,7 +134,22 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        mMap.clear();
+
         spinnerShape.setnMap(mMap);
+
+        // Set a preference for minimum and maximum zoom.
+        mMap.setMinZoomPreference(2.0f);
+        mMap.setMaxZoomPreference(16.0f);
+
+        //set camera to Ljubljana and zoom in
+        //resetCameraView();
+
+        //hide toolbar
+        //mMap.setUiSettings.setMapToolbarEnabled(false);
+
+        //3D buildings
+        mMap.setBuildingsEnabled(true);
 
         //mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);  //satelitska slika
     }
@@ -157,7 +168,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             toast.show();
         }
     }
-    */
 
     public void drawPoly(View v) {
         mMap.clear();
@@ -166,7 +176,27 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         //TODO: api call test
         new LiveBusArrivalCall().execute("1934");
         new StationsInRangeCall().execute(new String[] {"200", "46.0772932", "14.4731961"});
+    }*/
+
+    /**
+     * function resets camera's view and place it back to Ljubljana. Function also resets markers.
+     */
+    public void resetCameraView() {
+
+        /*zoom options:
+            1: World
+            5: Landmass/continent
+            10: City
+            15: Streets
+            20: Buildings
+         */
+
+        mMap.clear();
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(46.056946, 14.505751)));
+        mMap.moveCamera(CameraUpdateFactory.zoomTo(12));
+       // mMap.moveCamera(CameraUpdateFactory.zoomBy(5));
     }
+
 
     //TODO: gestures work in progress
     class CustomGestures extends GestureDetector.SimpleOnGestureListener {
