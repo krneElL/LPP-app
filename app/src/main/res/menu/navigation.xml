@@ -11,5 +11,6 @@
         android:title="Postaje" />
     <item
         android:id="@+id/blizina"
+        android:icon="@drawable/nearby"
         android:title="V bližini" />
 </menu>

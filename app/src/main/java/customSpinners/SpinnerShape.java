@@ -8,10 +8,12 @@ import android.widget.AdapterView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.lppapp.ioi.lpp.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -87,6 +89,8 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener {
             } catch (JSONException e) {
                 Log.e("ERROR", e.getMessage());
             }
+
+            drawBusStationsOnPoly(stops);
             //---------------------------------------------------------------------------------------------------------------
 
             PolylineOptions polyOptions = new PolylineOptions().clickable(false).addAll(points).color(Color.BLUE);
@@ -128,6 +132,30 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener {
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
+    /**
+     * function shows bus stops on selected bus line
+     * @param stops a list of points that represent a bus station's location
+     */
+    public void drawBusStationsOnPoly(ArrayList<Stop> stops) {
+
+        for(Stop busStop : stops) {
+            MarkerOptions markerOpt = new MarkerOptions().position(new LatLng(busStop.latitude, busStop.longitude))
+                    .title(busStop.stop_name).icon(BitmapDescriptorFactory.fromResource(R.drawable.busstopicon));
+
+            Marker markerTmp = this.nMap.addMarker(markerOpt);
+            markerTmp.setTag(busStop);
+
+            Stop tagged = (Stop) markerTmp.getTag();
+
+            try {
+                JSONArray tmpBuses = new JSONArray(db.getBusesOnStop(tagged.stop_id));
+            } catch (JSONException e) {
+                Log.e("ERROR", e.getMessage());
+            }
+        }
 
     }
 
