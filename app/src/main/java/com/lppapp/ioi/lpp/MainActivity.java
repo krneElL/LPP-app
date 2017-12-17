@@ -1,7 +1,11 @@
 package com.lppapp.ioi.lpp;
 
+import android.animation.LayoutTransition;
+import android.animation.ObjectAnimator;
+import android.database.DataSetObserver;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.transition.TransitionManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -10,14 +14,21 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Property;
 import android.view.GestureDetector;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -29,6 +40,7 @@ import com.google.android.gms.maps.model.LatLng;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Dictionary;
+import java.util.List;
 
 import api.LiveBusArrivalCall;
 import api.StationsInRangeCall;
@@ -45,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private DatabaseHelper db;
 
     private SpinnerShape spinnerShape = new SpinnerShape(this);
+    private Spinner spinnerShapes;
 
     //public EditText lat;
     private static final int NUM_PAGES = 1;
@@ -53,7 +66,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     //animation
     private LinearLayout l1;
+    private LinearLayout testL;
+    //private RelativeLayout l1;
+    private ViewGroup l2;
     private Animation sDown, sUp;
+    private ObjectAnimator objAnimator;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -63,13 +80,40 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             switch (item.getItemId()) {
                 case R.id.avtobusi:
                     resetCameraView();
-                    l1.startAnimation(sDown);
+                    spinnerShapes.setAdapter(null);
+                    populateSpinnerShapes();
+
+                    //TransitionManager.beginDelayedTransition(l2);
+                    //l1.startLayoutAnimation();;
+                   // testL.setVisibility(View.VISIBLE);
+                   // l1.startAnimation(sDown);
+                    animateObject(l1, l1.TRANSLATION_Y, 150);
+
 
                     //l1.setTranslationY(150);
                     return true;
                 case R.id.postaje:
                     resetCameraView();
-                    l1.startAnimation(sUp);
+                    animateObject(l1, l1.TRANSLATION_Y, -150);
+
+                    List sampleValues = new ArrayList();
+                    sampleValues.add("ena");
+                    sampleValues.add("dva");
+
+                    spinnerShapes.setAdapter(null);
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, sampleValues);
+
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    Spinner sItems = (Spinner) findViewById(R.id.spinnerShapesList);
+                    sItems.setAdapter(adapter);
+                    //l1.startAnimation(sUp);
+                    /*l1.postOnAnimation(new Runnable() {
+                        @Override
+                        public void run() {
+                            testL.setVisibility(View.INVISIBLE);
+                        }
+                    }); */
+
                     //l1.setTranslationY(-150);
 
                     return true;
@@ -102,7 +146,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             System.out.println("Unable to create database");
         }
 
-        populateSpinnerShapes();
+        spinnerShapes = (Spinner) findViewById(R.id.spinnerShapesList);
+        //populateSpinnerShapes();
 
         //init tabs
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -112,8 +157,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         sDown = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slidedown);
         sUp = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slideup);
 
+        //l2 = (ViewGroup)findViewById(R.id.subMenu);
+
         l1 = (LinearLayout) findViewById(R.id.subMenu);
+        testL = (LinearLayout) findViewById(R.id.test);
+        //testL.setVisibility(View.GONE);
         //l1.setAnimation(sDown);
+
 
         // initialize fragmet View
         //mPager = (ViewPager) findViewById(R.id.vp);
@@ -137,7 +187,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
     public void populateSpinnerShapes() {
-        Spinner spinnerShapes = (Spinner) findViewById(R.id.spinnerShapesList);
         spinnerShapes.setOnItemSelectedListener(spinnerShape);
 
         ArrayList<Shape> shapes = new ArrayList<>();
@@ -163,13 +212,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.setMaxZoomPreference(16.0f);
 
         //set camera to Ljubljana and zoom in
-        //resetCameraView();
+        resetCameraView();
 
         //hide toolbar
         //mMap.setUiSettings.setMapToolbarEnabled(false);
 
         //3D buildings
-        mMap.setBuildingsEnabled(true);
+        //mMap.setBuildingsEnabled(true);
 
         //mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);  //satelitska slika
     }
@@ -215,6 +264,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(46.056946, 14.505751)));
         mMap.moveCamera(CameraUpdateFactory.zoomTo(12));
        // mMap.moveCamera(CameraUpdateFactory.zoomBy(5));
+    }
+
+    public void animateObject(Object target, Property property, float value) {
+        objAnimator = ObjectAnimator.ofFloat(target, property, value);
+        objAnimator.setDuration(2000);
+        objAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
+        objAnimator.start();
     }
 
 
