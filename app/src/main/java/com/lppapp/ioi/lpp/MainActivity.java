@@ -1,6 +1,7 @@
 package com.lppapp.ioi.lpp;
 
 import android.animation.ObjectAnimator;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -10,11 +11,13 @@ import android.view.GestureDetector;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -47,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private ObjectAnimator objAnimator;
     private LinearLayout layoutShapes;
     private LinearLayout layoutStops;
+    private ToggleButton showBusStops;
 
     // custom animation - /res/anim/slidedown.xml | /res/anim/slideup.xml
     //private Animation sDown, sUp;
@@ -61,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         /**
          * function
          * @param item an item attached to menu
-         * @return true if action is executed or false if no action is executed
+         * @return true if action is executed or false if no action is being executed
          */
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -72,17 +76,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     // fill spinnerShapes on tab pressed
                     populateSpinnerShapes();
 
-                    // animate layouts to show proper submenu
-                    animateObject(layoutStops, layoutStops.TRANSLATION_Y, -150);
-                    animateObject(layoutShapes, layoutShapes.TRANSLATION_Y, 150);
+                    // animate layouts and toggle button
+                    animateObject(layoutStops, "translationY", -150);
+                    animateObject(layoutShapes, "translationY", 150);
+                    animateObject(showBusStops, "translationX", -40);
 
                     return true;
                 case R.id.postaje:
                     resetCameraView();
 
                     // animate layouts to show proper submenu
-                    animateObject(layoutStops, layoutStops.TRANSLATION_Y, 150);
-                    animateObject(layoutShapes, layoutShapes.TRANSLATION_Y, -150);
+                    animateObject(layoutStops, "translationY", 150);
+                    animateObject(layoutShapes, "translationY", -150);
+                    animateObject(showBusStops, "translationX", 130);
 
                     return true;
                 case R.id.blizina:
@@ -130,6 +136,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         layoutShapes = (LinearLayout) findViewById(R.id.subMenuAvtobusi);
         layoutStops = (LinearLayout) findViewById(R.id.subMenuPrihodi);
 
+        showBusStops = (ToggleButton) findViewById(R.id.showBusstops);
+        showBusStops.setX(130);
+        showBusStops.setChecked(true);
+
         // initialize fragmet View
         //mPager = (ViewPager) findViewById(R.id.vp);
         //mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
@@ -155,6 +165,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     @Override
+    /**
+     * function
+     */
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         mMap.clear();
@@ -229,11 +242,31 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
      * @param property a property of an object such as X, Y position, color, etc.
      * @param value value that will be set to selected property
      */
-    public void animateObject(Object target, Property property, float value) {
+    public void animateObject(Object target, String property, float value) {
         objAnimator = ObjectAnimator.ofFloat(target, property, value);
+        //objAnimator = obje
         objAnimator.setDuration(600);
         objAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
         objAnimator.start();
+    }
+
+    /**
+     * function shows or hides busstations accordingly to a toggleButton
+     * @param V view of an application context
+     */
+    public void toggleBusStops(View V) {
+        if(showBusStops.isChecked()) {
+            spinnerShape.drawBusStationsOnPoly(spinnerShape.stops);
+            //showBusStops.setBackgroundColor(Color.GREEN);
+            //System.out.println("toggle ON");
+        }
+        else {
+            //showBusStops.setBackgroundColor(Color.BLACK);
+            //System.out.println("toggle OFF");
+            //spinnerShape.stops.clear();
+            mMap.clear();
+            spinnerShape.prepareData();
+        }
     }
 
 

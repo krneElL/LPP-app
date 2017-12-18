@@ -40,6 +40,7 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall
 
     public ArrayList<LatLng> points = new ArrayList<>();
     public String shape_id = "";
+    public ArrayList<Stop> stops;
 
     public SpinnerShape(Context context) {
         this.myContext = context;
@@ -82,9 +83,9 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall
                                                 put("lon", "14.4731961");
                                             }});
 
-            //TODO: tuki dobis list postaj, treba dt v MarkerOptions. EXAMPLE spodi
-            ArrayList<Stop> stops = getShapeStops();
-            //---------------------------------------------------------------------------------------------------------------
+            prepareData();
+
+            /*---------------------------------------------------------------------------------------------------------------
             MarkerOptions markerOpt = new MarkerOptions().position(new LatLng(stops.get(0).latitude, stops.get(0).longitude))
                                                          .title(stops.get(0).stop_name);
 
@@ -92,21 +93,31 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall
             markerTmp.setTag(stops.get(0));
             Stop tagged = (Stop) markerTmp.getTag();
 
-            //TODO: postaje k majo v route_name= "..., arhiv" ne prkazvat
+            TODO: postaje k majo v route_name= "..., arhiv" ne prkazvat
             try {
                 JSONArray tmpBuses = new JSONArray(db.getBusesOnStop(tagged.stop_id));
             } catch (JSONException e) {
                 Log.e("ERROR", e.getMessage());
             }
-
-            drawBusStationsOnPoly(stops);
             //---------------------------------------------------------------------------------------------------------------
+            */
 
-            PolylineOptions polyOptions = new PolylineOptions().clickable(false).addAll(points).color(Color.BLUE);
-            this.nMap.addPolyline(polyOptions);
+            //drawBusStationsOnPoly(stops);
 
-            this.nMap.moveCamera(CameraUpdateFactory.newLatLng(points.get(points.size() / 2)));
+
         }
+    }
+
+    /**
+     * function fills stops with data and set polyOptions to nMap. This function is used with a
+     * a toggleButton
+     */
+    public void prepareData() {
+        stops = getShapeStops();
+        PolylineOptions polyOptions = new PolylineOptions().clickable(false).addAll(points).color(Color.BLUE);
+        this.nMap.addPolyline(polyOptions);
+
+        this.nMap.moveCamera(CameraUpdateFactory.newLatLng(points.get(points.size() / 2)));
     }
 
     /**
@@ -152,7 +163,7 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall
 
         for(Stop busStop : stops) {
             MarkerOptions markerOpt = new MarkerOptions().position(new LatLng(busStop.latitude, busStop.longitude))
-                    .title(busStop.stop_name).icon(BitmapDescriptorFactory.fromResource(R.drawable.busstopicon));
+                    .title(busStop.stop_name).icon(BitmapDescriptorFactory.fromResource(R.drawable.busstopicon3));
 
             Marker markerTmp = this.nMap.addMarker(markerOpt);
             markerTmp.setTag(busStop);
@@ -179,7 +190,7 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall
     /**
      * Function to get response from an API call
      * If JSONArray.length() == 0, then there was an error getting the response
-     * @param response JSONArray response that you get from ApiCall.onPostExecute()
+     * @param data JSONArray response that you get from ApiCall.onPostExecute()
      * */
     @Override
     public void processApiCall(JSONArray data) {
