@@ -257,7 +257,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
      * @param V view of an application context
      */
     public void toggleBusStops(View V) {
+        //TODO: EXAMPLE starting background service to check location of route_id = 717
         Intent serviceTest = new Intent(getApplicationContext(), BackgroundLocationService.class);
+        serviceTest.putExtra("route_id", "717");
 
 
         if(showBusStops.isChecked()) {

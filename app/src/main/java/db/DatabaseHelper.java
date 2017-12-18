@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
+import tables.BusLocation;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     //private static String DB_PATH = "/data/data/com.lppapp.ioi.lpp/databases/";
@@ -266,5 +268,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
         return result;
+    }
+
+    public ArrayList<BusLocation> getBusLocationByRouteId(String routeId, String currTime, String nextTime) {
+        ArrayList<BusLocation> list = new ArrayList<>();
+
+        try {
+            openDB();
+            Cursor cursor = db.rawQuery("SELECT * FROM locations " +
+                                        "WHERE strftime('%d %H:%M:%S', locations.local_time) between " +
+                                        "? and ? and locations.route_int_id = ? " +
+                                        "GROUP BY locations.bus_id " +
+                                        "ORDER BY locations.local_time ",
+                                    new String[] {currTime, nextTime, routeId});
+
+            cursor.moveToFirst();
+
+            while(!cursor.isAfterLast()) {
+                list.add(new BusLocation(cursor.getInt(cursor.getColumnIndex("bus_id")),
+                                        cursor.getString(cursor.getColumnIndex("reg_number")),
+                                        cursor.getInt(cursor.getColumnIndex("speed")),
+                                        cursor.getInt(cursor.getColumnIndex("route_int_id")),
+                                        cursor.getInt(cursor.getColumnIndex("station_int_id")),
+                                        cursor.getDouble(cursor.getColumnIndex("lat")),
+                                        cursor.getDouble(cursor.getColumnIndex("lon")),
+                                        cursor.getString(cursor.getColumnIndex("local_time"))
+                        ));
+
+                cursor.moveToNext();
+            }
+
+            cursor.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            this.close();
+        }
+
+        return list;
     }
 }
