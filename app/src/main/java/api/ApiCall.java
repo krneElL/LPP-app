@@ -11,20 +11,45 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
- * Created by Citrus on 15.12.2017.
+ * Created by Citrus on 18.12.2017.
  */
 
-public class LiveBusArrivalCall extends AsyncTask<String, Void, String> {
+public class ApiCall extends AsyncTask<HashMap<String, String>, Void, String>{
 
-    private final String API_URL = "http://data.lpp.si/timetables/liveBusArrival";
+    private String API_URL;
+    public ApiResponse delegate = null;
+
+    public interface ApiResponse {
+        void processApiCall(JSONArray response);
+    }
+
+    public ApiCall(ApiResponse delegate, String url) {
+        this.delegate = delegate;
+        this.API_URL = url;
+    }
+
 
     @Override
-    protected String doInBackground(String... station_id) {
-
+    protected String doInBackground(HashMap<String, String>[] params) {
         try {
-            URL url = new URL(API_URL + "?station_int_id=" + station_id[0]);
+
+            String urlTmp = API_URL + "?";
+            int i = 1;
+            for(Map.Entry<String, String> param : params[0].entrySet()) {
+                if(i == params[0].size()) {
+                    urlTmp += param.getKey() + "=" + param.getValue();
+                }
+                else {
+                    urlTmp += param.getKey() + "=" + param.getValue() + "&";
+                }
+                i++;
+            }
+
+            URL url = new URL(urlTmp);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
             try {
@@ -49,19 +74,21 @@ public class LiveBusArrivalCall extends AsyncTask<String, Void, String> {
     }
 
     @Override
-    protected void onPostExecute(String response) {
+    protected void onPostExecute(String response){
         try {
             JSONObject json = new JSONObject(response);
 
             if(json.getString("success").equals("true")) {
                 JSONArray data = json.getJSONArray("data");
-                for(int i=0; i<data.length(); i++) {
-                    JSONObject row = data.getJSONObject(i);
-                    //System.out.println(row);
-                }
+                delegate.processApiCall(data);
             }
+            else {
+                delegate.processApiCall(new JSONArray());
+            }
+
         } catch (JSONException e) {
             Log.e("ERROR", e.getMessage());
         }
+
     }
 }

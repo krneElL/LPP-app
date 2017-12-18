@@ -20,9 +20,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
-import api.LiveBusArrivalCall;
-import api.StationsInRangeCall;
+import api.ApiCall;
 import tables.Shape;
 import db.DatabaseHelper;
 import tables.Stop;
@@ -32,7 +32,7 @@ import tables.Stop;
  * Created by Citrus on 15.12.2017.
  */
 
-public class SpinnerShape implements AdapterView.OnItemSelectedListener {
+public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall.ApiResponse {
 
     private Context myContext;
     private DatabaseHelper db;
@@ -72,6 +72,15 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener {
             } catch (JSONException e) {
                 Log.e("ERROR", e.getMessage());
             }
+
+            //TODO: EXAMPLE api klica
+            ApiCall api = new ApiCall(this, "http://data.lpp.si/stations/stationsInRange");
+            api.execute(new HashMap<String, String>()
+                                            {{
+                                                put("radius", "250");
+                                                put("lat", "46.0772932");
+                                                put("lon", "14.4731961");
+                                            }});
 
             //TODO: tuki dobis list postaj, treba dt v MarkerOptions. EXAMPLE spodi
             ArrayList<Stop> stops = getShapeStops();
@@ -167,4 +176,13 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener {
         this.nMap = nMap;
     }
 
+    /**
+     * Function to get response from an API call
+     * If JSONArray.length() == 0, then there was an error getting the response
+     * @param response JSONArray response that you get from ApiCall.onPostExecute()
+     * */
+    @Override
+    public void processApiCall(JSONArray data) {
+        //TODO: api response code
+    }
 }

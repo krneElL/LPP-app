@@ -3,12 +3,6 @@ package com.lppapp.ioi.lpp;
 import android.animation.ObjectAnimator;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.GestureDetectorCompat;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Property;
@@ -17,7 +11,6 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.Animation;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -34,8 +27,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Dictionary;
 
-import api.LiveBusArrivalCall;
-import api.StationsInRangeCall;
 import tables.Shape;
 import customSpinners.SpinnerShape;
 import db.DatabaseHelper;
@@ -214,9 +205,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.clear();
         mMap.moveCamera(CameraUpdateFactory.zoomBy(10));
 
-        //TODO: api call test
-        new LiveBusArrivalCall().execute("1934");
-        new StationsInRangeCall().execute(new String[] {"200", "46.0772932", "14.4731961"});
     }
 
     /**
