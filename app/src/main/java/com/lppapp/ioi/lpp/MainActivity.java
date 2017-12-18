@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             switch (item.getItemId()) {
                 case R.id.avtobusi:
                     resetCameraView();
+                    showBusStops.setChecked(false);
 
                     // fill spinnerShapes on tab pressed
                     populateSpinnerShapes();
@@ -138,7 +139,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         showBusStops = (ToggleButton) findViewById(R.id.showBusstops);
         showBusStops.setX(130);
-        showBusStops.setChecked(true);
 
         // initialize fragmet View
         //mPager = (ViewPager) findViewById(R.id.vp);
