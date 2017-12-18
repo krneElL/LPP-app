@@ -1,6 +1,7 @@
 package com.lppapp.ioi.lpp;
 
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -30,6 +31,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Dictionary;
 
+import services.BackgroundLocationService;
 import tables.Shape;
 import customSpinners.SpinnerShape;
 import db.DatabaseHelper;
@@ -255,10 +257,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
      * @param V view of an application context
      */
     public void toggleBusStops(View V) {
+        Intent serviceTest = new Intent(getApplicationContext(), BackgroundLocationService.class);
+
+
         if(showBusStops.isChecked()) {
             spinnerShape.drawBusStationsOnPoly(spinnerShape.stops);
             //showBusStops.setBackgroundColor(Color.GREEN);
             //System.out.println("toggle ON");
+
+            startService(serviceTest);
         }
         else {
             //showBusStops.setBackgroundColor(Color.BLACK);
@@ -266,6 +273,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             //spinnerShape.stops.clear();
             mMap.clear();
             spinnerShape.prepareData();
+
+            stopService(serviceTest);
         }
     }
 
