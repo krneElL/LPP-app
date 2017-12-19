@@ -31,6 +31,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Dictionary;
 
+import api.LocationAsync;
 import services.BackgroundLocationService;
 import tables.Shape;
 import customSpinners.SpinnerShape;
@@ -281,19 +282,23 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
      * @param v view of an application context
      */
     public void toggleBusLocations(View v) {
-        //TODO: EXAMPLE starting background service to check location of route_id = 717
-        Intent serviceTest = new Intent(getApplicationContext(), BackgroundLocationService.class);
-        serviceTest.putExtra("route_id", "717");
+        //TODO: EXAMPLE buslocations every 5s
+        //Intent serviceTest = new Intent(getApplicationContext(), BackgroundLocationService.class);
+        //serviceTest.putExtra("route_id", "717");
+
+        LocationAsync updateLocations = new LocationAsync(this, this.mMap);
 
         if(showBusLocation.isChecked()) {
             showBusLocation.setBackgroundResource(R.drawable.busstopicon2);
 
-            startService(serviceTest);
+            //startService(serviceTest);
+            updateLocations.execute(new String[] {"717"});
         }
         else {
             showBusLocation.setBackgroundResource(R.drawable.busstopicon2off);
 
-            stopService(serviceTest);
+            //stopService(serviceTest);
+            updateLocations.stopTimer();
         }
     }
 
