@@ -7,6 +7,11 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.lppapp.ioi.lpp.MainActivity;
+import com.lppapp.ioi.lpp.R;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -26,6 +31,7 @@ public class BackgroundLocationService extends Service {
 
     private Timer backgroundTimer = new Timer();
     private DatabaseHelper db = new DatabaseHelper(this);
+    private GoogleMap map;
 
     private final int DELAY_MS = 0;
     private final int PERIOD_MS = 5000;
@@ -34,7 +40,6 @@ public class BackgroundLocationService extends Service {
     private String route_int_id;
 
     private void start() {
-
         this.backgroundTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
@@ -72,6 +77,7 @@ public class BackgroundLocationService extends Service {
         super.onCreate();
         start();
         Log.d("INFO", "Background service started");
+
     }
 
     public void onDestroy() {
@@ -90,6 +96,7 @@ public class BackgroundLocationService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         Bundle extras = intent.getExtras();
+
 
         if(extras != null) {
             this.route_int_id = extras.getString("route_id");

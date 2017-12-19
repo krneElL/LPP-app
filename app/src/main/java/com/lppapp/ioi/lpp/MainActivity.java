@@ -265,22 +265,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
      * @param V view of an application context
      */
     public void toggleBusStops(View V) {
-        //TODO: EXAMPLE starting background service to check location of route_id = 717
-        Intent serviceTest = new Intent(getApplicationContext(), BackgroundLocationService.class);
-        serviceTest.putExtra("route_id", "717");
-
-
         if(showBusStops.isChecked()) {
             spinnerShape.drawBusStationsOnPoly(spinnerShape.stops);
             showBusStops.setBackgroundResource(R.drawable.busstops1);
-            startService(serviceTest);
         }
         else {
             mMap.clear();
             spinnerShape.prepareData();
             showBusStops.setBackgroundResource(R.drawable.busstops1off);
-
-            stopService(serviceTest);
         }
     }
 
@@ -289,12 +281,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
      * @param v view of an application context
      */
     public void toggleBusLocations(View v) {
+        //TODO: EXAMPLE starting background service to check location of route_id = 717
+        Intent serviceTest = new Intent(getApplicationContext(), BackgroundLocationService.class);
+        serviceTest.putExtra("route_id", "717");
+
         if(showBusLocation.isChecked()) {
             showBusLocation.setBackgroundResource(R.drawable.busstopicon2);
+
+            startService(serviceTest);
         }
         else {
-
             showBusLocation.setBackgroundResource(R.drawable.busstopicon2off);
+
+            stopService(serviceTest);
         }
     }
 
