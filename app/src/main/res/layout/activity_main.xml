@@ -79,9 +79,23 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/busstopicon2"
+            android:background="@drawable/busstops1off"
             android:checked="false"
             android:onClick="toggleBusStops"
+            android:textAllCaps="false"
+            android:textColor="@android:color/transparent"
+            android:textSize="8sp" />
+
+        <ToggleButton
+            android:id="@+id/showBusLocation"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_above="@+id/showBusstops"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="13dp"
+            android:background="@drawable/busstopicon2off"
+            android:checked="false"
+            android:onClick="toggleBusLocations"
             android:textAllCaps="false"
             android:textColor="@android:color/transparent"
             android:textSize="8sp" />

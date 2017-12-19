@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private LinearLayout layoutShapes;
     private LinearLayout layoutStops;
     private ToggleButton showBusStops;
+    private ToggleButton showBusLocation;
 
     // custom animation - /res/anim/slidedown.xml | /res/anim/slideup.xml
     //private Animation sDown, sUp;
@@ -75,6 +76,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 case R.id.avtobusi:
                     resetCameraView();
                     showBusStops.setChecked(false);
+                    showBusStops.setBackgroundResource(R.drawable.busstops1off);
+                    showBusLocation.setChecked(false);
+                    showBusLocation.setBackgroundResource(R.drawable.busstopicon2off);
 
                     // fill spinnerShapes on tab pressed
                     populateSpinnerShapes();
@@ -83,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     animateObject(layoutStops, "translationY", -150);
                     animateObject(layoutShapes, "translationY", 150);
                     animateObject(showBusStops, "translationX", -40);
+                    animateObject(showBusLocation, "translationX", -40);
 
                     return true;
                 case R.id.postaje:
@@ -92,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     animateObject(layoutStops, "translationY", 150);
                     animateObject(layoutShapes, "translationY", -150);
                     animateObject(showBusStops, "translationX", 130);
+                    animateObject(showBusLocation, "translationX", 130);
 
                     return true;
                 case R.id.blizina:
@@ -140,7 +146,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         layoutStops = (LinearLayout) findViewById(R.id.subMenuPrihodi);
 
         showBusStops = (ToggleButton) findViewById(R.id.showBusstops);
+        showBusLocation = (ToggleButton) findViewById(R.id.showBusLocation);
         showBusStops.setX(130);
+        showBusLocation.setX(130);
 
         // initialize fragmet View
         //mPager = (ViewPager) findViewById(R.id.vp);
@@ -264,19 +272,29 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         if(showBusStops.isChecked()) {
             spinnerShape.drawBusStationsOnPoly(spinnerShape.stops);
-            //showBusStops.setBackgroundColor(Color.GREEN);
-            //System.out.println("toggle ON");
-
+            showBusStops.setBackgroundResource(R.drawable.busstops1);
             startService(serviceTest);
         }
         else {
-            //showBusStops.setBackgroundColor(Color.BLACK);
-            //System.out.println("toggle OFF");
-            //spinnerShape.stops.clear();
             mMap.clear();
             spinnerShape.prepareData();
+            showBusStops.setBackgroundResource(R.drawable.busstops1off);
 
             stopService(serviceTest);
+        }
+    }
+
+    /**
+     * function toggles bus locations on choosen line
+     * @param v view of an application context
+     */
+    public void toggleBusLocations(View v) {
+        if(showBusLocation.isChecked()) {
+            showBusLocation.setBackgroundResource(R.drawable.busstopicon2);
+        }
+        else {
+
+            showBusLocation.setBackgroundResource(R.drawable.busstopicon2off);
         }
     }
 
