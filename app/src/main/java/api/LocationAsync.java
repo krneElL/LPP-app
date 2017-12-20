@@ -61,7 +61,7 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
 
                 try {
                     ArrayList<MarkerOptions> markerList = new ArrayList<>();
-
+                    long startTime = System.currentTimeMillis();
                     for(String route : param) {
                         ArrayList<BusLocation> busLocations = getCurrentLocations(route);
 
@@ -74,13 +74,15 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
                         }
                     }
 
+                    long endTime = System.currentTimeMillis();
+
+                    System.out.println("That took " + (endTime - startTime) + " milliseconds");
                     publishProgress(markerList);
                     Thread.sleep(this.PERIOD_MS);
                 } catch (InterruptedException e) {
                     System.out.println(e.getMessage());
                 }
 
-                publishProgress(null);
             }
 
         }

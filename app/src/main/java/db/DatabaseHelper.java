@@ -307,4 +307,58 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return list;
     }
+
+    public ArrayList<String> getRouteIdByRouteName(String route_name) {
+        ArrayList<String> list = new ArrayList<>();
+
+        try {
+            openDB();
+            Cursor cursor = db.rawQuery("SELECT * FROM routes " +
+                                        "WHERE group_name = ? ",
+                    new String[] {route_name});
+
+            cursor.moveToFirst();
+
+            while(!cursor.isAfterLast()) {
+                list.add(cursor.getString(cursor.getColumnIndex("int_id")));
+
+                cursor.moveToNext();
+            }
+
+            cursor.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            this.close();
+        }
+
+        return list;
+    }
+
+    public ArrayList<String> getRouteIdByHeadsign(String trip_headsign) {
+        ArrayList<String> list = new ArrayList<>();
+
+        try {
+            openDB();
+            Cursor cursor = db.rawQuery("SELECT * FROM routes " +
+                            "WHERE parent_name = ? ",
+                    new String[] {trip_headsign});
+
+            cursor.moveToFirst();
+
+            while(!cursor.isAfterLast()) {
+                list.add(cursor.getString(cursor.getColumnIndex("int_id")));
+
+                cursor.moveToNext();
+            }
+
+            cursor.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            this.close();
+        }
+
+        return list;
+    }
 }

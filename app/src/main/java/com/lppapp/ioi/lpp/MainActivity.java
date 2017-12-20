@@ -292,25 +292,18 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
      * @param v view of an application context
      */
     public void toggleBusLocations(View v) {
-        //TODO: EXAMPLE buslocations every 5s
-        //Intent serviceTest = new Intent(getApplicationContext(), BackgroundLocationService.class);
-        //serviceTest.putExtra("route_id", "717");
-
-        //createBusLocationTask();
-
+        Shape selectedItem = (Shape) spinnerShapes.getSelectedItem();
 
         if(showBusLocation.isChecked()) {
             showBusLocation.setBackgroundResource(R.drawable.busstopicon2);
 
-            //startService(serviceTest);
-            //spinnerShapes.getSelectedItem().
             drawBusLocations = new LocationAsync(this, this.mMap);
-            drawBusLocations.execute(new String[] {"332", "333"});
+            //drawBusLocations.execute(this.db.getRouteIdByRouteName(selectedItem.route_name).toArray(new String[0]));
+            drawBusLocations.execute(this.db.getRouteIdByHeadsign(selectedItem.trip_headsign).toArray(new String[0]));
         }
         else {
             showBusLocation.setBackgroundResource(R.drawable.busstopicon2off);
 
-            //stopService(serviceTest);
             drawBusLocations.cancel(true);
         }
     }
