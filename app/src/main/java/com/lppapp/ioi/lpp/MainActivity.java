@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private ToggleButton showBusStops;
     private ToggleButton showBusLocation;
 
+    private static LocationAsync drawBusLocations;
+
     // custom animation - /res/anim/slidedown.xml | /res/anim/slideup.xml
     //private Animation sDown, sUp;
 
@@ -94,6 +96,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 case R.id.postaje:
                     resetCameraView();
 
+                    if(drawBusLocations != null) {
+                        drawBusLocations.cancel(true);
+                    }
+
                     // animate layouts to show proper submenu
                     animateObject(layoutStops, "translationY", 150);
                     animateObject(layoutShapes, "translationY", -150);
@@ -103,6 +109,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     return true;
                 case R.id.blizina:
                     resetCameraView();
+
+                    if(drawBusLocations != null) {
+                        drawBusLocations.cancel(true);
+                    }
                     //TODO; create "submenu" layout
                     return true;
             }
@@ -286,19 +296,22 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         //Intent serviceTest = new Intent(getApplicationContext(), BackgroundLocationService.class);
         //serviceTest.putExtra("route_id", "717");
 
-        LocationAsync updateLocations = new LocationAsync(this, this.mMap);
+        //createBusLocationTask();
+
 
         if(showBusLocation.isChecked()) {
             showBusLocation.setBackgroundResource(R.drawable.busstopicon2);
 
             //startService(serviceTest);
-            updateLocations.execute(new String[] {"717"});
+            //spinnerShapes.getSelectedItem().
+            drawBusLocations = new LocationAsync(this, this.mMap);
+            drawBusLocations.execute(new String[] {"332", "333"});
         }
         else {
             showBusLocation.setBackgroundResource(R.drawable.busstopicon2off);
 
             //stopService(serviceTest);
-            updateLocations.stopTimer();
+            drawBusLocations.cancel(true);
         }
     }
 

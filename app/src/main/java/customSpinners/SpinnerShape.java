@@ -78,36 +78,15 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall
             }
 
             //TODO: EXAMPLE api klica
-            ApiCall api = new ApiCall(this, "http://data.lpp.si/stations/stationsInRange");
+            /*ApiCall api = new ApiCall(this, "http://data.lpp.si/stations/stationsInRange");
             api.execute(new HashMap<String, String>()
                                             {{
                                                 put("radius", "250");
                                                 put("lat", "46.0772932");
                                                 put("lon", "14.4731961");
-                                            }});
+                                            }});*/
 
             prepareData();
-
-            /*---------------------------------------------------------------------------------------------------------------
-            MarkerOptions markerOpt = new MarkerOptions().position(new LatLng(stops.get(0).latitude, stops.get(0).longitude))
-                                                         .title(stops.get(0).stop_name);
-
-            Marker markerTmp = this.nMap.addMarker(markerOpt);
-            markerTmp.setTag(stops.get(0));
-            Stop tagged = (Stop) markerTmp.getTag();
-
-            TODO: postaje k majo v route_name= "..., arhiv" ne prkazvat
-            try {
-                JSONArray tmpBuses = new JSONArray(db.getBusesOnStop(tagged.stop_id));
-            } catch (JSONException e) {
-                Log.e("ERROR", e.getMessage());
-            }
-            //---------------------------------------------------------------------------------------------------------------
-            */
-
-            //drawBusStationsOnPoly(stops);
-
-
         }
     }
 

@@ -76,6 +76,7 @@ public class ApiCall extends AsyncTask<HashMap<String, String>, Void, String>{
     @Override
     protected void onPostExecute(String response){
         try {
+            //TODO catch no internet connection!!!
             JSONObject json = new JSONObject(response);
 
             if(json.getString("success").equals("true")) {
