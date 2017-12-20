@@ -36,7 +36,8 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
     private final int PERIOD_MS = 5000;
     private final int ADD_SECONDS = 60;
 
-    private boolean runFlag;
+    private ArrayList<Marker> prevMarkers;
+
 
 
     public LocationAsync(Context context, GoogleMap map) {
@@ -48,40 +49,13 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        backgroundTimer = new Timer();
-        this.runFlag = true;
+        //backgroundTimer = new Timer();
+        this.prevMarkers = new ArrayList<>();
     }
 
     @Override
     protected ArrayList<BusLocation> doInBackground(final String... param) {
         if(this.db != null) {
-            /*this.backgroundTimer.scheduleAtFixedRate(new TimerTask() {
-                @Override
-                public void run() {
-                    try {
-                        //TODO: SQL get buses at around current time
-
-                        for(String route : param) {
-                            ArrayList<BusLocation> busLocations = getCurrentLocations(route);
-                            System.out.println(busLocations.size());
-
-                            for(BusLocation bus : busLocations) {
-                                MarkerOptions markerOpt = new MarkerOptions().position(new LatLng(bus.lat, bus.lon));
-
-                                map.addMarker(markerOpt);
-                            }
-                        }
-
-                        Log.d("INFO", "BackgroundService run output");
-                    } catch (Exception e) {
-                        Log.e("ERROR", e.getMessage());
-                    }
-                }
-
-                @Override
-
-            }, DELAY_MS, PERIOD_MS);*/
-
             while(!isCancelled()) {
                 publishProgress(null);
 
@@ -128,24 +102,21 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
             if (values[0] == null) {
                 Log.e("INFO", "Inside onProgress == null.");
             } else if (values[0] != null) {
+                if(!this.prevMarkers.isEmpty()){
+
+                    for(Marker marker : this.prevMarkers) {
+                        marker.remove();
+                    }
+                    this.prevMarkers.clear();
+                }
+
                 Log.e("INFO", "Call inside progress.");
+
                 for(MarkerOptions marker : values[0]) {
-                    this.map.addMarker(marker);
+                    this.prevMarkers.add(this.map.addMarker(marker));
                 }
             }
         }
-    }
-
-    @Override
-    protected void onCancelled(ArrayList<BusLocation> busLocations) {
-        super.onCancelled(busLocations);
-        this.runFlag = false;
-    }
-
-    @Override
-    protected void onCancelled() {
-        super.onCancelled();
-        this.runFlag = false;
     }
 
     private ArrayList<BusLocation> getCurrentLocations(String route_int_id) {
