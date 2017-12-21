@@ -44,6 +44,7 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall
     public ArrayList<LatLng> points = new ArrayList<>();
     public String shape_id = "";
     public ArrayList<Stop> stops;
+    private ArrayList<Marker> markerStation = new ArrayList<>();
 
     public SpinnerShape(Context context) {
         this.myContext = context;
@@ -143,12 +144,15 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall
      */
     public void drawBusStationsOnPoly(ArrayList<Stop> stops) {
 
+        //array markervoej, return marker
+
         for(Stop busStop : stops) {
             MarkerOptions markerOpt = new MarkerOptions().position(new LatLng(busStop.latitude, busStop.longitude))
                     .title(busStop.stop_name).icon(BitmapDescriptorFactory.fromResource(R.drawable.busstopicon3));
 
             Marker markerTmp = this.nMap.addMarker(markerOpt);
             markerTmp.setTag(busStop);
+            markerStation.add(markerTmp);
 
             Stop tagged = (Stop) markerTmp.getTag();
 
@@ -158,7 +162,13 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall
                 Log.e("ERROR", e.getMessage());
             }
         }
+    }
 
+    public void clearStationsMarkers() {
+        for(Marker marker : this.markerStation) {
+            marker.remove();
+        }
+        this.markerStation.clear();
     }
 
     public GoogleMap getnMap() {

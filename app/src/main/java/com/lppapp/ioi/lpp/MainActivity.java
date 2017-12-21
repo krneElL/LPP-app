@@ -281,9 +281,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             showBusStops.setBackgroundResource(R.drawable.busstops1);
         }
         else {
-            mMap.clear();
-            spinnerShape.prepareData();
+            //mMap.clear();
+            //spinnerShape.prepareData();
             showBusStops.setBackgroundResource(R.drawable.busstops1off);
+            spinnerShape.clearStationsMarkers();
         }
     }
 
