@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ToggleButton;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -14,6 +15,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
+
+import api.LocationAsync;
 import services.BackgroundLocationService;
 
 import com.lppapp.ioi.lpp.R;
@@ -46,6 +49,9 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall
     public ArrayList<Stop> stops;
     private ArrayList<Marker> markerStation = new ArrayList<>();
 
+    private static LocationAsync locationThread;
+    private static ToggleButton toggleLocation;
+
     public SpinnerShape(Context context) {
         this.myContext = context;
         this.db = new DatabaseHelper(context);
@@ -56,6 +62,16 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall
      * */
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        if(locationThread != null && toggleLocation != null) {
+            toggleLocation.setChecked(false);
+            toggleLocation.setBackgroundResource(R.drawable.busstopicon2off);
+
+            locationThread.cancel(true);
+
+            toggleLocation = null;
+            locationThread = null;
+        }
+
         if(this.nMap != null) {
             points.clear();
             this.nMap.clear();
@@ -187,5 +203,17 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall
     @Override
     public void processApiCall(JSONArray data) {
         //TODO: api response code
+    }
+
+    public void setLocationThread(LocationAsync thread) {
+        locationThread = thread;
+    }
+
+    public LocationAsync getLocationThread() {
+        return locationThread;
+    }
+
+    public void setToggleLocation(ToggleButton button) {
+        toggleLocation = button;
     }
 }
