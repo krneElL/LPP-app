@@ -36,6 +36,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Dictionary;
 
@@ -45,6 +46,7 @@ import tables.ListViewAdapter;
 import tables.Shape;
 import customSpinners.SpinnerShape;
 import db.DatabaseHelper;
+import tables.SpinnerAdapter;
 import tables.Stop;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback,
@@ -217,7 +219,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             shapes.add(new Shape(row.get("shape_id"), row.get("route_name"), row.get("trip_headsign")));
         }
 
-        ArrayAdapter spinnerAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, shapes);
+        //ArrayAdapter spinnerAdapter = new ArrayAdapter(this, R.layout.spinneritem, shapes);
+        SpinnerAdapter spinnerAdapter = new SpinnerAdapter(this, shapes);
+
+        //spinnerAdapter.setDropDownViewResource(R.layout.spinneritem);
+
         spinnerShapes.setAdapter(spinnerAdapter);
     }
 
