@@ -12,6 +12,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -117,8 +118,7 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall
         stops = getShapeStops();
         PolylineOptions polyOptions = new PolylineOptions().clickable(false).addAll(points).color(Color.BLUE);
         this.nMap.addPolyline(polyOptions);
-        this.nMap.animateCamera(CameraUpdateFactory.newLatLngZoom(points.get(points.size() / 2), 12.5f));
-        //this.nMap.moveCamera(CameraUpdateFactory.newLatLng(points.get(points.size() / 2)));
+        this.nMap.animateCamera(CameraUpdateFactory.newLatLngBounds(findCenterPointOfPolly(points), 100));
     }
 
     /**
@@ -195,6 +195,36 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall
 
     public void setnMap(GoogleMap nMap) {
         this.nMap = nMap;
+    }
+
+    /**
+     * functions finds a center point of a given shape.
+     * @param points points of a shape
+     * @return LatLng point to updateCamera on given shape
+     */
+    public LatLngBounds findCenterPointOfPolly( ArrayList<LatLng> points) {
+        double maxLat = Double.MIN_VALUE;
+        double minLat = Double.MAX_VALUE;
+        double maxLng = Double.MIN_VALUE;
+        double minLng = Double.MAX_VALUE;
+
+        for(LatLng point: points) {
+            if(point.latitude > maxLat)
+                maxLat = point.latitude;
+            if(point.latitude < minLat)
+                minLat = point.latitude;
+
+            if(point.longitude > maxLng)
+                maxLng = point.longitude;
+            if(point.longitude < minLng)
+                minLng = point.longitude;
+        }
+
+        LatLngBounds.Builder builder = new LatLngBounds.Builder();
+        builder.include(new LatLng(maxLat, maxLng));
+        builder.include(new LatLng(minLat, minLng));
+
+        return builder.build();
     }
 
     /**
