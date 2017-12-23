@@ -115,8 +115,8 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall
         stops = getShapeStops();
         PolylineOptions polyOptions = new PolylineOptions().clickable(false).addAll(points).color(Color.BLUE);
         this.nMap.addPolyline(polyOptions);
-
-        this.nMap.moveCamera(CameraUpdateFactory.newLatLng(points.get(points.size() / 2)));
+        this.nMap.animateCamera(CameraUpdateFactory.newLatLngZoom(points.get(points.size() / 2), 12.5f));
+        //this.nMap.moveCamera(CameraUpdateFactory.newLatLng(points.get(points.size() / 2)));
     }
 
     /**

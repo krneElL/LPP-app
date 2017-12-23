@@ -15,6 +15,8 @@
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_weight="1"
             tools:context="com.lppapp.ioi.lpp.MapsActivity"
             tools:layout_editor_absoluteX="16dp"
@@ -57,6 +59,7 @@
                 android:layout_height="50dp"
                 android:layout_alignParentStart="true"
                 android:layout_weight="1" />
+
         </LinearLayout>
 
         <android.support.design.widget.BottomNavigationView
@@ -99,6 +102,25 @@
             android:textAllCaps="false"
             android:textColor="@android:color/transparent"
             android:textSize="8sp" />
+
+        <RelativeLayout
+            android:id="@+id/busTimeTable"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="?android:attr/windowBackground">
+
+            <TextView
+                android:id="@+id/busTimeTableText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="131dp"
+                android:layout_marginTop="52dp"
+                android:text="TextView" />
+        </RelativeLayout>
 
     </RelativeLayout>
 

@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Property;
 import android.view.GestureDetector;
 import android.view.MenuItem;
@@ -16,15 +17,21 @@ import android.view.Window;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
@@ -37,7 +44,8 @@ import tables.Shape;
 import customSpinners.SpinnerShape;
 import db.DatabaseHelper;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback,
+        GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowCloseListener {
 
     private GoogleMap mMap;
     private DatabaseHelper db;
@@ -55,7 +63,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private LinearLayout layoutStops;
     private ToggleButton showBusStops;
     private ToggleButton showBusLocation;
+    private RelativeLayout busTimeTable;
+    private TextView busTimeTableText;
 
+    //screen dimensions
+    private int height;
+    private int width;
     private static LocationAsync drawBusLocations;
 
     // custom animation - /res/anim/slidedown.xml | /res/anim/slideup.xml
@@ -75,26 +88,30 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
          */
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            //resets toggleButtons
+            showBusStops.setChecked(false);
+            showBusLocation.setChecked(false);
+            showBusStops.setBackgroundResource(R.drawable.busstops1off);
+            showBusLocation.setBackgroundResource(R.drawable.busstopicon2off);
+
+            //reset cameraView
+            resetCameraView();
+
             switch (item.getItemId()) {
                 case R.id.avtobusi:
-                    resetCameraView();
-                    showBusStops.setChecked(false);
-                    showBusStops.setBackgroundResource(R.drawable.busstops1off);
-                    showBusLocation.setChecked(false);
-                    showBusLocation.setBackgroundResource(R.drawable.busstopicon2off);
 
                     // fill spinnerShapes on tab pressed
                     populateSpinnerShapes();
 
                     // animate layouts and toggle button
-                    animateObject(layoutStops, "translationY", -150);
+                    animateObject(layoutStops, "translationY", 0);
                     animateObject(layoutShapes, "translationY", 150);
                     animateObject(showBusStops, "translationX", -40);
                     animateObject(showBusLocation, "translationX", -40);
 
                     return true;
                 case R.id.postaje:
-                    resetCameraView();
 
                     if(drawBusLocations != null) {
                         drawBusLocations.cancel(true);
@@ -102,14 +119,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                     // animate layouts to show proper submenu
                     animateObject(layoutStops, "translationY", 150);
-                    animateObject(layoutShapes, "translationY", -150);
-                    animateObject(showBusStops, "translationX", 130);
-                    animateObject(showBusLocation, "translationX", 130);
+                    animateObject(layoutShapes, "translationY", 0);
+                    animateObject(showBusStops, "translationX", 140);
+                    animateObject(showBusLocation, "translationX", 140);
 
                     return true;
                 case R.id.blizina:
-                    resetCameraView();
-
                     if(drawBusLocations != null) {
                         drawBusLocations.cancel(true);
                     }
@@ -125,6 +140,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //get dimenson metrics - landscape / portrait
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        height = metrics.heightPixels;
+        float ydpi = metrics.ydpi;
+        width = metrics.widthPixels;
+        //System.out.println(height + " | " + ydpi);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -158,8 +181,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         showBusStops = (ToggleButton) findViewById(R.id.showBusstops);
         showBusLocation = (ToggleButton) findViewById(R.id.showBusLocation);
+        busTimeTable = (RelativeLayout) findViewById(R.id.busTimeTable);
+        busTimeTableText = (TextView) findViewById(R.id.busTimeTableText);
+
         showBusStops.setX(130);
         showBusLocation.setX(130);
+        busTimeTable.setY(busTimeTable.getLayoutParams().height);
 
         // initialize fragmet View
         //mPager = (ViewPager) findViewById(R.id.vp);
@@ -195,6 +222,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         spinnerShape.setnMap(mMap);
 
+        //add custom MarkerClickListener and custom onInfoWindowCloseListener
+        mMap.setOnMarkerClickListener(this);
+        mMap.setOnInfoWindowCloseListener(this);
+
         // Set a preference for minimum and maximum zoom.
         mMap.setMinZoomPreference(2.0f);
         mMap.setMaxZoomPreference(16.0f);
@@ -203,7 +234,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         resetCameraView();
 
         //hide toolbar
-        //mMap.setUiSettings.setMapToolbarEnabled(false);
+        UiSettings mMapSettings = mMap.getUiSettings();
+        mMapSettings.setMapToolbarEnabled(false);
+        //mMapSettings.setCompassEnabled(true);
+        //mMapSettings.setMyLocationButtonEnabled(true);
 
         //3D buildings
         //mMap.setBuildingsEnabled(true);
@@ -252,8 +286,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
      */
     public void resetCameraView() {
         mMap.clear();
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(46.056946, 14.505751)));
-        mMap.moveCamera(CameraUpdateFactory.zoomTo(12));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(46.056946, 14.505751), 12));
     }
 
     /**
@@ -265,7 +298,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
      */
     public void animateObject(Object target, String property, float value) {
         objAnimator = ObjectAnimator.ofFloat(target, property, value);
-        //objAnimator = obje
         objAnimator.setDuration(600);
         objAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
         objAnimator.start();
@@ -281,8 +313,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             showBusStops.setBackgroundResource(R.drawable.busstops1);
         }
         else {
-            //mMap.clear();
-            //spinnerShape.prepareData();
             showBusStops.setBackgroundResource(R.drawable.busstops1off);
             spinnerShape.clearStationsMarkers();
         }
@@ -312,6 +342,37 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
+    /**
+     * functions shows marker's infoWindow and zooms and moves camera to selected marker
+     * @param marker on object being clicked by user
+     * @return true
+     */
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        marker.showInfoWindow();
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(marker.getPosition(), 15));
+
+        //show timeTable of selected bus stop
+        animateObject(busTimeTable, "translationY", 0);
+
+        animateObject(showBusStops, "translationY", -busTimeTable.getLayoutParams().height);
+        animateObject(showBusLocation, "translationY", -busTimeTable.getLayoutParams().height);
+
+        return true;
+    }
+
+    /**
+     * function detects when marker's infoWindows is closed and hides busTimeTable layout from
+     * screen.
+     * @param marker an object being deselected
+     */
+    @Override
+    public void onInfoWindowClose(Marker marker) {
+        animateObject(busTimeTable, "translationY", busTimeTable.getLayoutParams().height);
+
+        animateObject(showBusStops, "translationY", 0);
+        animateObject(showBusLocation, "translationY", 0);
+    }
 
     //TODO: gestures work in progress
     class CustomGestures extends GestureDetector.SimpleOnGestureListener {
