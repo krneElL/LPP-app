@@ -23,26 +23,18 @@
             tools:layout_editor_absoluteY="16dp" />
 
         <LinearLayout
-            android:id="@+id/subMenuPrihodi"
+            android:id="@+id/subMenuPostaje"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
             android:background="?android:attr/windowBackground"
             android:orientation="vertical">
 
-            <android.support.design.widget.TextInputLayout
+            <TextView
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/navigation">
-
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="vpiši postajališče"
-                    android:inputType="textAutoCorrect"
-                    android:textColorLink="@android:color/black" />
-            </android.support.design.widget.TextInputLayout>
+                android:layout_height="wrap_content"
+                android:text="TextView" />
         </LinearLayout>
 
         <LinearLayout
@@ -117,9 +109,15 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="131dp"
-                android:layout_marginTop="52dp"
                 android:text="TextView" />
+
+            <ListView
+                android:id="@+id/listViewTimeTable"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/busTimeTableText" />
         </RelativeLayout>
 
     </RelativeLayout>

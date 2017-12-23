@@ -17,6 +17,7 @@ import android.view.Window;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -40,9 +41,11 @@ import java.util.Dictionary;
 
 import api.LocationAsync;
 import services.BackgroundLocationService;
+import tables.ListViewAdapter;
 import tables.Shape;
 import customSpinners.SpinnerShape;
 import db.DatabaseHelper;
+import tables.Stop;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback,
         GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowCloseListener {
@@ -70,6 +73,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private int height;
     private int width;
     private static LocationAsync drawBusLocations;
+
+    private ListViewAdapter adapter;
+    private ListView listViewTimeTable;
 
     // custom animation - /res/anim/slidedown.xml | /res/anim/slideup.xml
     //private Animation sDown, sUp;
@@ -177,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         // inicilaization for animation using animateObject
         layoutShapes = (LinearLayout) findViewById(R.id.subMenuAvtobusi);
-        layoutStops = (LinearLayout) findViewById(R.id.subMenuPrihodi);
+        layoutStops = (LinearLayout) findViewById(R.id.subMenuPostaje);
 
         showBusStops = (ToggleButton) findViewById(R.id.showBusstops);
         showBusLocation = (ToggleButton) findViewById(R.id.showBusLocation);
@@ -187,6 +193,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         showBusStops.setX(130);
         showBusLocation.setX(130);
         busTimeTable.setY(busTimeTable.getLayoutParams().height);
+
+        //listView - display time table information
+        listViewTimeTable = (ListView) findViewById(R.id.listViewTimeTable);
 
         // initialize fragmet View
         //mPager = (ViewPager) findViewById(R.id.vp);
@@ -214,7 +223,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     /**
-     * function
+     * function executes when map widget loads on screen
      */
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -352,11 +361,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         marker.showInfoWindow();
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(marker.getPosition(), 15));
 
-        //show timeTable of selected bus stop
+        //show timeTable of selected bus stop and animate toggleButtons
         animateObject(busTimeTable, "translationY", 0);
-
         animateObject(showBusStops, "translationY", -busTimeTable.getLayoutParams().height);
         animateObject(showBusLocation, "translationY", -busTimeTable.getLayoutParams().height);
+
+        //TODO: get time table information on selected bus stop. Marker's tag holds information about busStop ID, name, Lat & Lng
+        Stop busStop = (Stop)marker.getTag();
+        busTimeTableText.setText("Postajališče: " + busStop.stop_name + " | ID: " + busStop.stop_id);
+
+        //set adapter with arrivals info
+        adapter = new ListViewAdapter(this); //adapter = new ListViewAdapter(this, objectJSON arrivals);
+        listViewTimeTable.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
 
         return true;
     }

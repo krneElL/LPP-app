@@ -19,6 +19,7 @@ import com.google.android.gms.maps.model.PolylineOptions;
 import api.LocationAsync;
 import services.BackgroundLocationService;
 
+import com.lppapp.ioi.lpp.MainActivity;
 import com.lppapp.ioi.lpp.R;
 
 import org.json.JSONArray;
@@ -70,6 +71,7 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall
 
             toggleLocation = null;
             locationThread = null;
+
         }
 
         if(this.nMap != null) {
