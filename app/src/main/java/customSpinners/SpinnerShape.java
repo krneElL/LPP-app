@@ -42,7 +42,7 @@ import tables.Stop;
  * Created by Citrus on 15.12.2017.
  */
 
-public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall.ApiResponse {
+public class SpinnerShape implements AdapterView.OnItemSelectedListener {
 
     private Context myContext;
     private DatabaseHelper db;
@@ -227,19 +227,6 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall
         builder.include(new LatLng(minLat, minLng));
 
         return builder.build();
-    }
-
-    /**
-     * Function to get response from an API call
-     * If JSONArray.length() == 0, then there was an error getting the response
-     * @param data JSONArray response that you get from ApiCall.onPostExecute()
-     * */
-    @Override
-    public void processApiCall(JSONArray data) {
-        //TODO: api response code
-        if(data.length() != 0) {
-            //non-empty response from the API
-        }
     }
 
     public void setLocationThread(LocationAsync thread) {

@@ -36,6 +36,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -387,13 +388,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                                         {{
                                             put("station_int_id", Integer.toString(busStop.stop_id));
                                         }});
-
         busTimeTableText.setText("Postajališče: " + busStop.stop_name + " | ID: " + busStop.stop_id);
-
-        //set adapter with arrivals info
-        adapter = new ListViewAdapter(this); //adapter = new ListViewAdapter(this, objectJSON arrivals);
-        listViewTimeTable.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
 
         return true;
     }
@@ -418,8 +413,36 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
      * */
     @Override
     public void processApiCall(JSONArray response) {
+        System.out.println("inside");
         if(response.length() != 0) {
-            //TODO: get data from response
+            ArrayList<String> timeTableArrayInfo = new ArrayList<>();
+
+            try {
+
+                for (int i = 0; i < response.length(); i++) {
+                    JSONObject c = response.getJSONObject(i);
+
+                    String trolaNumber = c.getString("route_number");
+                    String trolaName = c.getString("route_name");
+                    String prihod = c.getString("eta");
+
+                    String trolaData = trolaNumber + " " + trolaName + " | " +
+                            (prihod.equals("0")?"prihod" : prihod + " min");
+                    timeTableArrayInfo.add(trolaData);
+
+                }
+
+
+                //System.out.println(api.delegate.toString());
+            } catch (Exception ex) {
+                System.out.println("PERROR: " + ex.toString());
+            }
+
+            //set adapter with arrivals info
+            //apter = new ListViewAdapter(this); //adapter = new ListViewAdapter(this, objectJSON arrivals);
+            adapter = new ListViewAdapter(this, timeTableArrayInfo); //adapter = new ListViewAdapter(this, objectJSON arrivals);
+            listViewTimeTable.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
         }
     }
 

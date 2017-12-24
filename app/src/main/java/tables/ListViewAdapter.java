@@ -21,14 +21,15 @@ public class ListViewAdapter extends BaseAdapter {
     private Context context = null;
     private List<String> fields = null;
 
-    public ListViewAdapter(Context context) {
+    public ListViewAdapter(Context context, ArrayList<String> data) {
         this.context = context;
-        fields = new ArrayList<>();
-        fields.add("8 - prihod čez 4 min");
-        fields.add("13 - prihd čez 2 min");
-        fields.add("2 - prihod čez 1 min");
-        fields.add("3 - prihod čez 1 min");
-        fields.add("4 - prihod čez 1 min");
+        fields = data;
+        //fields = new ArrayList<>();
+        //fields.add("8 - prihod čez 4 min");
+        //fields.add("13 - prihd čez 2 min");
+        //fields.add("2 - prihod čez 1 min");
+        //fields.add("3 - prihod čez 1 min");
+        //fields.add("4 - prihod čez 1 min");
 
     }
 

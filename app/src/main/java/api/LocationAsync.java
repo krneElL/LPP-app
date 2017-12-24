@@ -102,12 +102,6 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
                             }
                             markerList.add(markerOpt);
                         }
-                        System.out.println(currBuses.get(825).lon);
-                        try {
-                            System.out.println(busLocations.get(825).lon);
-                        } catch(Exception e) {
-
-                        }
                     }
 
                     long endTime = System.currentTimeMillis();
