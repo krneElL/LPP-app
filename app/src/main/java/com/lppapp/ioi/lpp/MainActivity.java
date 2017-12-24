@@ -35,11 +35,15 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONArray;
+
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Dictionary;
+import java.util.HashMap;
 
+import api.ApiCall;
 import api.LocationAsync;
 import services.BackgroundLocationService;
 import tables.ListViewAdapter;
@@ -50,12 +54,14 @@ import tables.SpinnerAdapter;
 import tables.Stop;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback,
-        GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowCloseListener {
+        GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowCloseListener, ApiCall.ApiResponse {
 
     private GoogleMap mMap;
     private DatabaseHelper db;
     private SpinnerShape spinnerShape = new SpinnerShape(this);
     private Spinner spinnerShapes;
+
+    private final String API_LIVE_BUS_URL = "http://data.lpp.si/timetables/liveBusArrival";
 
     // fragments
     //private static final int NUM_PAGES = 1;
@@ -373,7 +379,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         animateObject(showBusLocation, "translationY", -busTimeTable.getLayoutParams().height);
 
         //TODO: get time table information on selected bus stop. Marker's tag holds information about busStop ID, name, Lat & Lng
-        Stop busStop = (Stop)marker.getTag();
+        final Stop busStop = (Stop)marker.getTag();
+
+        //TODO: you get response in the processApiCall method
+        ApiCall api = new ApiCall(this, this.API_LIVE_BUS_URL);
+        api.execute(new HashMap<String, String>()
+                                        {{
+                                            put("station_int_id", Integer.toString(busStop.stop_id));
+                                        }});
+
         busTimeTableText.setText("Postajališče: " + busStop.stop_name + " | ID: " + busStop.stop_id);
 
         //set adapter with arrivals info
@@ -395,6 +409,18 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         animateObject(showBusStops, "translationY", 0);
         animateObject(showBusLocation, "translationY", 0);
+    }
+
+    /**
+     * Function to get response from an API call
+     * If JSONArray.length() == 0, then there was an error getting the response
+     * @param response JSONArray response that you get from ApiCall.onPostExecute()
+     * */
+    @Override
+    public void processApiCall(JSONArray response) {
+        if(response.length() != 0) {
+            //TODO: get data from response
+        }
     }
 
     //TODO: gestures work in progress

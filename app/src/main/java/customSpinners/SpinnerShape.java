@@ -237,6 +237,9 @@ public class SpinnerShape implements AdapterView.OnItemSelectedListener, ApiCall
     @Override
     public void processApiCall(JSONArray data) {
         //TODO: api response code
+        if(data.length() != 0) {
+            //non-empty response from the API
+        }
     }
 
     public void setLocationThread(LocationAsync thread) {
