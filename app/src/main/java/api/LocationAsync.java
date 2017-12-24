@@ -1,6 +1,7 @@
 package api;
 
 import android.content.Context;
+import android.location.Location;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -23,6 +24,7 @@ import java.util.TimerTask;
 
 import db.DatabaseHelper;
 import tables.BusLocation;
+import tables.Stop;
 
 /**
  * Created by Citrus on 19.12.2017.
@@ -77,7 +79,7 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
                                 int key = entry.getKey();
                                 BusLocation bus = entry.getValue();
 
-                                //update bus location if it exists in the currBusses
+                                //update bus location if it exists in the currBuses
                                 if(currBuses.containsKey(key)) {
                                     currBuses.remove(key);
                                     currBuses.put(key, bus);
@@ -100,10 +102,13 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
                             if(!busLocations.containsKey(key)) {
                                 markerOpt.alpha(0.5f);
                             }
+
+                            //questionable data
+                            Double eta = calculateNextStopETA(bus.lat, bus.lon, bus.speed, bus.station_int_id);
+
                             markerList.add(markerOpt);
                         }
                     }
-
                     long endTime = System.currentTimeMillis();
 
                     System.out.println("That took " + (endTime - startTime) + " milliseconds");
@@ -163,5 +168,27 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
 
         //check currentTime as if it was 11th December 2017
         return db.getBusLocationByRouteId(route_int_id, currTime, nextTime);
+    }
+
+    /**
+     * Calculates how many seconds bus needs to the next stop that is stored in the database
+     * @param busLat latitude of live bus
+     * @param busLon longitutde of live bus
+     * @param speed speed in km/h of live bus
+     * @param nextStopId next stop of live bus, data is questionable
+     * */
+    private Double calculateNextStopETA(Double busLat, Double busLon, int speed, int nextStopId) {
+        if(nextStopId != 0) {
+            Stop nextStop = db.getStopById(nextStopId);
+
+            float[] distanceResult = new float[1];
+            Location.distanceBetween(busLat, busLon, nextStop.latitude, nextStop.longitude, distanceResult);
+            Double distanceKM = distanceResult[0] / 1000d;
+
+            Double eta = (distanceKM / speed) * 3600;
+
+            return eta;
+        }
+        return -1d;
     }
 }

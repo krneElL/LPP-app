@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.Hashtable;
 
 import tables.BusLocation;
+import tables.Stop;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -287,16 +288,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             cursor.moveToFirst();
 
             while(!cursor.isAfterLast()) {
-                /*list.add(new BusLocation(cursor.getInt(cursor.getColumnIndex("bus_id")),
-                                        cursor.getString(cursor.getColumnIndex("reg_number")),
-                                        cursor.getInt(cursor.getColumnIndex("speed")),
-                                        cursor.getInt(cursor.getColumnIndex("route_int_id")),
-                                        cursor.getInt(cursor.getColumnIndex("station_int_id")),
-                                        cursor.getDouble(cursor.getColumnIndex("lat")),
-                                        cursor.getDouble(cursor.getColumnIndex("lon")),
-                                        cursor.getString(cursor.getColumnIndex("local_time"))
-                        ));*/
-
                 BusLocation bus = new BusLocation(cursor.getInt(cursor.getColumnIndex("bus_id")),
                                                 cursor.getString(cursor.getColumnIndex("reg_number")),
                                                 cursor.getInt(cursor.getColumnIndex("speed")),
@@ -373,5 +364,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
         return list;
+    }
+
+    public Stop getStopById(int stopId) {
+        Stop stop = null;
+
+        try {
+            openDB();
+            Cursor cursor = db.rawQuery("SELECT * FROM stops " +
+                                        "WHERE stop_id = ? ",
+                    new String[] {Integer.toString(stopId)});
+
+            cursor.moveToFirst();
+
+            stop = new Stop(cursor.getInt(cursor.getColumnIndex("stop_id")),
+                            cursor.getDouble(cursor.getColumnIndex("latitude")),
+                            cursor.getDouble(cursor.getColumnIndex("longitude")),
+                            cursor.getString(cursor.getColumnIndex("stop_name")));
+
+            cursor.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            this.close();
+        }
+
+        return stop;
     }
 }

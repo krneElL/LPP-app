@@ -1,4 +1,4 @@
-package tables;
+package customSpinners;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.lppapp.ioi.lpp.R;
 
 import java.util.ArrayList;
+
+import tables.Shape;
 
 /**
  * Created by susni on 23. 12. 2017.
