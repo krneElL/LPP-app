@@ -72,6 +72,17 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
                         if(currBuses.isEmpty()) {
                             currBuses = busLocations;
                         }
+                        else {
+                            for(Map.Entry<Integer, BusLocation> entry : busLocations.entrySet()) {
+                                int key = entry.getKey();
+                                BusLocation bus = entry.getValue();
+
+                                if(currBuses.containsKey(key)) {
+                                    currBuses.remove(key);
+                                    currBuses.put(key, bus);
+                                }
+                            }
+                        }
 
                         markerList.clear();
                         /*for(BusLocation bus : busLocations) {
