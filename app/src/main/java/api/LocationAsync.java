@@ -77,32 +77,19 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
                                 int key = entry.getKey();
                                 BusLocation bus = entry.getValue();
 
+                                //update bus location if it exists in the currBusses
                                 if(currBuses.containsKey(key)) {
                                     currBuses.remove(key);
                                     currBuses.put(key, bus);
                                 }
+
+                                //insert new bus to currBuses
+                                if(!currBuses.containsKey(key)) {
+                                    currBuses.put(key, bus);
+                                }
                             }
                         }
-
                         markerList.clear();
-                        /*for(BusLocation bus : busLocations) {
-                            if(!currBuses.containsKey(bus.bus_id)) {
-                                currBuses.put(bus.bus_id, bus);
-                            }
-
-                            MarkerOptions markerOpt = new MarkerOptions().position(new LatLng(bus.lat, bus.lon));
-                            markerList.add(markerOpt);
-                        }*/
-
-                        //if a new bus shows up, add it to the currBuses list
-                        for(Map.Entry<Integer, BusLocation> entry : busLocations.entrySet()) {
-                            int key = entry.getKey();
-                            BusLocation bus = entry.getValue();
-
-                            if(!currBuses.containsKey(key)) {
-                                currBuses.put(key, bus);
-                            }
-                        }
 
                         for(Map.Entry<Integer, BusLocation> entry : currBuses.entrySet()) {
                             int key = entry.getKey();
@@ -115,8 +102,12 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
                             }
                             markerList.add(markerOpt);
                         }
-                        System.out.println(busLocations.size());
-                        System.out.println(currBuses.size());
+                        System.out.println(currBuses.get(825).lon);
+                        try {
+                            System.out.println(busLocations.get(825).lon);
+                        } catch(Exception e) {
+
+                        }
                     }
 
                     long endTime = System.currentTimeMillis();
@@ -127,7 +118,6 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
                 } catch (InterruptedException e) {
                     System.out.println(e.getMessage());
                 }
-
             }
 
         }
