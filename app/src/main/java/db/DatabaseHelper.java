@@ -16,6 +16,7 @@ import java.io.OutputStream;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Dictionary;
+import java.util.HashMap;
 import java.util.Hashtable;
 
 import tables.BusLocation;
@@ -270,8 +271,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result;
     }
 
-    public ArrayList<BusLocation> getBusLocationByRouteId(String routeId, String currTime, String nextTime) {
-        ArrayList<BusLocation> list = new ArrayList<>();
+    public HashMap<Integer, BusLocation> getBusLocationByRouteId(String routeId, String currTime, String nextTime) {
+        //ArrayList<BusLocation> list = new ArrayList<>();
+        HashMap<Integer, BusLocation> list = new HashMap<>();
 
         try {
             openDB();
@@ -285,7 +287,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             cursor.moveToFirst();
 
             while(!cursor.isAfterLast()) {
-                list.add(new BusLocation(cursor.getInt(cursor.getColumnIndex("bus_id")),
+                /*list.add(new BusLocation(cursor.getInt(cursor.getColumnIndex("bus_id")),
                                         cursor.getString(cursor.getColumnIndex("reg_number")),
                                         cursor.getInt(cursor.getColumnIndex("speed")),
                                         cursor.getInt(cursor.getColumnIndex("route_int_id")),
@@ -293,7 +295,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                                         cursor.getDouble(cursor.getColumnIndex("lat")),
                                         cursor.getDouble(cursor.getColumnIndex("lon")),
                                         cursor.getString(cursor.getColumnIndex("local_time"))
-                        ));
+                        ));*/
+
+                BusLocation bus = new BusLocation(cursor.getInt(cursor.getColumnIndex("bus_id")),
+                                                cursor.getString(cursor.getColumnIndex("reg_number")),
+                                                cursor.getInt(cursor.getColumnIndex("speed")),
+                                                cursor.getInt(cursor.getColumnIndex("route_int_id")),
+                                                cursor.getInt(cursor.getColumnIndex("station_int_id")),
+                                                cursor.getDouble(cursor.getColumnIndex("lat")),
+                                                cursor.getDouble(cursor.getColumnIndex("lon")),
+                                                cursor.getString(cursor.getColumnIndex("local_time")));
+
+                list.put(cursor.getInt(cursor.getColumnIndex("bus_id")), bus);
 
                 cursor.moveToNext();
             }

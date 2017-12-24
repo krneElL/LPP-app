@@ -16,6 +16,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -56,6 +58,8 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
     @Override
     protected ArrayList<BusLocation> doInBackground(final String... param) {
         if(this.db != null) {
+            HashMap<Integer, BusLocation> currBuses = new HashMap<>();
+
             while(!isCancelled()) {
                 publishProgress(null);
 
@@ -63,15 +67,45 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
                     ArrayList<MarkerOptions> markerList = new ArrayList<>();
                     long startTime = System.currentTimeMillis();
                     for(String route : param) {
-                        ArrayList<BusLocation> busLocations = getCurrentLocations(route);
+                        HashMap<Integer, BusLocation> busLocations = getCurrentLocations(route);
+
+                        if(currBuses.isEmpty()) {
+                            currBuses = busLocations;
+                        }
 
                         markerList.clear();
+                        /*for(BusLocation bus : busLocations) {
+                            if(!currBuses.containsKey(bus.bus_id)) {
+                                currBuses.put(bus.bus_id, bus);
+                            }
 
-                        for(BusLocation bus : busLocations) {
+                            MarkerOptions markerOpt = new MarkerOptions().position(new LatLng(bus.lat, bus.lon));
+                            markerList.add(markerOpt);
+                        }*/
+
+                        //if a new bus shows up, add it to the currBuses list
+                        for(Map.Entry<Integer, BusLocation> entry : busLocations.entrySet()) {
+                            int key = entry.getKey();
+                            BusLocation bus = entry.getValue();
+
+                            if(!currBuses.containsKey(key)) {
+                                currBuses.put(key, bus);
+                            }
+                        }
+
+                        for(Map.Entry<Integer, BusLocation> entry : currBuses.entrySet()) {
+                            int key = entry.getKey();
+                            BusLocation bus = entry.getValue();
+
                             MarkerOptions markerOpt = new MarkerOptions().position(new LatLng(bus.lat, bus.lon));
 
+                            if(!busLocations.containsKey(key)) {
+                                markerOpt.alpha(0.5f);
+                            }
                             markerList.add(markerOpt);
                         }
+                        System.out.println(busLocations.size());
+                        System.out.println(currBuses.size());
                     }
 
                     long endTime = System.currentTimeMillis();
@@ -121,7 +155,7 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
         }
     }
 
-    private ArrayList<BusLocation> getCurrentLocations(String route_int_id) {
+    private HashMap<Integer, BusLocation> getCurrentLocations(String route_int_id) {
         Calendar currCal = Calendar.getInstance();
         Date currDate = currCal.getTime();
         currCal.add(Calendar.SECOND, this.ADD_SECONDS);

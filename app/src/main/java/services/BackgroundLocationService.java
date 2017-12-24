@@ -17,6 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -46,7 +47,7 @@ public class BackgroundLocationService extends Service {
                 try {
                     //TODO: SQL get buses at around current time
 
-                    ArrayList<BusLocation> busLocations = getCurrentLocations();
+                    HashMap busLocations = getCurrentLocations();
                     System.out.println(busLocations.size());
 
                     Log.d("INFO", "BackgroundService run output");
@@ -57,7 +58,7 @@ public class BackgroundLocationService extends Service {
         }, DELAY_MS, PERIOD_MS);
     }
 
-    private ArrayList<BusLocation> getCurrentLocations() {
+    private HashMap<Integer, BusLocation> getCurrentLocations() {
         Calendar currCal = Calendar.getInstance();
         Date currDate = currCal.getTime();
         currCal.add(Calendar.SECOND, this.ADD_SECONDS);
