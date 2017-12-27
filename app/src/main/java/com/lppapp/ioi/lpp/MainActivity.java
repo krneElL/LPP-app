@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -77,6 +79,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private ListViewAdapter adapter;
     private ListView listViewTimeTable;
 
+    //custom autoCompleteTextView
+    private AutoCompleteTextView autoTextView;
+    private static final String[] COUNTRIES = new String[] {
+            "Belgium", "France", "Italy", "Germany", "Spain"
+    };
+
     // custom animation - /res/anim/slidedown.xml | /res/anim/slideup.xml
     //private Animation sDown, sUp;
 
@@ -109,6 +117,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                     // fill spinnerShapes on tab pressed
                     populateSpinnerShapes();
+
+                    populateBusLines();
 
                     // animate layouts and toggle button
                     animateObject(layoutStops, "translationY", 0);
@@ -192,10 +202,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         showBusStops.setX(130);
         showBusLocation.setX(130);
+        layoutShapes.setY(150);
+
         busTimeTable.setY(busTimeTable.getLayoutParams().height);
 
         //listView - display time table information
         listViewTimeTable = (ListView) findViewById(R.id.listViewTimeTable);
+
+        //autoCompleteTextView
+        autoTextView = (AutoCompleteTextView) findViewById(R.id.autoCompleteText);
 
         // initialize fragmet View
         //mPager = (ViewPager) findViewById(R.id.vp);
@@ -223,6 +238,22 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         //spinnerAdapter.setDropDownViewResource(R.layout.spinneritem);
 
         spinnerShapes.setAdapter(spinnerAdapter);
+    }
+
+    /**
+     * autoCompleteTextView implementation - currently working on second tab
+     */
+    public void populateBusLines() {
+        ArrayList<String> shapes = new ArrayList<>();
+        ArrayList<Dictionary<String, String>> allShapes = db.selectAllShapes();
+
+        for(Dictionary<String, String> row : allShapes) {
+            shapes.add(new Shape(row.get("shape_id"), row.get("route_name"), row.get("trip_headsign")).toString());
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, shapes);
+        autoTextView.setAdapter(adapter);
     }
 
     @Override
@@ -380,6 +411,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                                             put("station_int_id", Integer.toString(busStop.stop_id));
                                         }});
         busTimeTableText.setText("Postajališče: " + busStop.stop_name + " | ID: " + busStop.stop_id);
+        //adapter.notifyDataSetChanged();
 
         return true;
     }

@@ -20,7 +20,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Timer;
-import java.util.TimerTask;
 
 import db.DatabaseHelper;
 import tables.BusLocation;
@@ -97,7 +96,8 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
                             int key = entry.getKey();
                             BusLocation bus = entry.getValue();
 
-                            MarkerOptions markerOpt = new MarkerOptions().position(new LatLng(bus.lat, bus.lon));
+                            MarkerOptions markerOpt = new MarkerOptions().position(new LatLng(bus.lat, bus.lon))
+                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.trolamarker));
 
                             if(!busLocations.containsKey(key)) {
                                 markerOpt.alpha(0.5f);
