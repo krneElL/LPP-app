@@ -15,20 +15,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Citrus on 18.12.2017.
+ * Created by asrsa on 18.12.2017.
  */
 
-public class ApiCall extends AsyncTask<HashMap<String, String>, Void, String>{
+public class NearbyApiCall extends AsyncTask<HashMap<String, String>, Void, String>{
 
     private String API_URL;
-    public ApiResponse delegate = null;
 
-    public interface ApiResponse {
-        void processApiCall(JSONArray response);
-    }
 
-    public ApiCall(ApiResponse delegate, String url) {
-        this.delegate = delegate;
+    public NearbyApiCall(String url) {
         this.API_URL = url;
     }
 
@@ -70,26 +65,6 @@ public class ApiCall extends AsyncTask<HashMap<String, String>, Void, String>{
         } catch (Exception e) {
             Log.e("ERROR", e.getMessage());
             return null;
-        }
-    }
-
-    @Override
-    protected void onPostExecute(String response){
-        try {
-            //TODO catch no internet connection!!!
-            JSONObject json = new JSONObject(response);
-
-            if(json.getString("success").equals("true")) {
-                JSONArray data = json.getJSONArray("data");
-                //System.out.println(data.toString());
-                delegate.processApiCall(data);
-            }
-            else {
-                delegate.processApiCall(new JSONArray());
-            }
-
-        } catch (JSONException e) {
-            Log.e("ERROR", e.getMessage());
         }
     }
 }

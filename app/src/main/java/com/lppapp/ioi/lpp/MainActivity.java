@@ -43,6 +43,7 @@ import java.util.HashMap;
 
 import api.ApiCall;
 import api.LocationAsync;
+import api.NearbyStop;
 import tables.ListViewAdapter;
 import tables.Shape;
 import customSpinners.SpinnerShape;
@@ -265,6 +266,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         //mPager = (ViewPager) findViewById(R.id.vp);
         //mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         //mPager.setAdapter(mPagerAdapter);
+        //TODO: EXAMPLE FOR NEARBY
+        NearbyStop nearby = new NearbyStop(this, "Drama", 200);
+        ArrayList<Stop> tmpStops = nearby.getNearbyStops();
+        System.out.print("fasd");
     }
 
     /**

@@ -391,4 +391,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return stop;
     }
+
+    public boolean containsStop(int stopId) {
+        Stop stop = null;
+
+        try {
+            openDB();
+            Cursor cursor = db.rawQuery("SELECT * FROM stops " +
+                                        "WHERE stop_id = ? ",
+                    new String[] {Integer.toString(stopId)});
+
+            cursor.moveToFirst();
+
+            if(cursor.getCount() > 0) {
+                return true;
+            }
+
+            cursor.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            this.close();
+        }
+
+        return false;
+    }
 }
