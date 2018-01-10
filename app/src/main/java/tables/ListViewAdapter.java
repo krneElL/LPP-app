@@ -53,7 +53,9 @@ public class ListViewAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View convertView = inflater.inflate(R.layout.listviewitem, null);
         TextView txt = (TextView) convertView.findViewById(R.id.viewItemText);
-        txt.setText(fields.get(i));
+        TextView txtTime = (TextView) convertView.findViewById(R.id.viewItemTime);
+        txt.setText(fields.get(i).split(" , ")[0]);
+        txtTime.setText(fields.get(i).split(" , ")[1]);
         return convertView;
     }
 }

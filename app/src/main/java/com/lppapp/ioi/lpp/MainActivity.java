@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
@@ -48,7 +50,8 @@ import customSpinners.SpinnerAdapter;
 import tables.Stop;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback,
-        GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowCloseListener, ApiCall.ApiResponse {
+        GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowCloseListener, ApiCall.ApiResponse,
+        View.OnFocusChangeListener{
 
     private GoogleMap mMap;
     private DatabaseHelper db;
@@ -81,9 +84,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     //custom autoCompleteTextView
     private AutoCompleteTextView autoTextView;
-    private static final String[] COUNTRIES = new String[] {
-            "Belgium", "France", "Italy", "Germany", "Spain"
-    };
 
     // custom animation - /res/anim/slidedown.xml | /res/anim/slideup.xml
     //private Animation sDown, sUp;
@@ -119,6 +119,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     populateSpinnerShapes();
 
                     populateBusLines();
+                    autoTextView.clearFocus();
+
 
                     // animate layouts and toggle button
                     animateObject(layoutStops, "translationY", 0);
@@ -141,6 +143,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                     return true;
                 case R.id.blizina:
+                    autoTextView.clearFocus();
+
                     if(drawBusLocations != null) {
                         drawBusLocations.cancel(true);
                     }
@@ -181,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
 
         spinnerShapes = (Spinner) findViewById(R.id.spinnerShapesList);
-        //populateSpinnerShapes();
+        populateSpinnerShapes();
 
         // init tabs
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -200,8 +204,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         busTimeTable = (RelativeLayout) findViewById(R.id.busTimeTable);
         busTimeTableText = (TextView) findViewById(R.id.busTimeTableText);
 
-        showBusStops.setX(130);
-        showBusLocation.setX(130);
+        //showBusStops.setX(130);
+        //showBusLocation.setX(130);
         layoutShapes.setY(150);
 
         busTimeTable.setY(busTimeTable.getLayoutParams().height);
@@ -211,6 +215,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         //autoCompleteTextView
         autoTextView = (AutoCompleteTextView) findViewById(R.id.autoCompleteText);
+        autoTextView.setOnFocusChangeListener(this);
+        autoTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                InputMethodManager imm = (InputMethodManager)getSystemService(getApplication().INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(autoTextView.getWindowToken(), 0);
+            }
+        });
 
         // initialize fragmet View
         //mPager = (ViewPager) findViewById(R.id.vp);
@@ -396,6 +408,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         marker.showInfoWindow();
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(marker.getPosition(), 15));
 
+        if(marker.getTitle().contains("Prihod")) {
+            return true;
+        }
+
         //show timeTable of selected bus stop and animate toggleButtons
         animateObject(busTimeTable, "translationY", 0);
         animateObject(showBusStops, "translationY", -busTimeTable.getLayoutParams().height);
@@ -410,7 +426,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                                         {{
                                             put("station_int_id", Integer.toString(busStop.stop_id));
                                         }});
-        busTimeTableText.setText("Postajališče: " + busStop.stop_name + " | ID: " + busStop.stop_id);
+        busTimeTableText.setText("Postajališče - " + busStop.stop_name);
         //adapter.notifyDataSetChanged();
 
         return true;
@@ -449,7 +465,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     String trolaName = c.getString("route_name");
                     String prihod = c.getString("eta");
 
-                    String trolaData = trolaNumber + " " + trolaName + " | " +
+                    String trolaData = trolaNumber + " " + trolaName + " , " +
                             (prihod.equals("0")?"prihod" : prihod + " min");
                     timeTableArrayInfo.add(trolaData);
 
@@ -466,6 +482,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             adapter = new ListViewAdapter(this, timeTableArrayInfo); //adapter = new ListViewAdapter(this, objectJSON arrivals);
             listViewTimeTable.setAdapter(adapter);
             adapter.notifyDataSetChanged();
+        }
+    }
+
+    @Override
+    public void onFocusChange(View v, boolean hasFocus) {
+        if (!hasFocus) {
+            InputMethodManager imm = (InputMethodManager)getSystemService(this.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(autoTextView.getWindowToken(), 0);
         }
     }
 

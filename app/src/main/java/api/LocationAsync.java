@@ -105,6 +105,7 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
 
                             //questionable data
                             Double eta = calculateNextStopETA(bus.lat, bus.lon, bus.speed, bus.station_int_id);
+                            markerOpt.title("Prihod: " + Double.toString(eta));
 
                             markerList.add(markerOpt);
                         }
