@@ -18,6 +18,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private ObjectAnimator objAnimator;
     private LinearLayout layoutShapes;
     private LinearLayout layoutStops;
+    private LinearLayout layoutNearby;
     private ToggleButton showBusStops;
     private ToggleButton showBusLocation;
     private RelativeLayout busTimeTable;
@@ -84,6 +86,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     //custom autoCompleteTextView
     private AutoCompleteTextView autoTextView;
+
+    //seekBar
+    private SeekBar seekBar;
+    private TextView seekBarRadius;
 
     // custom animation - /res/anim/slidedown.xml | /res/anim/slideup.xml
     //private Animation sDown, sUp;
@@ -125,6 +131,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     // animate layouts and toggle button
                     animateObject(layoutStops, "translationY", 0);
                     animateObject(layoutShapes, "translationY", 150);
+                    animateObject(layoutNearby, "translationY", 0);
                     animateObject(showBusStops, "translationX", -40);
                     animateObject(showBusLocation, "translationX", -40);
 
@@ -138,12 +145,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     // animate layouts to show proper submenu
                     animateObject(layoutStops, "translationY", 150);
                     animateObject(layoutShapes, "translationY", 0);
+                    animateObject(layoutNearby, "translationY", 0);
                     animateObject(showBusStops, "translationX", 140);
                     animateObject(showBusLocation, "translationX", 140);
 
                     return true;
                 case R.id.blizina:
                     autoTextView.clearFocus();
+
+                    animateObject(layoutStops, "translationY", 0);
+                    animateObject(layoutShapes, "translationY", 0);
+                    animateObject(layoutNearby, "translationY", 150);
+                    animateObject(showBusStops, "translationX", 140);
+                    animateObject(showBusLocation, "translationX", 140);
 
                     if(drawBusLocations != null) {
                         drawBusLocations.cancel(true);
@@ -198,6 +212,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         // inicilaization for animation using animateObject
         layoutShapes = (LinearLayout) findViewById(R.id.subMenuAvtobusi);
         layoutStops = (LinearLayout) findViewById(R.id.subMenuPostaje);
+        layoutNearby = (LinearLayout) findViewById(R.id.subMenuNearby);
 
         showBusStops = (ToggleButton) findViewById(R.id.showBusstops);
         showBusLocation = (ToggleButton) findViewById(R.id.showBusLocation);
@@ -221,6 +236,28 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 InputMethodManager imm = (InputMethodManager)getSystemService(getApplication().INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(autoTextView.getWindowToken(), 0);
+            }
+        });
+
+        seekBar = (SeekBar) findViewById(R.id.seekBar);
+        seekBarRadius = (TextView) findViewById(R.id.seekBarRadius);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int currentRadius = 0;
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                currentRadius = i;
+                seekBarRadius.setText("Določi radij: " + Integer.toString(currentRadius));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                seekBarRadius.setText("Določi radij: " + Integer.toString(currentRadius));
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                seekBarRadius.setText("Določi radij: " + Integer.toString(currentRadius));
             }
         });
 
