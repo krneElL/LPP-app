@@ -595,15 +595,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         radius = (radius > 50 && radius < 1001) ? radius : 400;
         //System.out.print(naslov + " | " + radius);
 
-        //TODO: EXAMPLE FOR NEARBY
-            //NearbyStop nearby = new NearbyStop(this, "Drama", 200);
-        //NearbyStop nearby = new NearbyStop(this, naslov, radius);
-        //ArrayList<Stop> tmpStops = nearby.getNearbyStops();
-        //System.out.print("lalal2");
+        NearbyStop nearby = new NearbyStop(this, naslov, radius);
+        nearby.getAddressLocation();
+        ArrayList<Stop> tmpStops = nearby.getNearbyStops();
 
-        //circle za dramo
+
+        //circle za naslov
         Circle circle = mMap.addCircle(new CircleOptions()
-                .center(new LatLng(46.048992, 14.5014258))
+                .center(new LatLng(nearby.getPosLat(), nearby.getPosLon()))
                 .radius(radius)
                 .strokeColor(Color.parseColor("#55353839"))
                 .fillColor(Color.parseColor("#555260A3")));
@@ -611,13 +610,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(circle.getCenter(), getZoomLevel(circle)));
 
         //create markers from data
-        /*for(Stop busStop : tmpStops) {
+        for(Stop busStop : tmpStops) {
             MarkerOptions markerOpt = new MarkerOptions().position(new LatLng(busStop.latitude, busStop.longitude))
                     .title(busStop.stop_name);
 
             Marker markerTmp = mMap.addMarker(markerOpt);
             markerTmp.setTag(busStop);
-        } */
+        }
     }
 
     /**

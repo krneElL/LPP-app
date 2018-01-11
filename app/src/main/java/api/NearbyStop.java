@@ -39,8 +39,8 @@ public class NearbyStop {
      * @return ArrayList<Stop> list of stops that are nearby
      * */
     public ArrayList<Stop> getNearbyStops() {
-        getAddressLocation();
-        JSONArray stopsData = getStops(posLat, posLon);
+        //getAddressLocation();
+        JSONArray stopsData = getStops();
 
         //check if each stop is contained in the database
         ArrayList<Stop> stops = new ArrayList<>();
@@ -69,13 +69,16 @@ public class NearbyStop {
     /**
      * Gets latitude and longitude of a given address, always takes the first occurrence
      * */
-    private void getAddressLocation() {
-        final String API_URL_GMAPS = "http://maps.google.si/maps/api/geocode/json";
+    public void getAddressLocation() {
+        final String API_URL_GMAPS = "https://maps.google.si/maps/api/geocode/json";
+        final String API_KEY = "AIzaSyDm5cNT-45-aS_n6Vk8CwhW2BlQLlmyYC8";
+
         NearbyApiCall api = new NearbyApiCall(API_URL_GMAPS);
         try {
             String response =  api.execute(new HashMap<String, String>()
                                     {{
                                         put("address", address);
+                                        put("key", API_KEY);
                                     }}).get();
 
             JSONObject json = new JSONObject(response);
@@ -96,14 +99,14 @@ public class NearbyStop {
      * Returns a JSONArray with stops from API response
      * @return JSONArray with response from the API call
      * */
-    private JSONArray getStops(final Double lat, final Double lon) {
+    private JSONArray getStops() {
         final String API_URL_LPP = "http://data.lpp.si/stations/stationsInRange";
         NearbyApiCall api = new NearbyApiCall(API_URL_LPP);
         try {
             String response = api.execute(new HashMap<String, String>()
                                         {{
-                                            put("lat", String.valueOf(lat));
-                                            put("lon", String.valueOf(lon));
+                                            put("lat", String.valueOf(posLat));
+                                            put("lon", String.valueOf(posLon));
                                             put("radius", String.valueOf(radius));
                                         }}).get();
 
@@ -116,5 +119,13 @@ public class NearbyStop {
             Log.e("ERROR", e.getMessage());
         }
         return null;
+    }
+
+    public Double getPosLat() {
+        return posLat;
+    }
+
+    public Double getPosLon() {
+        return posLon;
     }
 }
