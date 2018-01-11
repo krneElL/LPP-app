@@ -174,7 +174,7 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
     /**
      * Calculates how many seconds bus needs to the next stop that is stored in the database
      * @param busLat latitude of live bus
-     * @param busLon longitutde of live bus
+     * @param busLon longitude of live bus
      * @param speed speed in km/h of live bus
      * @param nextStopId next stop of live bus, data is questionable
      * */

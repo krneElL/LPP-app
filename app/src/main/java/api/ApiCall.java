@@ -11,6 +11,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,10 +42,10 @@ public class ApiCall extends AsyncTask<HashMap<String, String>, Void, String>{
             int i = 1;
             for(Map.Entry<String, String> param : params[0].entrySet()) {
                 if(i == params[0].size()) {
-                    urlTmp += param.getKey() + "=" + param.getValue();
+                    urlTmp += param.getKey() + "=" + URLEncoder.encode(param.getValue(), "UTF-8");
                 }
                 else {
-                    urlTmp += param.getKey() + "=" + param.getValue() + "&";
+                    urlTmp += param.getKey() + "=" + URLEncoder.encode(param.getValue(), "UTF-8") + "&";
                 }
                 i++;
             }

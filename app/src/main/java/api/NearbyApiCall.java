@@ -11,6 +11,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,13 +37,15 @@ public class NearbyApiCall extends AsyncTask<HashMap<String, String>, Void, Stri
             int i = 1;
             for(Map.Entry<String, String> param : params[0].entrySet()) {
                 if(i == params[0].size()) {
-                    urlTmp += param.getKey() + "=" + param.getValue();
+                    urlTmp += param.getKey() + "=" + URLEncoder.encode(param.getValue(), "UTF-8");
                 }
                 else {
-                    urlTmp += param.getKey() + "=" + param.getValue() + "&";
+                    urlTmp += param.getKey() + "=" + URLEncoder.encode(param.getValue(), "UTF-8") + "&";
                 }
                 i++;
             }
+
+
 
             URL url = new URL(urlTmp);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
