@@ -1,6 +1,7 @@
 package com.lppapp.ioi.lpp;
 
 import android.animation.ObjectAnimator;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -29,6 +30,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.Circle;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -53,7 +56,7 @@ import tables.Stop;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback,
         GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowCloseListener, ApiCall.ApiResponse,
-        View.OnFocusChangeListener{
+        View.OnFocusChangeListener, AdapterView.OnItemClickListener {
 
     private GoogleMap mMap;
     private DatabaseHelper db;
@@ -90,7 +93,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     //seekBar
     private SeekBar seekBar;
-    private TextView seekBarRadius;
+    private TextView radiusNumber;
+    private TextView radiusAddress;
 
     // custom animation - /res/anim/slidedown.xml | /res/anim/slideup.xml
     //private Animation sDown, sUp;
@@ -116,6 +120,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             showBusStops.setBackgroundResource(R.drawable.busstops1off);
             showBusLocation.setBackgroundResource(R.drawable.busstopicon2off);
 
+            autoTextView.clearFocus();
+            radiusAddress.clearFocus();
+            radiusNumber.clearFocus();
+
             //reset cameraView
             resetCameraView();
 
@@ -126,13 +134,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     populateSpinnerShapes();
 
                     populateBusLines();
-                    autoTextView.clearFocus();
+
 
 
                     // animate layouts and toggle button
                     animateObject(layoutStops, "translationY", 0);
                     animateObject(layoutShapes, "translationY", 150);
                     animateObject(layoutNearby, "translationY", 0);
+
                     animateObject(showBusStops, "translationX", -40);
                     animateObject(showBusLocation, "translationX", -40);
 
@@ -147,6 +156,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     animateObject(layoutStops, "translationY", 150);
                     animateObject(layoutShapes, "translationY", 0);
                     animateObject(layoutNearby, "translationY", 0);
+
                     animateObject(showBusStops, "translationX", 140);
                     animateObject(showBusLocation, "translationX", 140);
 
@@ -157,13 +167,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     animateObject(layoutStops, "translationY", 0);
                     animateObject(layoutShapes, "translationY", 0);
                     animateObject(layoutNearby, "translationY", 150);
+
                     animateObject(showBusStops, "translationX", 140);
                     animateObject(showBusLocation, "translationX", 140);
 
                     if(drawBusLocations != null) {
                         drawBusLocations.cancel(true);
                     }
-                    //TODO; create "submenu" layout
                     return true;
             }
             return false;
@@ -232,44 +242,40 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         //autoCompleteTextView
         autoTextView = (AutoCompleteTextView) findViewById(R.id.autoCompleteText);
         autoTextView.setOnFocusChangeListener(this);
-        autoTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                InputMethodManager imm = (InputMethodManager)getSystemService(getApplication().INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(autoTextView.getWindowToken(), 0);
-            }
-        });
+        autoTextView.setOnItemClickListener(this);
 
-        seekBar = (SeekBar) findViewById(R.id.seekBar);
-        seekBarRadius = (TextView) findViewById(R.id.seekBarRadius);
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        radiusNumber = (TextView) findViewById(R.id.radiusNumber);
+        radiusAddress = (TextView) findViewById(R.id.radiusTextAddress);
+
+        radiusNumber.setOnFocusChangeListener(this);
+        radiusAddress.setOnFocusChangeListener(this);
+
+
+        //seekBar = (SeekBar) findViewById(R.id.seekBar);
+        /*seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             int currentRadius = 0;
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 currentRadius = i;
-                seekBarRadius.setText("Določi radij: " + Integer.toString(currentRadius));
+                seekBarRadius.setText("Določi radij: " + Integer.toString(currentRadius) + " m");
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                seekBarRadius.setText("Določi radij: " + Integer.toString(currentRadius));
+                seekBarRadius.setText("Določi radij: " + Integer.toString(currentRadius) + " m");
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                seekBarRadius.setText("Določi radij: " + Integer.toString(currentRadius));
+                seekBarRadius.setText("Določi radij: " + Integer.toString(currentRadius) + " m");
             }
-        });
+        }); */
 
         // initialize fragmet View
         //mPager = (ViewPager) findViewById(R.id.vp);
         //mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         //mPager.setAdapter(mPagerAdapter);
-        //TODO: EXAMPLE FOR NEARBY
-        NearbyStop nearby = new NearbyStop(this, "Drama", 200);
-        ArrayList<Stop> tmpStops = nearby.getNearbyStops();
-        System.out.print("fasd");
     }
 
     /**
@@ -310,10 +316,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         autoTextView.setAdapter(adapter);
     }
 
-    @Override
     /**
      * function executes when map widget loads on screen
      */
+    @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         mMap.clear();
@@ -343,7 +349,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         //mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);  //satelitska slika
     }
 
-
     /**
      * function sets and shows marker on mMap
      * @deprecated no longer in use
@@ -370,7 +375,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void drawPoly(View v) {
         mMap.clear();
         mMap.moveCamera(CameraUpdateFactory.zoomBy(10));
-
     }
 
     /**
@@ -527,6 +531,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
+    /**
+     * function hides soft virtual keyboard when losing focus on autoCompleteTextField and objects as such
+     * @param v currrent view of aplication contex
+     * @param hasFocus variable holding information whether the object has focus or not
+     */
     @Override
     public void onFocusChange(View v, boolean hasFocus) {
         if (!hasFocus) {
@@ -535,6 +544,23 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
+    /**
+     * function hides soft virtual keyboard when losing focus on autoCompleteTextField and objects as such
+     * @param adapterView
+     * @param view
+     * @param i
+     * @param l
+     */
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        InputMethodManager imm = (InputMethodManager)getSystemService(this.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(autoTextView.getWindowToken(), 0);
+    }
+
+    /**
+     * this may be deleted in future
+     * @deprecated no longer in use or work in progress
+     */
     //TODO: gestures work in progress
     class CustomGestures extends GestureDetector.SimpleOnGestureListener {
 
@@ -555,9 +581,65 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     /**
+     * function shows nearby stops on given address and radius
+     * @param v
+     */
+    public void showNearbyStops(View v) {
+
+        radiusAddress.clearFocus();
+        radiusNumber.clearFocus();
+        mMap.clear();
+
+        String naslov = radiusAddress.getText().toString();
+        int radius = Integer.parseInt(radiusNumber.getText().toString());
+        radius = (radius > 50 && radius < 1001) ? radius : 400;
+        //System.out.print(naslov + " | " + radius);
+
+        //TODO: EXAMPLE FOR NEARBY
+            //NearbyStop nearby = new NearbyStop(this, "Drama", 200);
+        //NearbyStop nearby = new NearbyStop(this, naslov, radius);
+        //ArrayList<Stop> tmpStops = nearby.getNearbyStops();
+        //System.out.print("lalal2");
+
+        //circle za dramo
+        Circle circle = mMap.addCircle(new CircleOptions()
+                .center(new LatLng(46.048992, 14.5014258))
+                .radius(radius)
+                .strokeColor(Color.parseColor("#55353839"))
+                .fillColor(Color.parseColor("#555260A3")));
+
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(circle.getCenter(), getZoomLevel(circle)));
+
+        //create markers from data
+        /*for(Stop busStop : tmpStops) {
+            MarkerOptions markerOpt = new MarkerOptions().position(new LatLng(busStop.latitude, busStop.longitude))
+                    .title(busStop.stop_name);
+
+            Marker markerTmp = mMap.addMarker(markerOpt);
+            markerTmp.setTag(busStop);
+        } */
+    }
+
+    /**
+     * functions claculates apropriate zoom level based on given circle radius
+     * @param circle given radius
+     * @return zoom level based on radius
+     */
+    public int getZoomLevel(Circle circle) {
+        int zoomLevel = 11;
+        if (circle != null) {
+            double radius = circle.getRadius() + circle.getRadius() / 2;
+            double scale = radius / 500;
+            zoomLevel = (int) (16 - Math.log(scale) / Math.log(2));
+        }
+        return zoomLevel;
+    }
+
+    /**
      * A simple pager adapter that represents 1 ScreenSlidePageFragment object.
      * Application is currently not using any instances of this class.
      * This may be deleted in future
+     * @depricated no longer in use
 
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
         public ScreenSlidePagerAdapter(FragmentManager fm) {
