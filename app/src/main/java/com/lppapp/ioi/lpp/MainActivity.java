@@ -304,6 +304,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
      * autoCompleteTextView implementation - currently working on second tab
      */
     public void populateBusLines() {
+        ArrayList<Stop> stops = db.getAllStops();
+
         ArrayList<String> shapes = new ArrayList<>();
         ArrayList<Dictionary<String, String>> allShapes = db.selectAllShapes();
 

@@ -393,8 +393,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public boolean containsStop(int stopId) {
-        Stop stop = null;
-
         try {
             openDB();
             Cursor cursor = db.rawQuery("SELECT * FROM stops " +
@@ -415,5 +413,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
         return false;
+    }
+
+    /**
+     * Selects all stops from database
+     * @return ArrayList<Stop>
+     * */
+    public ArrayList<Stop> getAllStops() {
+        ArrayList<Stop> stops = new ArrayList<>();
+
+        try {
+            openDB();
+            Cursor res = db.rawQuery("SELECT * FROM stops", null);
+            res.moveToFirst();
+
+            while(!res.isAfterLast()) {
+                String name = res.getString(res.getColumnIndex("stop_name"));
+                int id = res.getInt(res.getColumnIndex("stop_id"));
+                Double lat = res.getDouble(res.getColumnIndex("latitude"));
+                Double lon= res.getDouble(res.getColumnIndex("longitude"));
+
+                stops.add(new Stop(id, lat, lon, name));
+
+                res.moveToNext();
+            }
+
+            res.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            this.close();
+        }
+
+        return stops;
     }
 }
