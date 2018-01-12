@@ -30,6 +30,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
@@ -96,6 +97,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private TextView radiusNumber;
     private TextView radiusAddress;
 
+    //allStops
+    private HashMap<String, Stop> fullStopList;
+
     // custom animation - /res/anim/slidedown.xml | /res/anim/slideup.xml
     //private Animation sDown, sUp;
 
@@ -131,9 +135,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 case R.id.avtobusi:
 
                     // fill spinnerShapes on tab pressed
-                    populateSpinnerShapes();
+                    //populateSpinnerShapes();
 
-                    populateBusLines();
+                    //populateBusLines();
 
 
 
@@ -209,8 +213,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             System.out.println("Unable to create database");
         }
 
+        //populate full stop list <stop_name, stopObject>
+        fullStopList = new HashMap<>();
+        for(Stop stop : db.getAllStops()) {
+            fullStopList.put(stop.stop_name, stop);
+        }
+
         spinnerShapes = (Spinner) findViewById(R.id.spinnerShapesList);
-        populateSpinnerShapes();
 
         // init tabs
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -250,32 +259,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         radiusNumber.setOnFocusChangeListener(this);
         radiusAddress.setOnFocusChangeListener(this);
 
+        populateSpinnerShapes();
+        populateBusLines();
 
-        //seekBar = (SeekBar) findViewById(R.id.seekBar);
-        /*seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            int currentRadius = 0;
-
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                currentRadius = i;
-                seekBarRadius.setText("Določi radij: " + Integer.toString(currentRadius) + " m");
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                seekBarRadius.setText("Določi radij: " + Integer.toString(currentRadius) + " m");
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                seekBarRadius.setText("Določi radij: " + Integer.toString(currentRadius) + " m");
-            }
-        }); */
-
-        // initialize fragmet View
-        //mPager = (ViewPager) findViewById(R.id.vp);
-        //mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
-        //mPager.setAdapter(mPagerAdapter);
     }
 
     /**
@@ -304,17 +290,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
      * autoCompleteTextView implementation - currently working on second tab
      */
     public void populateBusLines() {
-        ArrayList<Stop> stops = db.getAllStops();
-
-        ArrayList<String> shapes = new ArrayList<>();
-        ArrayList<Dictionary<String, String>> allShapes = db.selectAllShapes();
-
-        for(Dictionary<String, String> row : allShapes) {
-            shapes.add(new Shape(row.get("shape_id"), row.get("route_name"), row.get("trip_headsign")).toString());
-        }
+        ArrayList<String> stops = new ArrayList<>();
+        stops.addAll(fullStopList.keySet());
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line, shapes);
+               android.R.layout.simple_dropdown_item_1line, stops);
         autoTextView.setAdapter(adapter);
     }
 
@@ -555,8 +535,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
      */
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        mMap.clear();
         InputMethodManager imm = (InputMethodManager)getSystemService(this.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(autoTextView.getWindowToken(), 0);
+
+        String selectedStop = autoTextView.getText().toString();
+        Stop busStop = fullStopList.get(selectedStop);
+
+        MarkerOptions markerOpt = new MarkerOptions().position(new LatLng(busStop.latitude, busStop.longitude))
+                .title(busStop.stop_name).icon(BitmapDescriptorFactory.fromResource(R.drawable.busstopicon3));
+
+        Marker markerTmp = mMap.addMarker(markerOpt);
+        markerTmp.setTag(busStop);
+        onMarkerClick(markerTmp);
     }
 
     /**
@@ -588,6 +579,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
      */
     public void showNearbyStops(View v) {
 
+        if(radiusAddress.getText().toString().equals("") ||
+                radiusNumber.getText().toString().equals(""))
+            return;
+
         radiusAddress.clearFocus();
         radiusNumber.clearFocus();
         mMap.clear();
@@ -601,7 +596,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         nearby.getAddressLocation();
         ArrayList<Stop> tmpStops = nearby.getNearbyStops();
 
-
         //circle za naslov
         Circle circle = mMap.addCircle(new CircleOptions()
                 .center(new LatLng(nearby.getPosLat(), nearby.getPosLon()))
@@ -614,7 +608,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         //create markers from data
         for(Stop busStop : tmpStops) {
             MarkerOptions markerOpt = new MarkerOptions().position(new LatLng(busStop.latitude, busStop.longitude))
-                    .title(busStop.stop_name);
+                    .title(busStop.stop_name).icon(BitmapDescriptorFactory.fromResource(R.drawable.busstopicon3));
 
             Marker markerTmp = mMap.addMarker(markerOpt);
             markerTmp.setTag(busStop);
@@ -622,7 +616,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     /**
-     * functions claculates apropriate zoom level based on given circle radius
+     * functions calculates appropriate zoom level based on given circle radius
      * @param circle given radius
      * @return zoom level based on radius
      */
