@@ -42,7 +42,6 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
     private ArrayList<Marker> prevMarkers;
 
 
-
     public LocationAsync(Context context, GoogleMap map) {
         this.map = map;
 
@@ -124,6 +123,13 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
         return null;
     }
 
+    @Override
+    protected void onCancelled() {
+        for(Marker marker : this.prevMarkers) {
+            marker.remove();
+        }
+        this.prevMarkers.clear();
+    }
 
 
     @Override
@@ -165,8 +171,7 @@ public class LocationAsync extends AsyncTask<String, ArrayList<MarkerOptions>, A
         DateFormat df = new SimpleDateFormat("HH:mm:ss");
         String currTime = "11 " + df.format(currDate);
         String nextTime = "11 " + df.format(nextDate);
-
-
+        
         //check currentTime as if it was 11th December 2017
         return db.getBusLocationByRouteId(route_int_id, currTime, nextTime);
     }

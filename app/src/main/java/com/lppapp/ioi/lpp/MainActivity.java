@@ -66,11 +66,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private final String API_LIVE_BUS_URL = "http://data.lpp.si/timetables/liveBusArrival";
 
-    // fragments
-    //private static final int NUM_PAGES = 1;
-    //private ViewPager mPager;
-    //private PagerAdapter mPagerAdapter;
-
     // animation
     private ObjectAnimator objAnimator;
     private LinearLayout layoutShapes;
@@ -82,8 +77,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private TextView busTimeTableText;
 
     //screen dimensions
-    private int height;
-    private int width;
     private static LocationAsync drawBusLocations;
 
     private ListViewAdapter adapter;
@@ -92,20 +85,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     //custom autoCompleteTextView
     private AutoCompleteTextView autoTextView;
 
-    //seekBar
-    private SeekBar seekBar;
     private TextView radiusNumber;
     private TextView radiusAddress;
 
     //allStops
     private HashMap<String, Stop> fullStopList;
-
-    // custom animation - /res/anim/slidedown.xml | /res/anim/slideup.xml
-    //private Animation sDown, sUp;
-
-    // custom gestures
-    //private GestureDetectorCompat gestureObject;
-
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -134,18 +118,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             switch (item.getItemId()) {
                 case R.id.avtobusi:
 
-                    // fill spinnerShapes on tab pressed
-                    //populateSpinnerShapes();
-
-                    //populateBusLines();
-
-
-
                     // animate layouts and toggle button
                     animateObject(layoutStops, "translationY", 0);
                     animateObject(layoutShapes, "translationY", 150);
                     animateObject(layoutNearby, "translationY", 0);
-
                     animateObject(showBusStops, "translationX", -40);
                     animateObject(showBusLocation, "translationX", -40);
 
@@ -160,7 +136,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     animateObject(layoutStops, "translationY", 150);
                     animateObject(layoutShapes, "translationY", 0);
                     animateObject(layoutNearby, "translationY", 0);
-
                     animateObject(showBusStops, "translationX", 140);
                     animateObject(showBusLocation, "translationX", 140);
 
@@ -171,7 +146,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     animateObject(layoutStops, "translationY", 0);
                     animateObject(layoutShapes, "translationY", 0);
                     animateObject(layoutNearby, "translationY", 150);
-
                     animateObject(showBusStops, "translationX", 140);
                     animateObject(showBusLocation, "translationX", 140);
 
@@ -190,20 +164,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //get dimenson metrics - landscape / portrait
-        DisplayMetrics metrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        height = metrics.heightPixels;
-        float ydpi = metrics.ydpi;
-        width = metrics.widthPixels;
-        //System.out.println(height + " | " + ydpi);
-
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map3);
         mapFragment.getMapAsync(this);
-
-        //gestureObject = new  GestureDetectorCompat(this, new CustomGestures());
 
         // init databaseHelper
         db = new DatabaseHelper(this);
@@ -225,10 +189,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        // load animation for layout using custom XML implementation of animation
-        //sDown = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slidedown);
-        //sUp = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slideup);
-
         // inicilaization for animation using animateObject
         layoutShapes = (LinearLayout) findViewById(R.id.subMenuAvtobusi);
         layoutStops = (LinearLayout) findViewById(R.id.subMenuPostaje);
@@ -239,10 +199,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         busTimeTable = (RelativeLayout) findViewById(R.id.busTimeTable);
         busTimeTableText = (TextView) findViewById(R.id.busTimeTableText);
 
-        //showBusStops.setX(130);
-        //showBusLocation.setX(130);
         layoutShapes.setY(150);
-
         busTimeTable.setY(busTimeTable.getLayoutParams().height);
 
         //listView - display time table information
@@ -261,7 +218,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         populateSpinnerShapes();
         populateBusLines();
-
     }
 
     /**
@@ -278,11 +234,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             shapes.add(new Shape(row.get("shape_id"), row.get("route_name"), row.get("trip_headsign")));
         }
 
-        //ArrayAdapter spinnerAdapter = new ArrayAdapter(this, R.layout.spinneritem, shapes);
         SpinnerAdapter spinnerAdapter = new SpinnerAdapter(this, shapes);
-
-        //spinnerAdapter.setDropDownViewResource(R.layout.spinneritem);
-
         spinnerShapes.setAdapter(spinnerAdapter);
     }
 
@@ -329,34 +281,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         //mMap.setBuildingsEnabled(true);
 
         //mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);  //satelitska slika
-    }
-
-    /**
-     * function sets and shows marker on mMap
-     * @deprecated no longer in use
-     */
-    public void findLocation(View v) {
-        mMap.clear();
-
-        try {
-            LatLng marker = new LatLng(46, 12);
-            mMap.addMarker(new MarkerOptions().position(marker).title("Marker set!"));
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(marker));
-            mMap.moveCamera(CameraUpdateFactory.zoomBy(10));
-        } catch (Exception ex) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Ojoojoj, sam cifre so dovoljene!", Toast.LENGTH_SHORT);
-            toast.show();
-        }
-    }
-
-    /**
-     * function draws a series of points into a shape on mMap
-     * @param v application view
-     * @deprecated no longer in use
-     */
-    public void drawPoly(View v) {
-        mMap.clear();
-        mMap.moveCamera(CameraUpdateFactory.zoomBy(10));
     }
 
     /**
@@ -413,7 +337,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             showBusLocation.setBackgroundResource(R.drawable.busstopicon2);
 
             drawBusLocations = new LocationAsync(this, this.mMap);
-            //drawBusLocations.execute(this.db.getRouteIdByRouteName(selectedItem.route_name).toArray(new String[0]));
             drawBusLocations.execute(this.db.getRouteIdByHeadsign(selectedItem.trip_headsign).toArray(new String[0]));
 
             spinnerShape.setLocationThread(drawBusLocations);
@@ -421,7 +344,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
         else {
             showBusLocation.setBackgroundResource(R.drawable.busstopicon2off);
-
             drawBusLocations.cancel(true);
         }
     }
@@ -445,18 +367,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         animateObject(showBusStops, "translationY", -busTimeTable.getLayoutParams().height);
         animateObject(showBusLocation, "translationY", -busTimeTable.getLayoutParams().height);
 
-        //TODO: get time table information on selected bus stop. Marker's tag holds information about busStop ID, name, Lat & Lng
         final Stop busStop = (Stop)marker.getTag();
 
-        //TODO: you get response in the processApiCall method
         ApiCall api = new ApiCall(this, this.API_LIVE_BUS_URL);
         api.execute(new HashMap<String, String>()
                                         {{
                                             put("station_int_id", Integer.toString(busStop.stop_id));
                                         }});
         busTimeTableText.setText("Postajališče - " + busStop.stop_name);
-        //adapter.notifyDataSetChanged();
-
         return true;
     }
 
@@ -468,7 +386,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onInfoWindowClose(Marker marker) {
         animateObject(busTimeTable, "translationY", busTimeTable.getLayoutParams().height);
-
         animateObject(showBusStops, "translationY", 0);
         animateObject(showBusLocation, "translationY", 0);
     }
@@ -485,7 +402,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             ArrayList<String> timeTableArrayInfo = new ArrayList<>();
 
             try {
-
                 for (int i = 0; i < response.length(); i++) {
                     JSONObject c = response.getJSONObject(i);
 
@@ -496,18 +412,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     String trolaData = trolaNumber + " " + trolaName + " , " +
                             (prihod.equals("0")?"prihod" : prihod + " min");
                     timeTableArrayInfo.add(trolaData);
-
                 }
 
-
-                //System.out.println(api.delegate.toString());
             } catch (Exception ex) {
                 System.out.println("PERROR: " + ex.toString());
             }
 
             //set adapter with arrivals info
-            //apter = new ListViewAdapter(this); //adapter = new ListViewAdapter(this, objectJSON arrivals);
-            adapter = new ListViewAdapter(this, timeTableArrayInfo); //adapter = new ListViewAdapter(this, objectJSON arrivals);
+            adapter = new ListViewAdapter(this, timeTableArrayInfo);
             listViewTimeTable.setAdapter(adapter);
             adapter.notifyDataSetChanged();
         }
@@ -551,29 +463,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     /**
-     * this may be deleted in future
-     * @deprecated no longer in use or work in progress
-     */
-    //TODO: gestures work in progress
-    class CustomGestures extends GestureDetector.SimpleOnGestureListener {
-
-        @Override
-        public boolean onFling(MotionEvent e1, MotionEvent e2, float vx, float xy) {
-            if(e2.getX() > e2.getX()) {
-                Toast toast = Toast.makeText(getApplicationContext(), "->", Toast.LENGTH_SHORT);
-                toast.show();
-            }
-
-            else if(e2.getX() < e2.getX()) {
-                Toast toast = Toast.makeText(getApplicationContext(), "<-", Toast.LENGTH_SHORT);
-                toast.show();
-            }
-
-            return false;
-        }
-    }
-
-    /**
      * function shows nearby stops on given address and radius
      * @param v
      */
@@ -590,13 +479,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         String naslov = radiusAddress.getText().toString();
         int radius = Integer.parseInt(radiusNumber.getText().toString());
         radius = (radius > 50 && radius < 1001) ? radius : 400;
-        //System.out.print(naslov + " | " + radius);
 
         NearbyStop nearby = new NearbyStop(this, naslov, radius);
         nearby.getAddressLocation();
         ArrayList<Stop> tmpStops = nearby.getNearbyStops();
 
-        //circle za naslov
         Circle circle = mMap.addCircle(new CircleOptions()
                 .center(new LatLng(nearby.getPosLat(), nearby.getPosLon()))
                 .radius(radius)
@@ -629,26 +516,4 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
         return zoomLevel;
     }
-
-    /**
-     * A simple pager adapter that represents 1 ScreenSlidePageFragment object.
-     * Application is currently not using any instances of this class.
-     * This may be deleted in future
-     * @depricated no longer in use
-
-    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
-        public ScreenSlidePagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return new ScreenSlidePageFragment();
-        }
-
-        @Override
-        public int getCount() {
-            return NUM_PAGES;
-        }
-    } */
 }
