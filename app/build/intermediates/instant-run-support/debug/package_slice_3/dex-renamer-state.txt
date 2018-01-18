@@ -1,0 +1,4 @@
+#Thu Jan 11 19:57:16 CET 2018
+base.0=C\:\\FRI\\MAG\\1. letnik\\Interaktivnost in oblikovanje informacij\\lpp_git\\LPP-app\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\4
+path.0=classes.dex
+renamed.0=classes.dex

@@ -1,0 +1,5358 @@
+[{
+	"latitude": "46.037391581951",
+	"stop_id": "2099",
+	"longitude": "14.4632149619944",
+	"stop_name": "DOLGI MOST P+R"
+},
+{
+	"latitude": "46.0328155047582",
+	"stop_id": "3517",
+	"longitude": "14.4621179000234",
+	"stop_name": "Zgornji log"
+},
+{
+	"latitude": "46.0322523918234",
+	"stop_id": "3515",
+	"longitude": "14.4651811551423",
+	"stop_name": "Cesta v Gorice"
+},
+{
+	"latitude": "46.0300779457793",
+	"stop_id": "3103",
+	"longitude": "14.472651640192",
+	"stop_name": "MESTNI LOG"
+},
+{
+	"latitude": "46.0337352434663",
+	"stop_id": "3511",
+	"longitude": "14.4781438446922",
+	"stop_name": "Tbilisijska"
+},
+{
+	"latitude": "46.0353959724272",
+	"stop_id": "1961",
+	"longitude": "14.4845342445523",
+	"stop_name": "Koprska"
+},
+{
+	"latitude": "46.0365812948747",
+	"stop_id": "1959",
+	"longitude": "14.4897181962958",
+	"stop_name": "Krimska"
+},
+{
+	"latitude": "46.0407648558072",
+	"stop_id": "1957",
+	"longitude": "14.4900057577242",
+	"stop_name": "Gerbièeva"
+},
+{
+	"latitude": "46.0437795777789",
+	"stop_id": "1955",
+	"longitude": "14.4886758245036",
+	"stop_name": "Jadranska"
+},
+{
+	"latitude": "46.045525262675",
+	"stop_id": "1953",
+	"longitude": "14.4904055379179",
+	"stop_name": "Hajdrihova"
+},
+{
+	"latitude": "46.0469033031607",
+	"stop_id": "1951",
+	"longitude": "14.4944646192484",
+	"stop_name": "Tobaèna"
+},
+{
+	"latitude": "46.0466149021947",
+	"stop_id": "1949",
+	"longitude": "14.498692577197",
+	"stop_name": "Aškerèeva"
+},
+{
+	"latitude": "46.0489598659593",
+	"stop_id": "1947",
+	"longitude": "14.5023260218633",
+	"stop_name": "Drama"
+},
+{
+	"latitude": "46.052064807962",
+	"stop_id": "1945",
+	"longitude": "14.5035070930001",
+	"stop_name": "Pošta"
+},
+{
+	"latitude": "46.0538548553607",
+	"stop_id": "4455",
+	"longitude": "14.5044000768287",
+	"stop_name": "Ajdovšèina"
+},
+{
+	"latitude": "46.0563512087656",
+	"stop_id": "1943",
+	"longitude": "14.5019390996907",
+	"stop_name": "Gosposvetska"
+},
+{
+	"latitude": "46.0600747882683",
+	"stop_id": "1941",
+	"longitude": "14.4979610166072",
+	"stop_name": "Tivoli"
+},
+{
+	"latitude": "46.0650025718064",
+	"stop_id": "1939",
+	"longitude": "14.4942089544609",
+	"stop_name": "Stara cerkev"
+},
+{
+	"latitude": "46.069271",
+	"stop_id": "1937",
+	"longitude": "14.49028",
+	"stop_name": "Kino Šiška"
+},
+{
+	"latitude": "46.0743539437374",
+	"stop_id": "1935",
+	"longitude": "14.4855071825561",
+	"stop_name": "Remiza"
+},
+{
+	"latitude": "46.0773180697392",
+	"stop_id": "1933",
+	"longitude": "14.4824498264085",
+	"stop_name": "Avtomontaža"
+},
+{
+	"latitude": "46.0798333635307",
+	"stop_id": "1931",
+	"longitude": "14.4807016995688",
+	"stop_name": "Kompas"
+},
+{
+	"latitude": "46.0835599023968",
+	"stop_id": "1928",
+	"longitude": "14.4783480068958",
+	"stop_name": "Dravlje"
+},
+{
+	"latitude": "46.0871662820164",
+	"stop_id": "1927",
+	"longitude": "14.4746134585934",
+	"stop_name": "Trata"
+},
+{
+	"latitude": "46.0907175876449",
+	"stop_id": "1925",
+	"longitude": "14.4713579672898",
+	"stop_name": "Prušnikova"
+},
+{
+	"latitude": "46.0935450967278",
+	"stop_id": "1923",
+	"longitude": "14.4691406660577",
+	"stop_name": "Podgora"
+},
+{
+	"latitude": "46.0966915278023",
+	"stop_id": "1921",
+	"longitude": "14.4653547563056",
+	"stop_name": "Šentvid"
+},
+{
+	"latitude": "46.1002405905451",
+	"stop_id": "1919",
+	"longitude": "14.4580792268338",
+	"stop_name": "VIŽMARJE"
+},
+{
+	"latitude": "46.095469885169",
+	"stop_id": "1920",
+	"longitude": "14.4663668666688",
+	"stop_name": "Šentvid"
+},
+{
+	"latitude": "46.0925702680057",
+	"stop_id": "1922",
+	"longitude": "14.4692993577114",
+	"stop_name": "Podgora"
+},
+{
+	"latitude": "46.089910023321",
+	"stop_id": "1924",
+	"longitude": "14.4716311635353",
+	"stop_name": "Prušnikova"
+},
+{
+	"latitude": "46.0870811635291",
+	"stop_id": "1926",
+	"longitude": "14.4740952834977",
+	"stop_name": "Trata"
+},
+{
+	"latitude": "46.0835784412999",
+	"stop_id": "1929",
+	"longitude": "14.4776295445231",
+	"stop_name": "Dravlje"
+},
+{
+	"latitude": "46.0797182553747",
+	"stop_id": "1930",
+	"longitude": "14.4802981654157",
+	"stop_name": "Kompas"
+},
+{
+	"latitude": "46.0769346799793",
+	"stop_id": "1932",
+	"longitude": "14.4822732496708",
+	"stop_name": "Avtomontaža"
+},
+{
+	"latitude": "46.0729871704143",
+	"stop_id": "1934",
+	"longitude": "14.4863817754814",
+	"stop_name": "Slovenija avto"
+},
+{
+	"latitude": "46.069726",
+	"stop_id": "1936",
+	"longitude": "14.489376",
+	"stop_name": "Kino Šiška"
+},
+{
+	"latitude": "46.0640674962697",
+	"stop_id": "1938",
+	"longitude": "14.4943382197834",
+	"stop_name": "Stara cerkev"
+},
+{
+	"latitude": "46.0603002787038",
+	"stop_id": "1940",
+	"longitude": "14.4973438354549",
+	"stop_name": "Tivoli"
+},
+{
+	"latitude": "46.0547112836872",
+	"stop_id": "1942",
+	"longitude": "14.50390213335",
+	"stop_name": "Gosposvetska"
+},
+{
+	"latitude": "46.0535390082324",
+	"stop_id": "3330",
+	"longitude": "14.5039868517979",
+	"stop_name": "Ajdovšèina"
+},
+{
+	"latitude": "46.0512362310992",
+	"stop_id": "1944",
+	"longitude": "14.5028208626036",
+	"stop_name": "Konzorcij"
+},
+{
+	"latitude": "46.0488142650673",
+	"stop_id": "1946",
+	"longitude": "14.5017333205319",
+	"stop_name": "Drama"
+},
+{
+	"latitude": "46.0466733978688",
+	"stop_id": "1948",
+	"longitude": "14.4993791192346",
+	"stop_name": "Aškerèeva"
+},
+{
+	"latitude": "46.0470755662802",
+	"stop_id": "1950",
+	"longitude": "14.4935786010422",
+	"stop_name": "Tobaèna"
+},
+{
+	"latitude": "46.0458430605145",
+	"stop_id": "1952",
+	"longitude": "14.489879993166",
+	"stop_name": "Hajdrihova"
+},
+{
+	"latitude": "46.0422488747526",
+	"stop_id": "1954",
+	"longitude": "14.4892784678837",
+	"stop_name": "Jadranska"
+},
+{
+	"latitude": "46.0403670659872",
+	"stop_id": "1956",
+	"longitude": "14.4898329587134",
+	"stop_name": "Gerbièeva"
+},
+{
+	"latitude": "46.0366909125103",
+	"stop_id": "1958",
+	"longitude": "14.4892577226481",
+	"stop_name": "Krimska"
+},
+{
+	"latitude": "46.0352461611615",
+	"stop_id": "3509",
+	"longitude": "14.4832452268611",
+	"stop_name": "Koprska"
+},
+{
+	"latitude": "46.0339792531908",
+	"stop_id": "3510",
+	"longitude": "14.4782336762206",
+	"stop_name": "Tbilisijska"
+},
+{
+	"latitude": "46.0302531440262",
+	"stop_id": "4445",
+	"longitude": "14.4719509542704",
+	"stop_name": "Mestni log"
+},
+{
+	"latitude": "46.0324338399552",
+	"stop_id": "3514",
+	"longitude": "14.4649206437099",
+	"stop_name": "Cesta v Gorice"
+},
+{
+	"latitude": "46.0329030995846",
+	"stop_id": "3516",
+	"longitude": "14.4624143440672",
+	"stop_name": "Zgornji log"
+},
+{
+	"latitude": "46.0561009080242",
+	"stop_id": "1976",
+	"longitude": "14.5051456871461",
+	"stop_name": "Bavarski dvor"
+},
+{
+	"latitude": "46.063581",
+	"stop_id": "1963",
+	"longitude": "14.529347",
+	"stop_name": "ZELENA JAMA"
+},
+{
+	"latitude": "46.065626401728",
+	"stop_id": "1964",
+	"longitude": "14.5292756102799",
+	"stop_name": "Pokopališka"
+},
+{
+	"latitude": "46.0669620118359",
+	"stop_id": "1966",
+	"longitude": "14.5272767513117",
+	"stop_name": "Žale"
+},
+{
+	"latitude": "46.0626691785687",
+	"stop_id": "1968",
+	"longitude": "14.5243578154065",
+	"stop_name": "Savsko naselje"
+},
+{
+	"latitude": "46.05941",
+	"stop_id": "1970",
+	"longitude": "14.52062",
+	"stop_name": "Viadukt"
+},
+{
+	"latitude": "46.057442524105",
+	"stop_id": "1972",
+	"longitude": "14.5183160715773",
+	"stop_name": "Friškovec"
+},
+{
+	"latitude": "46.0577343087827",
+	"stop_id": "1974",
+	"longitude": "14.5094296324936",
+	"stop_name": "Kolodvor"
+},
+{
+	"latitude": "46.0695989381466",
+	"stop_id": "2008",
+	"longitude": "14.5512191149212",
+	"stop_name": "NOVE JARŠE"
+},
+{
+	"latitude": "46.0703746047442",
+	"stop_id": "3471",
+	"longitude": "14.5484280325217",
+	"stop_name": "Nove Jarše"
+},
+{
+	"latitude": "46.0699275349816",
+	"stop_id": "2005",
+	"longitude": "14.5452580430306",
+	"stop_name": "Žito"
+},
+{
+	"latitude": "46.0692253015597",
+	"stop_id": "2003",
+	"longitude": "14.5399354977784",
+	"stop_name": "Kodrova"
+},
+{
+	"latitude": "46.0684510441875",
+	"stop_id": "2001",
+	"longitude": "14.5366875508196",
+	"stop_name": "Jarše"
+},
+{
+	"latitude": "46.0667535149744",
+	"stop_id": "1999",
+	"longitude": "14.533173796629",
+	"stop_name": "Šola Jarše"
+},
+{
+	"latitude": "46.0633347305643",
+	"stop_id": "1997",
+	"longitude": "14.5320453199363",
+	"stop_name": "Rožièeva"
+},
+{
+	"latitude": "46.0639666638168",
+	"stop_id": "1995",
+	"longitude": "14.5364808386361",
+	"stop_name": "Kavèièeva"
+},
+{
+	"latitude": "46.060729764712",
+	"stop_id": "1993",
+	"longitude": "14.5394172706079",
+	"stop_name": "Tovorni kolodvor"
+},
+{
+	"latitude": "46.0561411194173",
+	"stop_id": "1991",
+	"longitude": "14.5395127552736",
+	"stop_name": "Zaloška"
+},
+{
+	"latitude": "46.0558777600207",
+	"stop_id": "1989",
+	"longitude": "14.5344568660752",
+	"stop_name": "Tržnica Moste"
+},
+{
+	"latitude": "46.0543085654282",
+	"stop_id": "1987",
+	"longitude": "14.5282085175713",
+	"stop_name": "Bolnica"
+},
+{
+	"latitude": "46.0524267760194",
+	"stop_id": "1985",
+	"longitude": "14.5205554330943",
+	"stop_name": "Klinièni center"
+},
+{
+	"latitude": "46.0495728420941",
+	"stop_id": "3335",
+	"longitude": "14.5172493587762",
+	"stop_name": "Ambrožev trg"
+},
+{
+	"latitude": "46.0505552898975",
+	"stop_id": "1983",
+	"longitude": "14.5147725070593",
+	"stop_name": "Poljanska"
+},
+{
+	"latitude": "46.0502050925444",
+	"stop_id": "3312",
+	"longitude": "14.5104436548026",
+	"stop_name": "Krekov trg"
+},
+{
+	"latitude": "46.0459373831064",
+	"stop_id": "2014",
+	"longitude": "14.5063616966418",
+	"stop_name": "Gornji trg"
+},
+{
+	"latitude": "46.0462959189535",
+	"stop_id": "2012",
+	"longitude": "14.5016451401323",
+	"stop_name": "Križanke"
+},
+{
+	"latitude": "46.0562502760306",
+	"stop_id": "1977",
+	"longitude": "14.505488014758",
+	"stop_name": "Bavarski dvor"
+},
+{
+	"latitude": "46.0574747093719",
+	"stop_id": "1975",
+	"longitude": "14.5109627482171",
+	"stop_name": "Kolodvor"
+},
+{
+	"latitude": "46.0574878665168",
+	"stop_id": "1973",
+	"longitude": "14.5167482582541",
+	"stop_name": "Friškovec"
+},
+{
+	"latitude": "46.059471046818",
+	"stop_id": "1971",
+	"longitude": "14.5211296660527",
+	"stop_name": "Viadukt"
+},
+{
+	"latitude": "46.0627649957494",
+	"stop_id": "1969",
+	"longitude": "14.524853932852",
+	"stop_name": "Savsko naselje"
+},
+{
+	"latitude": "46.066898944631",
+	"stop_id": "1967",
+	"longitude": "14.5276637870277",
+	"stop_name": "Žale"
+},
+{
+	"latitude": "46.0656090130998",
+	"stop_id": "1965",
+	"longitude": "14.5290011802691",
+	"stop_name": "Pokopališka"
+},
+{
+	"latitude": "46.0459610063461",
+	"stop_id": "2013",
+	"longitude": "14.5021824108121",
+	"stop_name": "Križanke"
+},
+{
+	"latitude": "46.0457408698752",
+	"stop_id": "2015",
+	"longitude": "14.5064869358443",
+	"stop_name": "Gornji trg"
+},
+{
+	"latitude": "46.0505445674127",
+	"stop_id": "3313",
+	"longitude": "14.5107649777746",
+	"stop_name": "Krekov trg"
+},
+{
+	"latitude": "46.0500317413051",
+	"stop_id": "1984",
+	"longitude": "14.5156647031503",
+	"stop_name": "Poljanska"
+},
+{
+	"latitude": "46.0495752574493",
+	"stop_id": "3334",
+	"longitude": "14.5168919025372",
+	"stop_name": "Ambrožev trg"
+},
+{
+	"latitude": "46.0494182535155",
+	"stop_id": "3717",
+	"longitude": "14.5197080563576",
+	"stop_name": "Roška"
+},
+{
+	"latitude": "46.0523047836622",
+	"stop_id": "1986",
+	"longitude": "14.5209650400139",
+	"stop_name": "Klinièni center"
+},
+{
+	"latitude": "46.0542549933401",
+	"stop_id": "1988",
+	"longitude": "14.5289485995372",
+	"stop_name": "Bolnica"
+},
+{
+	"latitude": "46.0554975381072",
+	"stop_id": "1990",
+	"longitude": "14.5339650999744",
+	"stop_name": "Tržnica Moste"
+},
+{
+	"latitude": "46.0567921339455",
+	"stop_id": "1992",
+	"longitude": "14.5406648756758",
+	"stop_name": "Kajuhova"
+},
+{
+	"latitude": "46.0614408098368",
+	"stop_id": "1994",
+	"longitude": "14.5391211009896",
+	"stop_name": "Tovorni kolodvor"
+},
+{
+	"latitude": "46.0640695390938",
+	"stop_id": "1996",
+	"longitude": "14.535905113622",
+	"stop_name": "Kavèièeva"
+},
+{
+	"latitude": "46.0633447391051",
+	"stop_id": "1998",
+	"longitude": "14.5317005640753",
+	"stop_name": "Rožièeva"
+},
+{
+	"latitude": "46.0671498839754",
+	"stop_id": "2000",
+	"longitude": "14.5345499734436",
+	"stop_name": "Šola Jarše"
+},
+{
+	"latitude": "46.0687318055859",
+	"stop_id": "2002",
+	"longitude": "14.5387445215647",
+	"stop_name": "Jarše"
+},
+{
+	"latitude": "46.0691507508133",
+	"stop_id": "2004",
+	"longitude": "14.5414942639509",
+	"stop_name": "Kodrova"
+},
+{
+	"latitude": "46.0698226895654",
+	"stop_id": "2006",
+	"longitude": "14.5467393442049",
+	"stop_name": "Žito"
+},
+{
+	"latitude": "46.0826421091",
+	"stop_id": "3640",
+	"longitude": "14.497189982638",
+	"stop_name": "LITOSTROJ"
+},
+{
+	"latitude": "46.0803964420806",
+	"stop_id": "3642",
+	"longitude": "14.4913580625216",
+	"stop_name": "Kovinarska"
+},
+{
+	"latitude": "46.0767783216972",
+	"stop_id": "1906",
+	"longitude": "14.4884700644529",
+	"stop_name": "Litostrojska"
+},
+{
+	"latitude": "46.0436871390557",
+	"stop_id": "2017",
+	"longitude": "14.5116395329957",
+	"stop_name": "Privoz"
+},
+{
+	"latitude": "46.0386440849511",
+	"stop_id": "2019",
+	"longitude": "14.5176450608338",
+	"stop_name": "Strelišèe"
+},
+{
+	"latitude": "46.0356131885114",
+	"stop_id": "2021",
+	"longitude": "14.5237769348064",
+	"stop_name": "Rakovnik"
+},
+{
+	"latitude": "46.0320795364951",
+	"stop_id": "2023",
+	"longitude": "14.5290982905482",
+	"stop_name": "Akademija"
+},
+{
+	"latitude": "46.0302659686408",
+	"stop_id": "2025",
+	"longitude": "14.5317593452538",
+	"stop_name": "Peruzzijeva"
+},
+{
+	"latitude": "46.0280429889558",
+	"stop_id": "2027",
+	"longitude": "14.5355323015909",
+	"stop_name": "Gornji Rudnik"
+},
+{
+	"latitude": "46.022754200005",
+	"stop_id": "2029",
+	"longitude": "14.5404867282094",
+	"stop_name": "Spodnji Rudnik"
+},
+{
+	"latitude": "46.0177844342114",
+	"stop_id": "2030",
+	"longitude": "14.5438013202765",
+	"stop_name": "RUDNIK"
+},
+{
+	"latitude": "46.0176125578445",
+	"stop_id": "3508",
+	"longitude": "14.543262719638",
+	"stop_name": "Rudnik"
+},
+{
+	"latitude": "46.0064156609062",
+	"stop_id": "3490",
+	"longitude": "14.5483521950888",
+	"stop_name": "Pod Hribom"
+},
+{
+	"latitude": "46.0014733378539",
+	"stop_id": "3502",
+	"longitude": "14.5542211882784",
+	"stop_name": "Lavrica pri Malèi"
+},
+{
+	"latitude": "45.9969844846173",
+	"stop_id": "3504",
+	"longitude": "14.5579402135546",
+	"stop_name": "Lavrica"
+},
+{
+	"latitude": "45.9895460800128",
+	"stop_id": "3496",
+	"longitude": "14.5662406467799",
+	"stop_name": "Škofljica Petkovšek"
+},
+{
+	"latitude": "45.9858828595104",
+	"stop_id": "3498",
+	"longitude": "14.5715946058733",
+	"stop_name": "Škofljica žaga"
+},
+{
+	"latitude": "45.9793134992194",
+	"stop_id": "3501",
+	"longitude": "14.5753495637609",
+	"stop_name": "ŠKOFLJICA"
+},
+{
+	"latitude": "45.9844801258618",
+	"stop_id": "3500",
+	"longitude": "14.5744781979353",
+	"stop_name": "Škofljica Špica"
+},
+{
+	"latitude": "45.9861677854114",
+	"stop_id": "3499",
+	"longitude": "14.5713610438994",
+	"stop_name": "Škofljica žaga"
+},
+{
+	"latitude": "45.9896493980787",
+	"stop_id": "3497",
+	"longitude": "14.5665460739765",
+	"stop_name": "Škofljica Petkovšek"
+},
+{
+	"latitude": "45.99733509165",
+	"stop_id": "3506",
+	"longitude": "14.557580887441",
+	"stop_name": "Lavrica"
+},
+{
+	"latitude": "46.0003370728329",
+	"stop_id": "3503",
+	"longitude": "14.5553350992308",
+	"stop_name": "Lavrica pri Malèi"
+},
+{
+	"latitude": "46.0063029846471",
+	"stop_id": "3491",
+	"longitude": "14.549358308207",
+	"stop_name": "Pod Hribom"
+},
+{
+	"latitude": "46.0187265613968",
+	"stop_id": "3507",
+	"longitude": "14.5432447533323",
+	"stop_name": "Rudnik"
+},
+{
+	"latitude": "46.0236765791319",
+	"stop_id": "2028",
+	"longitude": "14.5401874811351",
+	"stop_name": "Spodnji Rudnik"
+},
+{
+	"latitude": "46.0283415248652",
+	"stop_id": "2026",
+	"longitude": "14.5354591916259",
+	"stop_name": "Gornji Rudnik"
+},
+{
+	"latitude": "46.0299221276014",
+	"stop_id": "2024",
+	"longitude": "14.532655721019",
+	"stop_name": "Peruzzijeva"
+},
+{
+	"latitude": "46.0321902788228",
+	"stop_id": "2022",
+	"longitude": "14.52924188551",
+	"stop_name": "Akademija"
+},
+{
+	"latitude": "46.03622560865",
+	"stop_id": "2020",
+	"longitude": "14.5229852606273",
+	"stop_name": "Rakovnik"
+},
+{
+	"latitude": "46.0393406347181",
+	"stop_id": "2018",
+	"longitude": "14.5171085645323",
+	"stop_name": "Strelišèe"
+},
+{
+	"latitude": "46.0440087305618",
+	"stop_id": "2016",
+	"longitude": "14.5113775201499",
+	"stop_name": "Privoz"
+},
+{
+	"latitude": "46.0738537171375",
+	"stop_id": "2011",
+	"longitude": "14.4865567638802",
+	"stop_name": "Slovenija avto"
+},
+{
+	"latitude": "46.0767540512211",
+	"stop_id": "1907",
+	"longitude": "14.4889747268173",
+	"stop_name": "Litostrojska"
+},
+{
+	"latitude": "46.0804464528947",
+	"stop_id": "3641",
+	"longitude": "14.4918072201637",
+	"stop_name": "Kovinarska"
+},
+{
+	"latitude": "46.0538135256933",
+	"stop_id": "2065",
+	"longitude": "14.5478810412379",
+	"stop_name": "ŠTEPANJSKO NASELJE"
+},
+{
+	"latitude": "46.0477987299173",
+	"stop_id": "2063",
+	"longitude": "14.5448415145015",
+	"stop_name": "Emona"
+},
+{
+	"latitude": "46.048686027518",
+	"stop_id": "2061",
+	"longitude": "14.5385547626929",
+	"stop_name": "Štepanja vas"
+},
+{
+	"latitude": "46.051574636556",
+	"stop_id": "2059",
+	"longitude": "14.5395596910308",
+	"stop_name": "Kodeljevo"
+},
+{
+	"latitude": "46.0532800749137",
+	"stop_id": "2057",
+	"longitude": "14.5329079230999",
+	"stop_name": "Jana Husa"
+},
+{
+	"latitude": "46.0502893202748",
+	"stop_id": "2055",
+	"longitude": "14.5264661162759",
+	"stop_name": "Glonarjeva"
+},
+{
+	"latitude": "46.0489022481686",
+	"stop_id": "2053",
+	"longitude": "14.5223698735479",
+	"stop_name": "Gornje Poljane"
+},
+{
+	"latitude": "46.0524970098127",
+	"stop_id": "2049",
+	"longitude": "14.5168527242346",
+	"stop_name": "Hrvatski trg"
+},
+{
+	"latitude": "46.0530533396928",
+	"stop_id": "2047",
+	"longitude": "14.5137765606089",
+	"stop_name": "Ilirska"
+},
+{
+	"latitude": "46.0547360452192",
+	"stop_id": "2045",
+	"longitude": "14.5063137855025",
+	"stop_name": "Tavèarjeva"
+},
+{
+	"latitude": "46.0737811474814",
+	"stop_id": "2044",
+	"longitude": "14.4850548474213",
+	"stop_name": "Šišenska"
+},
+{
+	"latitude": "46.0717449040447",
+	"stop_id": "2042",
+	"longitude": "14.4809774479051",
+	"stop_name": "Kneza Koclja"
+},
+{
+	"latitude": "46.0697392773975",
+	"stop_id": "2040",
+	"longitude": "14.4733813920661",
+	"stop_name": "Bratov Uèakar"
+},
+{
+	"latitude": "46.0721727685109",
+	"stop_id": "2038",
+	"longitude": "14.4676912359921",
+	"stop_name": "Koseze"
+},
+{
+	"latitude": "46.0739502116334",
+	"stop_id": "2036",
+	"longitude": "14.4614593041291",
+	"stop_name": "Draveljska gmajna"
+},
+{
+	"latitude": "46.0741445860599",
+	"stop_id": "2034",
+	"longitude": "14.45286424872",
+	"stop_name": "Omersova"
+},
+{
+	"latitude": "46.0741641610318",
+	"stop_id": "2032",
+	"longitude": "14.4489268845816",
+	"stop_name": "Murkova"
+},
+{
+	"latitude": "46.074700607212",
+	"stop_id": "2031",
+	"longitude": "14.4437468732627",
+	"stop_name": "PODUTIK"
+},
+{
+	"latitude": "46.0735555583435",
+	"stop_id": "2033",
+	"longitude": "14.4500348271652",
+	"stop_name": "Murkova"
+},
+{
+	"latitude": "46.0740682324078",
+	"stop_id": "2035",
+	"longitude": "14.454199290376",
+	"stop_name": "Omersova"
+},
+{
+	"latitude": "46.0737110332312",
+	"stop_id": "3261",
+	"longitude": "14.4558888690389",
+	"stop_name": "Pod Kamno Gorico"
+},
+{
+	"latitude": "46.0737654431551",
+	"stop_id": "2037",
+	"longitude": "14.461609180508",
+	"stop_name": "Draveljska gmajna"
+},
+{
+	"latitude": "46.072124031422",
+	"stop_id": "2039",
+	"longitude": "14.4673609645689",
+	"stop_name": "Koseze"
+},
+{
+	"latitude": "46.0698730895148",
+	"stop_id": "2041",
+	"longitude": "14.4727939732586",
+	"stop_name": "Bratov Uèakar"
+},
+{
+	"latitude": "46.0714477548823",
+	"stop_id": "2043",
+	"longitude": "14.4809568373857",
+	"stop_name": "Kneza Koclja"
+},
+{
+	"latitude": "46.0541199976755",
+	"stop_id": "3309",
+	"longitude": "14.5052983679243",
+	"stop_name": "Dalmatinova"
+},
+{
+	"latitude": "46.0535979234662",
+	"stop_id": "2046",
+	"longitude": "14.5074699497496",
+	"stop_name": "Turist"
+},
+{
+	"latitude": "46.0528795585258",
+	"stop_id": "2048",
+	"longitude": "14.5141083545737",
+	"stop_name": "Ilirska"
+},
+{
+	"latitude": "46.0521860232111",
+	"stop_id": "2050",
+	"longitude": "14.5178402366579",
+	"stop_name": "Hrvatski trg"
+},
+{
+	"latitude": "46.0486676620314",
+	"stop_id": "2244",
+	"longitude": "14.5207411189343",
+	"stop_name": "Roška"
+},
+{
+	"latitude": "46.0487326038029",
+	"stop_id": "2054",
+	"longitude": "14.5245678375734",
+	"stop_name": "Gornje Poljane"
+},
+{
+	"latitude": "46.0505565109467",
+	"stop_id": "2056",
+	"longitude": "14.5270949974698",
+	"stop_name": "Glonarjeva"
+},
+{
+	"latitude": "46.0534490553296",
+	"stop_id": "2058",
+	"longitude": "14.5339355788506",
+	"stop_name": "Jana Husa"
+},
+{
+	"latitude": "46.0512200388844",
+	"stop_id": "2060",
+	"longitude": "14.5391041111301",
+	"stop_name": "Kodeljevo"
+},
+{
+	"latitude": "46.0479287229107",
+	"stop_id": "2062",
+	"longitude": "14.539141192577",
+	"stop_name": "Štepanja vas"
+},
+{
+	"latitude": "46.0474984725596",
+	"stop_id": "2064",
+	"longitude": "14.5454590738668",
+	"stop_name": "Emona"
+},
+{
+	"latitude": "46.1043078257781",
+	"stop_id": "2066",
+	"longitude": "14.536491951893",
+	"stop_name": "ÈRNUÈE"
+},
+{
+	"latitude": "46.0448634378802",
+	"stop_id": "2091",
+	"longitude": "14.4865134291888",
+	"stop_name": "Stan in dom"
+},
+{
+	"latitude": "46.0434445186122",
+	"stop_id": "2093",
+	"longitude": "14.4814343274799",
+	"stop_name": "Glince"
+},
+{
+	"latitude": "46.0422099163163",
+	"stop_id": "2095",
+	"longitude": "14.4773615599551",
+	"stop_name": "Viè"
+},
+{
+	"latitude": "46.0401675700556",
+	"stop_id": "2097",
+	"longitude": "14.473203180215",
+	"stop_name": "Bonifacija"
+},
+{
+	"latitude": "46.0368441633802",
+	"stop_id": "2253",
+	"longitude": "14.4653790164028",
+	"stop_name": "Dolgi most"
+},
+{
+	"latitude": "46.0370583059353",
+	"stop_id": "2254",
+	"longitude": "14.4671790974108",
+	"stop_name": "Dolgi most"
+},
+{
+	"latitude": "46.0397161487766",
+	"stop_id": "2098",
+	"longitude": "14.4727181657083",
+	"stop_name": "Bonifacija"
+},
+{
+	"latitude": "46.0421398444185",
+	"stop_id": "2096",
+	"longitude": "14.4780545673349",
+	"stop_name": "Viè"
+},
+{
+	"latitude": "46.0432357780323",
+	"stop_id": "2094",
+	"longitude": "14.4821914599498",
+	"stop_name": "Glince"
+},
+{
+	"latitude": "46.044401664897",
+	"stop_id": "2092",
+	"longitude": "14.4861148282617",
+	"stop_name": "Stan in dom"
+},
+{
+	"latitude": "46.0610219292677",
+	"stop_id": "2089",
+	"longitude": "14.5077089966774",
+	"stop_name": "Razstavišèe"
+},
+{
+	"latitude": "46.0648973517199",
+	"stop_id": "2088",
+	"longitude": "14.5090730833369",
+	"stop_name": "Astra"
+},
+{
+	"latitude": "46.06942",
+	"stop_id": "2086",
+	"longitude": "14.51042",
+	"stop_name": "Stadion"
+},
+{
+	"latitude": "46.0747260644736",
+	"stop_id": "2084",
+	"longitude": "14.5116842768961",
+	"stop_name": "Mercator"
+},
+{
+	"latitude": "46.07735",
+	"stop_id": "2082",
+	"longitude": "14.51221",
+	"stop_name": "Amzs"
+},
+{
+	"latitude": "46.0822741463821",
+	"stop_id": "2080",
+	"longitude": "14.5134640245604",
+	"stop_name": "Smelt"
+},
+{
+	"latitude": "46.0860541515796",
+	"stop_id": "2078",
+	"longitude": "14.5140151073556",
+	"stop_name": "Stožice"
+},
+{
+	"latitude": "46.09064",
+	"stop_id": "2076",
+	"longitude": "14.51398",
+	"stop_name": "Ruski car"
+},
+{
+	"latitude": "46.0979880562185",
+	"stop_id": "3473",
+	"longitude": "14.5171397111758",
+	"stop_name": "Ježica"
+},
+{
+	"latitude": "46.1008107901197",
+	"stop_id": "2072",
+	"longitude": "14.5219852697672",
+	"stop_name": "Sava"
+},
+{
+	"latitude": "46.1012083782083",
+	"stop_id": "2070",
+	"longitude": "14.5253262447597",
+	"stop_name": "Kolodvor Èrnuèe"
+},
+{
+	"latitude": "46.10266",
+	"stop_id": "2068",
+	"longitude": "14.53145",
+	"stop_name": "Rogovilc"
+},
+{
+	"latitude": "46.10225",
+	"stop_id": "2067",
+	"longitude": "14.52968",
+	"stop_name": "Rogovilc"
+},
+{
+	"latitude": "46.1015457641637",
+	"stop_id": "2069",
+	"longitude": "14.526211461955",
+	"stop_name": "Kolodvor Èrnuèe"
+},
+{
+	"latitude": "46.1009611640019",
+	"stop_id": "2071",
+	"longitude": "14.5218039346614",
+	"stop_name": "Sava"
+},
+{
+	"latitude": "46.0975162283911",
+	"stop_id": "3472",
+	"longitude": "14.5170408964945",
+	"stop_name": "Ježica"
+},
+{
+	"latitude": "46.09022",
+	"stop_id": "2075",
+	"longitude": "14.51384",
+	"stop_name": "Ruski car"
+},
+{
+	"latitude": "46.0862351317798",
+	"stop_id": "2077",
+	"longitude": "14.5138290303445",
+	"stop_name": "Stožice"
+},
+{
+	"latitude": "46.0822915734937",
+	"stop_id": "2079",
+	"longitude": "14.5130944086417",
+	"stop_name": "Smelt"
+},
+{
+	"latitude": "46.07782",
+	"stop_id": "2081",
+	"longitude": "14.51192",
+	"stop_name": "Amzs"
+},
+{
+	"latitude": "46.0742667424902",
+	"stop_id": "2083",
+	"longitude": "14.5111779382601",
+	"stop_name": "Mercator"
+},
+{
+	"latitude": "46.06938",
+	"stop_id": "2085",
+	"longitude": "14.51023",
+	"stop_name": "Stadion"
+},
+{
+	"latitude": "46.0647389188896",
+	"stop_id": "2087",
+	"longitude": "14.5084860025511",
+	"stop_name": "Astra"
+},
+{
+	"latitude": "46.0607888162495",
+	"stop_id": "2090",
+	"longitude": "14.5070188919119",
+	"stop_name": "Razstavišèe"
+},
+{
+	"latitude": "46.0611679873977",
+	"stop_id": "4510",
+	"longitude": "14.513166538807",
+	"stop_name": "201012"
+},
+{
+	"latitude": "46.03369140625",
+	"stop_id": "3352",
+	"longitude": "14.4522756714304",
+	"stop_name": "Dolgi most Rotar"
+},
+{
+	"latitude": "46.0321",
+	"stop_id": "3416",
+	"longitude": "14.447189",
+	"stop_name": "Kozarje"
+},
+{
+	"latitude": "46.029677",
+	"stop_id": "3354",
+	"longitude": "14.439967",
+	"stop_name": "Na Gmajnici"
+},
+{
+	"latitude": "46.0244979858398",
+	"stop_id": "3356",
+	"longitude": "14.4215431213379",
+	"stop_name": "Radna"
+},
+{
+	"latitude": "46.016627",
+	"stop_id": "3358",
+	"longitude": "14.414541",
+	"stop_name": "Šolska"
+},
+{
+	"latitude": "46.0102332786021",
+	"stop_id": "3667",
+	"longitude": "14.4127375088554",
+	"stop_name": "Japelj"
+},
+{
+	"latitude": "46.0019400561519",
+	"stop_id": "3669",
+	"longitude": "14.4129830483664",
+	"stop_name": "Erbežnik"
+},
+{
+	"latitude": "45.9959882797341",
+	"stop_id": "3671",
+	"longitude": "14.4063954029495",
+	"stop_name": "Mostièek"
+},
+{
+	"latitude": "45.9878578048631",
+	"stop_id": "3826",
+	"longitude": "14.4024697651579",
+	"stop_name": "NOTRANJE GORICE"
+},
+{
+	"latitude": "46.0596030795498",
+	"stop_id": "3336",
+	"longitude": "14.5093692228477",
+	"stop_name": "Navje"
+},
+{
+	"latitude": "46.0611179589993",
+	"stop_id": "3307",
+	"longitude": "14.5134899323093",
+	"stop_name": "ŽELEZNA"
+},
+{
+	"latitude": "46.0637341978335",
+	"stop_id": "1874",
+	"longitude": "14.5117702100289",
+	"stop_name": "Bežigrad"
+},
+{
+	"latitude": "46.088468380925",
+	"stop_id": "1859",
+	"longitude": "14.4587585391091",
+	"stop_name": "PRŽAN"
+},
+{
+	"latitude": "46.0853832906922",
+	"stop_id": "1861",
+	"longitude": "14.4651328356827",
+	"stop_name": "Andreja Bitenca"
+},
+{
+	"latitude": "46.0815100577848",
+	"stop_id": "1862",
+	"longitude": "14.4694274912936",
+	"stop_name": "Plešièeva"
+},
+{
+	"latitude": "46.0783920213723",
+	"stop_id": "1864",
+	"longitude": "14.4717184718765",
+	"stop_name": "Èebelarska"
+},
+{
+	"latitude": "46.073932320023",
+	"stop_id": "1866",
+	"longitude": "14.4758989929015",
+	"stop_name": "Tržnica Koseze"
+},
+{
+	"latitude": "46.0699732179614",
+	"stop_id": "1868",
+	"longitude": "14.4804184082228",
+	"stop_name": "Zgornja Šiška"
+},
+{
+	"latitude": "46.0675141042531",
+	"stop_id": "1870",
+	"longitude": "14.4857786602125",
+	"stop_name": "Bolnica P. Držaja"
+},
+{
+	"latitude": "46.0666307062578",
+	"stop_id": "1872",
+	"longitude": "14.4901457775681",
+	"stop_name": "Na jami"
+},
+{
+	"latitude": "46.063337242755",
+	"stop_id": "1875",
+	"longitude": "14.5101806614003",
+	"stop_name": "Bežigrad"
+},
+{
+	"latitude": "46.0645865836567",
+	"stop_id": "1877",
+	"longitude": "14.5165665689864",
+	"stop_name": "Prekmurska"
+},
+{
+	"latitude": "46.065866186599",
+	"stop_id": "1879",
+	"longitude": "14.5230283655615",
+	"stop_name": "Savske stolpnice"
+},
+{
+	"latitude": "46.065833148618",
+	"stop_id": "1881",
+	"longitude": "14.5510579735067",
+	"stop_name": "Bratislavska"
+},
+{
+	"latitude": "46.061852",
+	"stop_id": "2298",
+	"longitude": "14.553738",
+	"stop_name": "Yulon"
+},
+{
+	"latitude": "46.061921",
+	"stop_id": "1883",
+	"longitude": "14.558216",
+	"stop_name": "Leskoškova"
+},
+{
+	"latitude": "46.061968",
+	"stop_id": "1885",
+	"longitude": "14.564377",
+	"stop_name": "Gzl"
+},
+{
+	"latitude": "46.062026",
+	"stop_id": "1887",
+	"longitude": "14.567524",
+	"stop_name": "Rog"
+},
+{
+	"latitude": "46.062066",
+	"stop_id": "1889",
+	"longitude": "14.571226",
+	"stop_name": "Letališka"
+},
+{
+	"latitude": "46.0621538094006",
+	"stop_id": "1890",
+	"longitude": "14.5732202133182",
+	"stop_name": "LETALIŠKA"
+},
+{
+	"latitude": "46.0622142671473",
+	"stop_id": "1888",
+	"longitude": "14.5701118255108",
+	"stop_name": "Letališka"
+},
+{
+	"latitude": "46.062149",
+	"stop_id": "1886",
+	"longitude": "14.566488",
+	"stop_name": "Rog"
+},
+{
+	"latitude": "46.062134",
+	"stop_id": "1884",
+	"longitude": "14.563411",
+	"stop_name": "Gzl"
+},
+{
+	"latitude": "46.06205",
+	"stop_id": "1882",
+	"longitude": "14.558657",
+	"stop_name": "Leskoškova"
+},
+{
+	"latitude": "46.061986",
+	"stop_id": "2297",
+	"longitude": "14.552712",
+	"stop_name": "Yulon"
+},
+{
+	"latitude": "46.0661748219224",
+	"stop_id": "1880",
+	"longitude": "14.5515032876908",
+	"stop_name": "Bratislavska"
+},
+{
+	"latitude": "46.065797444571",
+	"stop_id": "1878",
+	"longitude": "14.5217855318437",
+	"stop_name": "Savske stolpnice"
+},
+{
+	"latitude": "46.0645765757045",
+	"stop_id": "1876",
+	"longitude": "14.5158912218391",
+	"stop_name": "Prekmurska"
+},
+{
+	"latitude": "46.0666625666718",
+	"stop_id": "1873",
+	"longitude": "14.4897452389028",
+	"stop_name": "Na jami"
+},
+{
+	"latitude": "46.0679190680763",
+	"stop_id": "1871",
+	"longitude": "14.485504304584",
+	"stop_name": "Bolnica P. Držaja"
+},
+{
+	"latitude": "46.0711072255671",
+	"stop_id": "1869",
+	"longitude": "14.4784491185266",
+	"stop_name": "Zgornja Šiška"
+},
+{
+	"latitude": "46.0743592966343",
+	"stop_id": "1867",
+	"longitude": "14.4758692630004",
+	"stop_name": "Tržnica Koseze"
+},
+{
+	"latitude": "46.0789262533192",
+	"stop_id": "1865",
+	"longitude": "14.4715954707461",
+	"stop_name": "Èebelarska"
+},
+{
+	"latitude": "46.0818567495464",
+	"stop_id": "1863",
+	"longitude": "14.4696368664751",
+	"stop_name": "Plešièeva"
+},
+{
+	"latitude": "46.0859041528413",
+	"stop_id": "1860",
+	"longitude": "14.4651100051609",
+	"stop_name": "Andreja Bitenca"
+},
+{
+	"latitude": "46.093735103828",
+	"stop_id": "2332",
+	"longitude": "14.555810025269",
+	"stop_name": "BRNÈIÈEVA"
+},
+{
+	"latitude": "46.0938797664379",
+	"stop_id": "2333",
+	"longitude": "14.5525718253956",
+	"stop_name": "Slovenijales"
+},
+{
+	"latitude": "46.0965950903672",
+	"stop_id": "2335",
+	"longitude": "14.5461328227218",
+	"stop_name": "Cesta na Brod"
+},
+{
+	"latitude": "46.0977519102331",
+	"stop_id": "2337",
+	"longitude": "14.5422142160388",
+	"stop_name": "Obrtna cona"
+},
+{
+	"latitude": "46.0979042125744",
+	"stop_id": "2339",
+	"longitude": "14.5356621798438",
+	"stop_name": "Šlandrova"
+},
+{
+	"latitude": "46.0985848889383",
+	"stop_id": "2341",
+	"longitude": "14.5271842337291",
+	"stop_name": "Elma"
+},
+{
+	"latitude": "46.0816800238783",
+	"stop_id": "1905",
+	"longitude": "14.4852617844443",
+	"stop_name": "Ljubljanske brigade"
+},
+{
+	"latitude": "46.0870563684513",
+	"stop_id": "1903",
+	"longitude": "14.4796957407311",
+	"stop_name": "Tehnounion"
+},
+{
+	"latitude": "46.0893348633412",
+	"stop_id": "1901",
+	"longitude": "14.4773244519037",
+	"stop_name": "Imp"
+},
+{
+	"latitude": "46.1008640530497",
+	"stop_id": "1899",
+	"longitude": "14.4610139536294",
+	"stop_name": "Kosmaèeva"
+},
+{
+	"latitude": "46.1038913431465",
+	"stop_id": "1897",
+	"longitude": "14.4628096087491",
+	"stop_name": "Na klancu"
+},
+{
+	"latitude": "46.1091628228159",
+	"stop_id": "1895",
+	"longitude": "14.4618896053543",
+	"stop_name": "Tabor"
+},
+{
+	"latitude": "46.1124946205681",
+	"stop_id": "1894",
+	"longitude": "14.4618801835576",
+	"stop_name": "Ob daljnovodu"
+},
+{
+	"latitude": "46.118274172724",
+	"stop_id": "2288",
+	"longitude": "14.4620329313273",
+	"stop_name": "Tacenski most"
+},
+{
+	"latitude": "46.1201476268817",
+	"stop_id": "2290",
+	"longitude": "14.4669464372034",
+	"stop_name": "Tacen"
+},
+{
+	"latitude": "46.12334095462",
+	"stop_id": "2292",
+	"longitude": "14.4769928356368",
+	"stop_name": "Šmartno"
+},
+{
+	"latitude": "46.1256914497371",
+	"stop_id": "2293",
+	"longitude": "14.4865820202575",
+	"stop_name": "Zg. Gameljne"
+},
+{
+	"latitude": "46.1269597315082",
+	"stop_id": "2295",
+	"longitude": "14.4942976127467",
+	"stop_name": "Rašica"
+},
+{
+	"latitude": "46.1268015000902",
+	"stop_id": "2296",
+	"longitude": "14.4970666067739",
+	"stop_name": "GAMELJNE"
+},
+{
+	"latitude": "46.1271117235912",
+	"stop_id": "2294",
+	"longitude": "14.4933497752674",
+	"stop_name": "Rašica"
+},
+{
+	"latitude": "46.1258788350425",
+	"stop_id": "3371",
+	"longitude": "14.4867167675502",
+	"stop_name": "Zg. Gameljne"
+},
+{
+	"latitude": "46.1237547303633",
+	"stop_id": "2291",
+	"longitude": "14.4778112389449",
+	"stop_name": "Šmartno"
+},
+{
+	"latitude": "46.1202398123933",
+	"stop_id": "2289",
+	"longitude": "14.466880563933",
+	"stop_name": "Tacen"
+},
+{
+	"latitude": "46.1176434714006",
+	"stop_id": "2287",
+	"longitude": "14.4616697217749",
+	"stop_name": "Tacenski most"
+},
+{
+	"latitude": "46.1130392139322",
+	"stop_id": "1893",
+	"longitude": "14.4617334498747",
+	"stop_name": "Ob daljnovodu"
+},
+{
+	"latitude": "46.10834870673",
+	"stop_id": "1858",
+	"longitude": "14.4616745846504",
+	"stop_name": "Tabor"
+},
+{
+	"latitude": "46.10421603877",
+	"stop_id": "1896",
+	"longitude": "14.4627572687125",
+	"stop_name": "Na klancu"
+},
+{
+	"latitude": "46.1009023530574",
+	"stop_id": "1898",
+	"longitude": "14.4607964902229",
+	"stop_name": "Kosmaèeva"
+},
+{
+	"latitude": "46.0890354971728",
+	"stop_id": "1900",
+	"longitude": "14.4770886855179",
+	"stop_name": "Imp"
+},
+{
+	"latitude": "46.0858335781574",
+	"stop_id": "1902",
+	"longitude": "14.4803785080757",
+	"stop_name": "Tehnounion"
+},
+{
+	"latitude": "46.0797538084623",
+	"stop_id": "1904",
+	"longitude": "14.4866913944941",
+	"stop_name": "Ljubljanske brigade"
+},
+{
+	"latitude": "46.1005768485914",
+	"stop_id": "3370",
+	"longitude": "14.5212649454909",
+	"stop_name": "Sava"
+},
+{
+	"latitude": "46.0983366746928",
+	"stop_id": "2342",
+	"longitude": "14.5275079429496",
+	"stop_name": "Elma"
+},
+{
+	"latitude": "46.09779540501",
+	"stop_id": "2340",
+	"longitude": "14.5360097084519",
+	"stop_name": "Šlandrova"
+},
+{
+	"latitude": "46.097300000303",
+	"stop_id": "2338",
+	"longitude": "14.5433187221436",
+	"stop_name": "Obrtna cona"
+},
+{
+	"latitude": "46.0960606197726",
+	"stop_id": "2336",
+	"longitude": "14.5470074985983",
+	"stop_name": "Cesta na Brod"
+},
+{
+	"latitude": "46.0935650658959",
+	"stop_id": "2334",
+	"longitude": "14.5533908952253",
+	"stop_name": "Slovenijales"
+},
+{
+	"latitude": "46.0267210645216",
+	"stop_id": "4459",
+	"longitude": "14.4999100240264",
+	"stop_name": "BARJE P+R"
+},
+{
+	"latitude": "46.0334289421751",
+	"stop_id": "1912",
+	"longitude": "14.5019511368623",
+	"stop_name": "Pot na Rakovo jelšo"
+},
+{
+	"latitude": "46.0372889190145",
+	"stop_id": "4457",
+	"longitude": "14.5040512574862",
+	"stop_name": "Opekarska"
+},
+{
+	"latitude": "46.0384535917753",
+	"stop_id": "1915",
+	"longitude": "14.4999838811257",
+	"stop_name": "Murgle"
+},
+{
+	"latitude": "46.0418212314252",
+	"stop_id": "1917",
+	"longitude": "14.5001231726554",
+	"stop_name": "Ziherlova"
+},
+{
+	"latitude": "46.0446703595961",
+	"stop_id": "2103",
+	"longitude": "14.5007129425827",
+	"stop_name": "Mirje"
+},
+{
+	"latitude": "46.0535822010773",
+	"stop_id": "2104",
+	"longitude": "14.5190345536217",
+	"stop_name": "Poliklinika"
+},
+{
+	"latitude": "46.0538213183786",
+	"stop_id": "2106",
+	"longitude": "14.5398492793268",
+	"stop_name": "Ob sotoèju"
+},
+{
+	"latitude": "46.0535669144503",
+	"stop_id": "2108",
+	"longitude": "14.548200669132",
+	"stop_name": "ŠTEPANJSKO NASELJE"
+},
+{
+	"latitude": "46.0456223330086",
+	"stop_id": "2102",
+	"longitude": "14.500669119305",
+	"stop_name": "Mirje"
+},
+{
+	"latitude": "46.0405037688203",
+	"stop_id": "1916",
+	"longitude": "14.4996355985021",
+	"stop_name": "Ziherlova"
+},
+{
+	"latitude": "46.0378633192509",
+	"stop_id": "3572",
+	"longitude": "14.5005157571694",
+	"stop_name": "Murgle"
+},
+{
+	"latitude": "46.0371825623459",
+	"stop_id": "4458",
+	"longitude": "14.5039434596521",
+	"stop_name": "Opekarska"
+},
+{
+	"latitude": "46.0328981940404",
+	"stop_id": "1913",
+	"longitude": "14.5014376009105",
+	"stop_name": "Pot na Rakovo jelšo"
+},
+{
+	"latitude": "46.0521922899648",
+	"stop_id": "2107",
+	"longitude": "14.5391744150322",
+	"stop_name": "Kodeljevo"
+},
+{
+	"latitude": "46.0538088922616",
+	"stop_id": "2105",
+	"longitude": "14.5195247598878",
+	"stop_name": "Poliklinika"
+},
+{
+	"latitude": "46.0690964259996",
+	"stop_id": "2148",
+	"longitude": "14.6048679805178",
+	"stop_name": "ZALOG"
+},
+{
+	"latitude": "46.067198961327",
+	"stop_id": "2147",
+	"longitude": "14.6084498528221",
+	"stop_name": "Saturnus"
+},
+{
+	"latitude": "46.0657719866693",
+	"stop_id": "2145",
+	"longitude": "14.6133417041208",
+	"stop_name": "Zeleni gaj"
+},
+{
+	"latitude": "46.0607817707145",
+	"stop_id": "2143",
+	"longitude": "14.6136752386467",
+	"stop_name": "Zadružni dom"
+},
+{
+	"latitude": "46.0578285535522",
+	"stop_id": "2141",
+	"longitude": "14.6062640384975",
+	"stop_name": "Silos"
+},
+{
+	"latitude": "46.0569426256292",
+	"stop_id": "2139",
+	"longitude": "14.6018958559998",
+	"stop_name": "Petrol"
+},
+{
+	"latitude": "46.0540213634546",
+	"stop_id": "2137",
+	"longitude": "14.5894131474561",
+	"stop_name": "Cesta na Vevèe"
+},
+{
+	"latitude": "46.0540736150412",
+	"stop_id": "2122",
+	"longitude": "14.5825341543004",
+	"stop_name": "Polje"
+},
+{
+	"latitude": "46.0547196858719",
+	"stop_id": "2120",
+	"longitude": "14.576019820884",
+	"stop_name": "Studenec"
+},
+{
+	"latitude": "46.0551790871287",
+	"stop_id": "2135",
+	"longitude": "14.5659071731747",
+	"stop_name": "Chengdujska"
+},
+{
+	"latitude": "46.0561815767354",
+	"stop_id": "2133",
+	"longitude": "14.5608268973777",
+	"stop_name": "Osenjakova"
+},
+{
+	"latitude": "46.056254518624",
+	"stop_id": "2131",
+	"longitude": "14.5553811524467",
+	"stop_name": "Archinetova"
+},
+{
+	"latitude": "46.0562549828926",
+	"stop_id": "2112",
+	"longitude": "14.5495750133502",
+	"stop_name": "Pot na Fužine"
+},
+{
+	"latitude": "46.048454284668",
+	"stop_id": "3314",
+	"longitude": "14.519437789917",
+	"stop_name": "Roška"
+},
+{
+	"latitude": "46.0446072780575",
+	"stop_id": "3315",
+	"longitude": "14.5169512539615",
+	"stop_name": "Streliška"
+},
+{
+	"latitude": "46.0978537585247",
+	"stop_id": "4430",
+	"longitude": "14.5146341183969",
+	"stop_name": "JEŽICA P+R"
+},
+{
+	"latitude": "46.0449877191722",
+	"stop_id": "3316",
+	"longitude": "14.5183204559035",
+	"stop_name": "Streliška"
+},
+{
+	"latitude": "46.0557930676559",
+	"stop_id": "2111",
+	"longitude": "14.5419185875166",
+	"stop_name": "Zaloška"
+},
+{
+	"latitude": "46.0559793120522",
+	"stop_id": "2130",
+	"longitude": "14.5511274159203",
+	"stop_name": "Pot na Fužine"
+},
+{
+	"latitude": "46.056019318024",
+	"stop_id": "2132",
+	"longitude": "14.5567446524791",
+	"stop_name": "Archinetova"
+},
+{
+	"latitude": "46.0555715988365",
+	"stop_id": "2134",
+	"longitude": "14.5621699638457",
+	"stop_name": "Osenjakova"
+},
+{
+	"latitude": "46.0548199178901",
+	"stop_id": "2119",
+	"longitude": "14.5674585490773",
+	"stop_name": "Chengdujska"
+},
+{
+	"latitude": "46.0544873028857",
+	"stop_id": "2121",
+	"longitude": "14.5761047898288",
+	"stop_name": "Studenec"
+},
+{
+	"latitude": "46.0536865835799",
+	"stop_id": "2136",
+	"longitude": "14.5838588068776",
+	"stop_name": "Polje"
+},
+{
+	"latitude": "46.0537870727057",
+	"stop_id": "2138",
+	"longitude": "14.5896486316999",
+	"stop_name": "Cesta na Vevèe"
+},
+{
+	"latitude": "46.0566550070868",
+	"stop_id": "2140",
+	"longitude": "14.6018387873034",
+	"stop_name": "Petrol"
+},
+{
+	"latitude": "46.0577191531978",
+	"stop_id": "2142",
+	"longitude": "14.6066721405823",
+	"stop_name": "Silos"
+},
+{
+	"latitude": "46.0610685544933",
+	"stop_id": "2144",
+	"longitude": "14.6137417404567",
+	"stop_name": "Zadružni dom"
+},
+{
+	"latitude": "46.0663425852918",
+	"stop_id": "2146",
+	"longitude": "14.6132242812701",
+	"stop_name": "Zeleni gaj"
+},
+{
+	"latitude": "46.0791274024066",
+	"stop_id": "3524",
+	"longitude": "14.5246136943398",
+	"stop_name": "CENTER STOŽICE P+R"
+},
+{
+	"latitude": "46.0522134847809",
+	"stop_id": "3310",
+	"longitude": "14.5102044360555",
+	"stop_name": "Zmajski most"
+},
+{
+	"latitude": "46.0484020012933",
+	"stop_id": "2160",
+	"longitude": "14.5299234236632",
+	"stop_name": "Pod Golovcem"
+},
+{
+	"latitude": "46.046550417811",
+	"stop_id": "2163",
+	"longitude": "14.5529696589914",
+	"stop_name": "Rast"
+},
+{
+	"latitude": "46.0451824142776",
+	"stop_id": "2165",
+	"longitude": "14.5604542338362",
+	"stop_name": "Hrušica"
+},
+{
+	"latitude": "46.0444428781081",
+	"stop_id": "2167",
+	"longitude": "14.5702847383715",
+	"stop_name": "Cesta v Bizovik"
+},
+{
+	"latitude": "46.0429726608002",
+	"stop_id": "2169",
+	"longitude": "14.5801006732324",
+	"stop_name": "Dobrunje"
+},
+{
+	"latitude": "46.0418722607821",
+	"stop_id": "2171",
+	"longitude": "14.5862769428865",
+	"stop_name": "Pošta Dobrunje"
+},
+{
+	"latitude": "46.0411679981144",
+	"stop_id": "2173",
+	"longitude": "14.5930155076351",
+	"stop_name": "Kpl"
+},
+{
+	"latitude": "46.0400166148246",
+	"stop_id": "2175",
+	"longitude": "14.5976815875312",
+	"stop_name": "Zadvor"
+},
+{
+	"latitude": "46.0399630417283",
+	"stop_id": "2177",
+	"longitude": "14.6032843599087",
+	"stop_name": "Cesta v Zavoglje"
+},
+{
+	"latitude": "46.0373007576135",
+	"stop_id": "2178",
+	"longitude": "14.6078301910186",
+	"stop_name": "Križišèe Sostro"
+},
+{
+	"latitude": "46.0318346539589",
+	"stop_id": "2179",
+	"longitude": "14.6044300835047",
+	"stop_name": "SOSTRO"
+},
+{
+	"latitude": "46.0373128024334",
+	"stop_id": "2100",
+	"longitude": "14.608264279482",
+	"stop_name": "Križišèe Sostro"
+},
+{
+	"latitude": "46.040283078906",
+	"stop_id": "2176",
+	"longitude": "14.6024928927269",
+	"stop_name": "Cesta v Zavoglje"
+},
+{
+	"latitude": "46.0404717847642",
+	"stop_id": "2174",
+	"longitude": "14.5973966706784",
+	"stop_name": "Zadvor"
+},
+{
+	"latitude": "46.0415496010355",
+	"stop_id": "2172",
+	"longitude": "14.5919722928302",
+	"stop_name": "Kpl"
+},
+{
+	"latitude": "46.0420525254306",
+	"stop_id": "2170",
+	"longitude": "14.5862106101539",
+	"stop_name": "Pošta Dobrunje"
+},
+{
+	"latitude": "46.0432198441493",
+	"stop_id": "2168",
+	"longitude": "14.5796107563175",
+	"stop_name": "Dobrunje"
+},
+{
+	"latitude": "46.044648308075",
+	"stop_id": "2166",
+	"longitude": "14.5699107187337",
+	"stop_name": "Cesta v Bizovik"
+},
+{
+	"latitude": "46.045579741671",
+	"stop_id": "2164",
+	"longitude": "14.5592465274681",
+	"stop_name": "Hrušica"
+},
+{
+	"latitude": "46.0467650358979",
+	"stop_id": "2162",
+	"longitude": "14.5527966953013",
+	"stop_name": "Rast"
+},
+{
+	"latitude": "46.048018191623",
+	"stop_id": "2161",
+	"longitude": "14.5375551922354",
+	"stop_name": "Štepanja vas"
+},
+{
+	"latitude": "46.0485397859698",
+	"stop_id": "2159",
+	"longitude": "14.5299335821447",
+	"stop_name": "Pod Golovcem"
+},
+{
+	"latitude": "46.0515774565414",
+	"stop_id": "3311",
+	"longitude": "14.5107176337077",
+	"stop_name": "Zmajski most"
+},
+{
+	"latitude": "46.0653036134428",
+	"stop_id": "2331",
+	"longitude": "14.5142398703514",
+	"stop_name": "Kržièeva"
+},
+{
+	"latitude": "46.0684989225221",
+	"stop_id": "2330",
+	"longitude": "14.5170917229402",
+	"stop_name": "Gasilska brigada"
+},
+{
+	"latitude": "46.0725598758594",
+	"stop_id": "2328",
+	"longitude": "14.5196174922125",
+	"stop_name": "Kardeljeva plošèad"
+},
+{
+	"latitude": "46.0756108212601",
+	"stop_id": "3527",
+	"longitude": "14.5203377135873",
+	"stop_name": "Božièeva"
+},
+{
+	"latitude": "46.0763391628087",
+	"stop_id": "3523",
+	"longitude": "14.5252065824273",
+	"stop_name": "Štajerska"
+},
+{
+	"latitude": "46.075776496368",
+	"stop_id": "3526",
+	"longitude": "14.520355679893",
+	"stop_name": "Božièeva"
+},
+{
+	"latitude": "46.0717802316615",
+	"stop_id": "2327",
+	"longitude": "14.519127204168",
+	"stop_name": "Kardeljeva plošèad"
+},
+{
+	"latitude": "46.0683122204821",
+	"stop_id": "2329",
+	"longitude": "14.5163895242491",
+	"stop_name": "Gasilska brigada"
+},
+{
+	"latitude": "46.0630727786738",
+	"stop_id": "2150",
+	"longitude": "14.5263063553858",
+	"stop_name": "Središka"
+},
+{
+	"latitude": "46.064665777555",
+	"stop_id": "3478",
+	"longitude": "14.5295005294853",
+	"stop_name": "Flajšmanova"
+},
+{
+	"latitude": "46.0746909404647",
+	"stop_id": "2152",
+	"longitude": "14.5637845561949",
+	"stop_name": "Hrastje"
+},
+{
+	"latitude": "46.0778972251394",
+	"stop_id": "2154",
+	"longitude": "14.5695140029539",
+	"stop_name": "Sneberje"
+},
+{
+	"latitude": "46.0710467440893",
+	"stop_id": "3474",
+	"longitude": "14.5800846631341",
+	"stop_name": "Zadobrova"
+},
+{
+	"latitude": "46.0652393467374",
+	"stop_id": "2126",
+	"longitude": "14.5825996585414",
+	"stop_name": "Novo Polje"
+},
+{
+	"latitude": "46.0571865764195",
+	"stop_id": "2124",
+	"longitude": "14.5834810774499",
+	"stop_name": "Polje-kolodvor"
+},
+{
+	"latitude": "46.0547232015821",
+	"stop_id": "2157",
+	"longitude": "14.583380305327",
+	"stop_name": "Polje"
+},
+{
+	"latitude": "46.0495224354619",
+	"stop_id": "2158",
+	"longitude": "14.5928518713427",
+	"stop_name": "VEVÈE"
+},
+{
+	"latitude": "46.0548817920223",
+	"stop_id": "2123",
+	"longitude": "14.5836685964137",
+	"stop_name": "Polje"
+},
+{
+	"latitude": "46.0574802116673",
+	"stop_id": "2125",
+	"longitude": "14.5837636256577",
+	"stop_name": "Polje-kolodvor"
+},
+{
+	"latitude": "46.0646594433519",
+	"stop_id": "2127",
+	"longitude": "14.5830247871717",
+	"stop_name": "Novo Polje"
+},
+{
+	"latitude": "46.0725441784032",
+	"stop_id": "3475",
+	"longitude": "14.5804709387063",
+	"stop_name": "Zadobrova"
+},
+{
+	"latitude": "46.0778165548515",
+	"stop_id": "2153",
+	"longitude": "14.5690663487487",
+	"stop_name": "Sneberje"
+},
+{
+	"latitude": "46.074654664111",
+	"stop_id": "2151",
+	"longitude": "14.5633281342416",
+	"stop_name": "Hrastje"
+},
+{
+	"latitude": "46.0625303856775",
+	"stop_id": "2149",
+	"longitude": "14.5248530374981",
+	"stop_name": "Središka"
+},
+{
+	"latitude": "46.095171",
+	"stop_id": "2221",
+	"longitude": "14.503254",
+	"stop_name": "SAVLJE"
+},
+{
+	"latitude": "46.0936096229744",
+	"stop_id": "2219",
+	"longitude": "14.5107395210725",
+	"stop_name": "Kališnikov trg"
+},
+{
+	"latitude": "46.0899877293292",
+	"stop_id": "2217",
+	"longitude": "14.5121427492657",
+	"stop_name": "Èerinova"
+},
+{
+	"latitude": "46.0900125259025",
+	"stop_id": "2215",
+	"longitude": "14.5084696098982",
+	"stop_name": "7. septembra"
+},
+{
+	"latitude": "46.0849519977653",
+	"stop_id": "2213",
+	"longitude": "14.5075294684764",
+	"stop_name": "Gorjanèeva"
+},
+{
+	"latitude": "46.0824088609516",
+	"stop_id": "2211",
+	"longitude": "14.5072916018955",
+	"stop_name": "Pohorskega bataljona"
+},
+{
+	"latitude": "46.076962365076",
+	"stop_id": "2209",
+	"longitude": "14.5056154640785",
+	"stop_name": "Brinje"
+},
+{
+	"latitude": "46.0746816258463",
+	"stop_id": "2207",
+	"longitude": "14.5045382628815",
+	"stop_name": "Vodovodna"
+},
+{
+	"latitude": "46.0694200442557",
+	"stop_id": "2205",
+	"longitude": "14.5033811152253",
+	"stop_name": "Podmilšèakova"
+},
+{
+	"latitude": "46.0652125914215",
+	"stop_id": "2203",
+	"longitude": "14.5029670392812",
+	"stop_name": "Bratov Židan"
+},
+{
+	"latitude": "46.0637332738403",
+	"stop_id": "2201",
+	"longitude": "14.5047452664051",
+	"stop_name": "Parmova"
+},
+{
+	"latitude": "46.0637352088869",
+	"stop_id": "2199",
+	"longitude": "14.507314712315",
+	"stop_name": "Hranilniška"
+},
+{
+	"latitude": "46.0500969106315",
+	"stop_id": "2197",
+	"longitude": "14.4970181229667",
+	"stop_name": "Cankarjev dom"
+},
+{
+	"latitude": "46.0511971984579",
+	"stop_id": "2195",
+	"longitude": "14.4919779753942",
+	"stop_name": "Pod Rožnikom"
+},
+{
+	"latitude": "46.0493868667932",
+	"stop_id": "2193",
+	"longitude": "14.4874220959407",
+	"stop_name": "Študentsko naselje"
+},
+{
+	"latitude": "46.0479019720208",
+	"stop_id": "2191",
+	"longitude": "14.4819687322362",
+	"stop_name": "Rožna dolina"
+},
+{
+	"latitude": "46.0466046027991",
+	"stop_id": "2225",
+	"longitude": "14.4802774130743",
+	"stop_name": "Cesta XV"
+},
+{
+	"latitude": "46.0451372022588",
+	"stop_id": "2189",
+	"longitude": "14.4744900543158",
+	"stop_name": "Jamnikarjeva"
+},
+{
+	"latitude": "46.0463661760391",
+	"stop_id": "2187",
+	"longitude": "14.4690759204989",
+	"stop_name": "Viško polje"
+},
+{
+	"latitude": "46.047409180621",
+	"stop_id": "2185",
+	"longitude": "14.4643458194798",
+	"stop_name": "Podmornica"
+},
+{
+	"latitude": "46.0466787750353",
+	"stop_id": "4465",
+	"longitude": "14.4607255113331",
+	"stop_name": "Pot R. križa"
+},
+{
+	"latitude": "46.0441140837363",
+	"stop_id": "4463",
+	"longitude": "14.4614621298661",
+	"stop_name": "Ježkova"
+},
+{
+	"latitude": "46.0411989476273",
+	"stop_id": "4461",
+	"longitude": "14.4618753548968",
+	"stop_name": "Ivane Kobilca"
+},
+{
+	"latitude": "46.0419496412537",
+	"stop_id": "4241",
+	"longitude": "14.4595756677694",
+	"stop_name": "Cesta na Vrhovce"
+},
+{
+	"latitude": "46.0440416528738",
+	"stop_id": "4243",
+	"longitude": "14.4556140168472",
+	"stop_name": "704032"
+},
+{
+	"latitude": "46.0475332730844",
+	"stop_id": "4468",
+	"longitude": "14.453886931933",
+	"stop_name": "Brdo"
+},
+{
+	"latitude": "46.051926",
+	"stop_id": "3331",
+	"longitude": "14.448009",
+	"stop_name": "BOKALCE"
+},
+{
+	"latitude": "46.0475082526743",
+	"stop_id": "4467",
+	"longitude": "14.4535725215836",
+	"stop_name": "Brdo"
+},
+{
+	"latitude": "46.0439071594799",
+	"stop_id": "2180",
+	"longitude": "14.4552457075807",
+	"stop_name": "Vrhovci"
+},
+{
+	"latitude": "46.0415242494591",
+	"stop_id": "4242",
+	"longitude": "14.4596744824506",
+	"stop_name": "Cesta na Vrhovce"
+},
+{
+	"latitude": "46.0419183625575",
+	"stop_id": "4462",
+	"longitude": "14.4632048615173",
+	"stop_name": "Ivane Kobilca"
+},
+{
+	"latitude": "46.0443142590762",
+	"stop_id": "4464",
+	"longitude": "14.4617765402155",
+	"stop_name": "Ježkova"
+},
+{
+	"latitude": "46.0471103820338",
+	"stop_id": "4466",
+	"longitude": "14.4613363657263",
+	"stop_name": "Pot R. križa"
+},
+{
+	"latitude": "46.0472638488987",
+	"stop_id": "2186",
+	"longitude": "14.4650218068887",
+	"stop_name": "Podmornica"
+},
+{
+	"latitude": "46.0459405458918",
+	"stop_id": "2188",
+	"longitude": "14.4695828205199",
+	"stop_name": "Viško polje"
+},
+{
+	"latitude": "46.0448326076806",
+	"stop_id": "2190",
+	"longitude": "14.4752195167235",
+	"stop_name": "Jamnikarjeva"
+},
+{
+	"latitude": "46.0459573556179",
+	"stop_id": "2226",
+	"longitude": "14.4809096078738",
+	"stop_name": "Cesta XV"
+},
+{
+	"latitude": "46.0477793973284",
+	"stop_id": "2192",
+	"longitude": "14.4822085265935",
+	"stop_name": "Rožna dolina"
+},
+{
+	"latitude": "46.0495360420264",
+	"stop_id": "2194",
+	"longitude": "14.4884871017185",
+	"stop_name": "Študentsko naselje"
+},
+{
+	"latitude": "46.0511154924379",
+	"stop_id": "2196",
+	"longitude": "14.4922797762011",
+	"stop_name": "Pod Rožnikom"
+},
+{
+	"latitude": "46.0510371818915",
+	"stop_id": "2198",
+	"longitude": "14.4985177210652",
+	"stop_name": "Cankarjev dom"
+},
+{
+	"latitude": "46.0638776016509",
+	"stop_id": "2200",
+	"longitude": "14.5076000429589",
+	"stop_name": "Hranilniška"
+},
+{
+	"latitude": "46.0638467697702",
+	"stop_id": "2202",
+	"longitude": "14.5044379113636",
+	"stop_name": "Parmova"
+},
+{
+	"latitude": "46.0654599623076",
+	"stop_id": "2204",
+	"longitude": "14.5031369934877",
+	"stop_name": "Bratov Židan"
+},
+{
+	"latitude": "46.0696646188722",
+	"stop_id": "2206",
+	"longitude": "14.503734900294",
+	"stop_name": "Podmilšèakova"
+},
+{
+	"latitude": "46.075412353716",
+	"stop_id": "2208",
+	"longitude": "14.5051744436035",
+	"stop_name": "Vodovodna"
+},
+{
+	"latitude": "46.0779175872901",
+	"stop_id": "2210",
+	"longitude": "14.5063455897371",
+	"stop_name": "Brinje"
+},
+{
+	"latitude": "46.0820525723104",
+	"stop_id": "2212",
+	"longitude": "14.5074840738995",
+	"stop_name": "Pohorskega bataljona"
+},
+{
+	"latitude": "46.0860602839651",
+	"stop_id": "2214",
+	"longitude": "14.5079036791005",
+	"stop_name": "Gorjanèeva"
+},
+{
+	"latitude": "46.0898229796124",
+	"stop_id": "2216",
+	"longitude": "14.5086353966768",
+	"stop_name": "7. septembra"
+},
+{
+	"latitude": "46.0902824219899",
+	"stop_id": "2218",
+	"longitude": "14.5124448134791",
+	"stop_name": "Èerinova"
+},
+{
+	"latitude": "46.0935912186703",
+	"stop_id": "2220",
+	"longitude": "14.5111587770356",
+	"stop_name": "Kališnikov trg"
+},
+{
+	"latitude": "46.1083941899974",
+	"stop_id": "3643",
+	"longitude": "14.4365823315126",
+	"stop_name": "STANEŽIÈE"
+},
+{
+	"latitude": "46.1055273761085",
+	"stop_id": "3644",
+	"longitude": "14.4428939529433",
+	"stop_name": "Dvor"
+},
+{
+	"latitude": "46.104196431941",
+	"stop_id": "3646",
+	"longitude": "14.4498289469367",
+	"stop_name": "Oval"
+},
+{
+	"latitude": "46.108817317204",
+	"stop_id": "3529",
+	"longitude": "14.4621417085981",
+	"stop_name": "804104"
+},
+{
+	"latitude": "46.1137339140591",
+	"stop_id": "4234",
+	"longitude": "14.4645665378416",
+	"stop_name": "Martinova"
+},
+{
+	"latitude": "46.1157089089127",
+	"stop_id": "3653",
+	"longitude": "14.4623895786085",
+	"stop_name": "Brod"
+},
+{
+	"latitude": "46.1181432375917",
+	"stop_id": "3654",
+	"longitude": "14.4613553114255",
+	"stop_name": "Tacenski most"
+},
+{
+	"latitude": "46.1189162496211",
+	"stop_id": "3656",
+	"longitude": "14.4517423584919",
+	"stop_name": "Kajakaška"
+},
+{
+	"latitude": "46.1228579398975",
+	"stop_id": "3658",
+	"longitude": "14.4458673765337",
+	"stop_name": "Vikrèe"
+},
+{
+	"latitude": "46.1288417702333",
+	"stop_id": "3660",
+	"longitude": "14.4446277014417",
+	"stop_name": "Gostilna Kovaè"
+},
+{
+	"latitude": "46.135767955179",
+	"stop_id": "4447",
+	"longitude": "14.4444660046905",
+	"stop_name": "Zavrh"
+},
+{
+	"latitude": "46.1342628804347",
+	"stop_id": "3662",
+	"longitude": "14.4385820395795",
+	"stop_name": "Sp. Pirnièe"
+},
+{
+	"latitude": "46.1374415996388",
+	"stop_id": "3664",
+	"longitude": "14.4336862212811",
+	"stop_name": "KS Pirnièe"
+},
+{
+	"latitude": "46.1413572789396",
+	"stop_id": "3726",
+	"longitude": "14.4266871659909",
+	"stop_name": "Zg. Pirnièe"
+},
+{
+	"latitude": "46.1435487186318",
+	"stop_id": "3721",
+	"longitude": "14.4180555353374",
+	"stop_name": "Verje"
+},
+{
+	"latitude": "46.1411917412587",
+	"stop_id": "3838",
+	"longitude": "14.4110703526283",
+	"stop_name": "MEDVODE"
+},
+{
+	"latitude": "46.1434113471726",
+	"stop_id": "3722",
+	"longitude": "14.4176063776953",
+	"stop_name": "Verje"
+},
+{
+	"latitude": "46.1409701247976",
+	"stop_id": "3665",
+	"longitude": "14.4272800540784",
+	"stop_name": "Zg.  Pirnièe"
+},
+{
+	"latitude": "46.13752902742",
+	"stop_id": "3663",
+	"longitude": "14.4333089288618",
+	"stop_name": "KS Pirnièe"
+},
+{
+	"latitude": "46.1342566352251",
+	"stop_id": "3661",
+	"longitude": "14.4390311972216",
+	"stop_name": "Sp. Pirnièe"
+},
+{
+	"latitude": "46.1356867696309",
+	"stop_id": "4446",
+	"longitude": "14.4439449818257",
+	"stop_name": "Zavrh"
+},
+{
+	"latitude": "46.1286481492222",
+	"stop_id": "3659",
+	"longitude": "14.4442863416337",
+	"stop_name": "Gostilna Kovaè"
+},
+{
+	"latitude": "46.1225268738193",
+	"stop_id": "3657",
+	"longitude": "14.4455080504201",
+	"stop_name": "Vikrèe"
+},
+{
+	"latitude": "46.1186039006965",
+	"stop_id": "3655",
+	"longitude": "14.4514908302123",
+	"stop_name": "Kajakaška"
+},
+{
+	"latitude": "46.1154465205652",
+	"stop_id": "1891",
+	"longitude": "14.4626231405824",
+	"stop_name": "BROD"
+},
+{
+	"latitude": "46.1135152493032",
+	"stop_id": "1892",
+	"longitude": "14.4643239927149",
+	"stop_name": "Martinova"
+},
+{
+	"latitude": "46.1037277819299",
+	"stop_id": "3647",
+	"longitude": "14.4487240191372",
+	"stop_name": "Oval"
+},
+{
+	"latitude": "46.1061209792756",
+	"stop_id": "3645",
+	"longitude": "14.4421303849518",
+	"stop_name": "Dvor"
+},
+{
+	"latitude": "46.057853133483",
+	"stop_id": "4346",
+	"longitude": "14.5100225205811",
+	"stop_name": "Kolodvor"
+},
+{
+	"latitude": "46.0527835092103",
+	"stop_id": "4362",
+	"longitude": "14.4878456497607",
+	"stop_name": "Svetèeva"
+},
+{
+	"latitude": "46.0509884375769",
+	"stop_id": "4233",
+	"longitude": "14.4786109686399",
+	"stop_name": "Veèna pot"
+},
+{
+	"latitude": "46.0526896915896",
+	"stop_id": "3477",
+	"longitude": "14.4718466545505",
+	"stop_name": "Živalski vrt"
+},
+{
+	"latitude": "46.067932950179",
+	"stop_id": "4365",
+	"longitude": "14.4769670516699",
+	"stop_name": "Draga"
+},
+{
+	"latitude": "46.0820482515233",
+	"stop_id": "2009",
+	"longitude": "14.4966689597733",
+	"stop_name": "LITOSTROJ"
+},
+{
+	"latitude": "46.0786304059576",
+	"stop_id": "4368",
+	"longitude": "14.4974037243837",
+	"stop_name": "I.C. Šiška"
+},
+{
+	"latitude": "46.072781524367",
+	"stop_id": "2306",
+	"longitude": "14.495428416438",
+	"stop_name": "Tiki"
+},
+{
+	"latitude": "46.0744557792793",
+	"stop_id": "2304",
+	"longitude": "14.4997909001977",
+	"stop_name": "Mostovna"
+},
+{
+	"latitude": "46.0763351988842",
+	"stop_id": "2302",
+	"longitude": "14.5003913078894",
+	"stop_name": "Toplarna"
+},
+{
+	"latitude": "46.0799316564267",
+	"stop_id": "4369",
+	"longitude": "14.501603846278",
+	"stop_name": "Tovarna Lek"
+},
+{
+	"latitude": "46.0759890599243",
+	"stop_id": "4373",
+	"longitude": "14.5168612334377",
+	"stop_name": "Baragova"
+},
+{
+	"latitude": "46.0763141555339",
+	"stop_id": "4372",
+	"longitude": "14.5155047773587",
+	"stop_name": "Baragova"
+},
+{
+	"latitude": "46.0793690268546",
+	"stop_id": "2300",
+	"longitude": "14.5010738402604",
+	"stop_name": "TOVARNA LEK"
+},
+{
+	"latitude": "46.0765221526591",
+	"stop_id": "2301",
+	"longitude": "14.5002135465797",
+	"stop_name": "Toplarna"
+},
+{
+	"latitude": "46.0742984465222",
+	"stop_id": "2303",
+	"longitude": "14.4994673368048",
+	"stop_name": "Mostovna"
+},
+{
+	"latitude": "46.0729595617098",
+	"stop_id": "2305",
+	"longitude": "14.4951453995516",
+	"stop_name": "Tiki"
+},
+{
+	"latitude": "46.0788585872766",
+	"stop_id": "4367",
+	"longitude": "14.4980594945411",
+	"stop_name": "I.C. Šiška"
+},
+{
+	"latitude": "46.0824451991428",
+	"stop_id": "4375",
+	"longitude": "14.4962108189784",
+	"stop_name": "Litostroj"
+},
+{
+	"latitude": "46.0678485376418",
+	"stop_id": "4364",
+	"longitude": "14.4762573825955",
+	"stop_name": "Draga"
+},
+{
+	"latitude": "46.0529961618898",
+	"stop_id": "3476",
+	"longitude": "14.4712807159216",
+	"stop_name": "Živalski vrt"
+},
+{
+	"latitude": "46.0512261159394",
+	"stop_id": "4374",
+	"longitude": "14.4797518290507",
+	"stop_name": "Veèna pot"
+},
+{
+	"latitude": "46.0525646011794",
+	"stop_id": "4363",
+	"longitude": "14.4880253128175",
+	"stop_name": "Svetèeva"
+},
+{
+	"latitude": "46.0795024004748",
+	"stop_id": "2308",
+	"longitude": "14.5367319984973",
+	"stop_name": "TOMAÈEVO"
+},
+{
+	"latitude": "46.0743922225175",
+	"stop_id": "2309",
+	"longitude": "14.5315843856506",
+	"stop_name": "Nove Žale"
+},
+{
+	"latitude": "46.0715438092827",
+	"stop_id": "4235",
+	"longitude": "14.5292849338171",
+	"stop_name": "Na Žalah"
+},
+{
+	"latitude": "46.0695306961881",
+	"stop_id": "2311",
+	"longitude": "14.5273421781761",
+	"stop_name": "Tomaèevska"
+},
+{
+	"latitude": "46.0689677747977",
+	"stop_id": "3639",
+	"longitude": "14.5258623525846",
+	"stop_name": "Kranjèeva"
+},
+{
+	"latitude": "46.0672344350151",
+	"stop_id": "2313",
+	"longitude": "14.5149228423992",
+	"stop_name": "Topniška"
+},
+{
+	"latitude": "46.0418602385381",
+	"stop_id": "4456",
+	"longitude": "14.5097395217379",
+	"stop_name": "Trnovo"
+},
+{
+	"latitude": "46.0374530185592",
+	"stop_id": "1911",
+	"longitude": "14.5047099987106",
+	"stop_name": "Veliki štradon"
+},
+{
+	"latitude": "46.0331502007534",
+	"stop_id": "2315",
+	"longitude": "14.5124860998746",
+	"stop_name": "Livada"
+},
+{
+	"latitude": "46.0283243333925",
+	"stop_id": "2317",
+	"longitude": "14.5116712282574",
+	"stop_name": "Ilovica"
+},
+{
+	"latitude": "46.0244493799523",
+	"stop_id": "2319",
+	"longitude": "14.5110600058389",
+	"stop_name": "Lahova pot"
+},
+{
+	"latitude": "46.0198198672622",
+	"stop_id": "2321",
+	"longitude": "14.5103365236176",
+	"stop_name": "Iški most"
+},
+{
+	"latitude": "46.0151835136562",
+	"stop_id": "3570",
+	"longitude": "14.5117994373386",
+	"stop_name": "Barje"
+},
+{
+	"latitude": "46.0122268457141",
+	"stop_id": "3395",
+	"longitude": "14.505982635347",
+	"stop_name": "Pleènikova cerkev"
+},
+{
+	"latitude": "46.0094289461203",
+	"stop_id": "3398",
+	"longitude": "14.499595613677",
+	"stop_name": "Berglezov Štradon"
+},
+{
+	"latitude": "46.0076825338998",
+	"stop_id": "3399",
+	"longitude": "14.4948794584353",
+	"stop_name": "Dornig"
+},
+{
+	"latitude": "46.0059266764209",
+	"stop_id": "3402",
+	"longitude": "14.4903609325562",
+	"stop_name": "Capuder"
+},
+{
+	"latitude": "46.0022864580773",
+	"stop_id": "3403",
+	"longitude": "14.4805782791121",
+	"stop_name": "Zidarjevec"
+},
+{
+	"latitude": "46.0002205347651",
+	"stop_id": "3406",
+	"longitude": "14.475942972246",
+	"stop_name": "Rutar"
+},
+{
+	"latitude": "45.9976787165312",
+	"stop_id": "3407",
+	"longitude": "14.4698344283141",
+	"stop_name": "Lipe"
+},
+{
+	"latitude": "45.993997254183",
+	"stop_id": "3409",
+	"longitude": "14.462540108207",
+	"stop_name": "Kozler"
+},
+{
+	"latitude": "45.9915929008167",
+	"stop_id": "3411",
+	"longitude": "14.4570783512796",
+	"stop_name": "Snoj"
+},
+{
+	"latitude": "45.9761937812073",
+	"stop_id": "4435",
+	"longitude": "14.422942370483",
+	"stop_name": "Podpeè 1"
+},
+{
+	"latitude": "45.9737823859685",
+	"stop_id": "3413",
+	"longitude": "14.4202474246307",
+	"stop_name": "Podpeè"
+},
+{
+	"latitude": "45.9707726911857",
+	"stop_id": "3415",
+	"longitude": "14.4348450479976",
+	"stop_name": "JEZERO"
+},
+{
+	"latitude": "45.9718594574061",
+	"stop_id": "3800",
+	"longitude": "14.4289700660395",
+	"stop_name": "O.š. Jezero"
+},
+{
+	"latitude": "45.9739170510861",
+	"stop_id": "3414",
+	"longitude": "14.4208582790239",
+	"stop_name": "Podpeè"
+},
+{
+	"latitude": "45.9764881520891",
+	"stop_id": "4434",
+	"longitude": "14.423678989016",
+	"stop_name": "Podpeè 1"
+},
+{
+	"latitude": "45.9910418883632",
+	"stop_id": "3412",
+	"longitude": "14.4580844643978",
+	"stop_name": "Snoj"
+},
+{
+	"latitude": "45.9934462658223",
+	"stop_id": "3410",
+	"longitude": "14.4630072321547",
+	"stop_name": "Kozler"
+},
+{
+	"latitude": "45.99750341439",
+	"stop_id": "3408",
+	"longitude": "14.471199867546",
+	"stop_name": "Lipe"
+},
+{
+	"latitude": "46.0002174045193",
+	"stop_id": "3405",
+	"longitude": "14.4766706076262",
+	"stop_name": "Rutar"
+},
+{
+	"latitude": "46.0021862938895",
+	"stop_id": "3404",
+	"longitude": "14.481656257453",
+	"stop_name": "Zidarjevec"
+},
+{
+	"latitude": "46.0057013216667",
+	"stop_id": "3401",
+	"longitude": "14.4907831407397",
+	"stop_name": "Capuder"
+},
+{
+	"latitude": "46.0075072636593",
+	"stop_id": "3400",
+	"longitude": "14.4959933693876",
+	"stop_name": "Dornig"
+},
+{
+	"latitude": "46.0093538327583",
+	"stop_id": "3397",
+	"longitude": "14.5001076533889",
+	"stop_name": "Berglezov Štradon"
+},
+{
+	"latitude": "46.0118200011569",
+	"stop_id": "3396",
+	"longitude": "14.5064946750589",
+	"stop_name": "Pleènikova cerkev"
+},
+{
+	"latitude": "46.0149206439703",
+	"stop_id": "3571",
+	"longitude": "14.5122216455221",
+	"stop_name": "Barje"
+},
+{
+	"latitude": "46.0196012053216",
+	"stop_id": "2322",
+	"longitude": "14.5106727296962",
+	"stop_name": "Iški most"
+},
+{
+	"latitude": "46.0244871008917",
+	"stop_id": "2320",
+	"longitude": "14.511304459977",
+	"stop_name": "Lahova pot"
+},
+{
+	"latitude": "46.0287453037109",
+	"stop_id": "2318",
+	"longitude": "14.5119981644784",
+	"stop_name": "Ilovica"
+},
+{
+	"latitude": "46.0343603175769",
+	"stop_id": "2316",
+	"longitude": "14.5113156846602",
+	"stop_name": "Livada"
+},
+{
+	"latitude": "46.0378636579932",
+	"stop_id": "1910",
+	"longitude": "14.5055322633425",
+	"stop_name": "Veliki štradon"
+},
+{
+	"latitude": "46.0409531476367",
+	"stop_id": "1909",
+	"longitude": "14.509281380943",
+	"stop_name": "TRNOVO"
+},
+{
+	"latitude": "46.0670790150096",
+	"stop_id": "2314",
+	"longitude": "14.5148355703627",
+	"stop_name": "Topniška"
+},
+{
+	"latitude": "46.0692545747422",
+	"stop_id": "2312",
+	"longitude": "14.5274983509624",
+	"stop_name": "Tomaèevska"
+},
+{
+	"latitude": "46.0716188375998",
+	"stop_id": "4236",
+	"longitude": "14.529913754516",
+	"stop_name": "Na Žalah"
+},
+{
+	"latitude": "46.074574781396",
+	"stop_id": "2310",
+	"longitude": "14.5321195846937",
+	"stop_name": "Nove Žale"
+},
+{
+	"latitude": "45.9370409541923",
+	"stop_id": "3694",
+	"longitude": "14.5145615463104",
+	"stop_name": "Iška vas obraè."
+},
+{
+	"latitude": "45.9402311122851",
+	"stop_id": "3693",
+	"longitude": "14.5116689710955",
+	"stop_name": "Iška vas"
+},
+{
+	"latitude": "45.9442232502692",
+	"stop_id": "3783",
+	"longitude": "14.5096118290949",
+	"stop_name": "Iška vas šola"
+},
+{
+	"latitude": "45.9513920778158",
+	"stop_id": "3781",
+	"longitude": "14.5121899939603",
+	"stop_name": "Kot"
+},
+{
+	"latitude": "45.957156541879",
+	"stop_id": "3779",
+	"longitude": "14.512603218991",
+	"stop_name": "Staje"
+},
+{
+	"latitude": "45.9603643300592",
+	"stop_id": "3569",
+	"longitude": "14.5181907400582",
+	"stop_name": "Ig"
+},
+{
+	"latitude": "45.9588262440124",
+	"stop_id": "1978",
+	"longitude": "14.5275691516245",
+	"stop_name": "Ig AP"
+},
+{
+	"latitude": "45.9629204024475",
+	"stop_id": "3566",
+	"longitude": "14.5304886762979",
+	"stop_name": "Ig Petrol"
+},
+{
+	"latitude": "45.9995819609424",
+	"stop_id": "3564",
+	"longitude": "14.5171576774814",
+	"stop_name": "Havptmance"
+},
+{
+	"latitude": "46.0044336839578",
+	"stop_id": "3801",
+	"longitude": "14.5155047773587",
+	"stop_name": "Ižica"
+},
+{
+	"latitude": "46.0072067990893",
+	"stop_id": "3562",
+	"longitude": "14.5146873104501",
+	"stop_name": "Pri Maranzu"
+},
+{
+	"latitude": "46.0068186965887",
+	"stop_id": "3561",
+	"longitude": "14.5144537484762",
+	"stop_name": "Pri Maranzu"
+},
+{
+	"latitude": "46.0041582427621",
+	"stop_id": "3802",
+	"longitude": "14.5153520637604",
+	"stop_name": "Ižica"
+},
+{
+	"latitude": "45.9996570876595",
+	"stop_id": "3563",
+	"longitude": "14.5165827556996",
+	"stop_name": "Havptmance"
+},
+{
+	"latitude": "45.9625946351153",
+	"stop_id": "3565",
+	"longitude": "14.5303449458524",
+	"stop_name": "Ig Petrol"
+},
+{
+	"latitude": "45.9603455349697",
+	"stop_id": "3785",
+	"longitude": "14.5178493802502",
+	"stop_name": "Ig"
+},
+{
+	"latitude": "45.9573445033728",
+	"stop_id": "3778",
+	"longitude": "14.5121989771131",
+	"stop_name": "Staje"
+},
+{
+	"latitude": "45.9510662422624",
+	"stop_id": "3780",
+	"longitude": "14.5117947352353",
+	"stop_name": "Kot"
+},
+{
+	"latitude": "45.9439036392016",
+	"stop_id": "3782",
+	"longitude": "14.5093513176625",
+	"stop_name": "Iška vas šola"
+},
+{
+	"latitude": "45.9401057657486",
+	"stop_id": "3692",
+	"longitude": "14.5111659145364",
+	"stop_name": "Iška vas"
+},
+{
+	"latitude": "46.081845",
+	"stop_id": "2324",
+	"longitude": "14.519774",
+	"stop_name": "NOVE STOŽICE P+R"
+},
+{
+	"latitude": "46.0542080945127",
+	"stop_id": "2114",
+	"longitude": "14.5534459082234",
+	"stop_name": "Brodarjev trg"
+},
+{
+	"latitude": "46.0545282823353",
+	"stop_id": "2116",
+	"longitude": "14.5586838234352",
+	"stop_name": "Preglov trg"
+},
+{
+	"latitude": "46.0545252114319",
+	"stop_id": "2118",
+	"longitude": "14.56285010191",
+	"stop_name": "Rusjanov trg"
+},
+{
+	"latitude": "46.0520364175342",
+	"stop_id": "2299",
+	"longitude": "14.5657533369432",
+	"stop_name": "FUŽINE P+R"
+},
+{
+	"latitude": "46.0768816213189",
+	"stop_id": "2326",
+	"longitude": "14.5199693652432",
+	"stop_name": "Puhova"
+},
+{
+	"latitude": "46.0794399764814",
+	"stop_id": "3520",
+	"longitude": "14.5199244885565",
+	"stop_name": "Maroltova"
+},
+{
+	"latitude": "46.0547213197494",
+	"stop_id": "2117",
+	"longitude": "14.5635381579658",
+	"stop_name": "Rusjanov trg"
+},
+{
+	"latitude": "46.0546966918945",
+	"stop_id": "2115",
+	"longitude": "14.5588679432511",
+	"stop_name": "Preglov trg"
+},
+{
+	"latitude": "46.0544323043463",
+	"stop_id": "2113",
+	"longitude": "14.5530999343792",
+	"stop_name": "Brodarjev trg"
+},
+{
+	"latitude": "46.0797931830415",
+	"stop_id": "3521",
+	"longitude": "14.5196909265827",
+	"stop_name": "Maroltova"
+},
+{
+	"latitude": "46.0764620845281",
+	"stop_id": "2325",
+	"longitude": "14.5195276329798",
+	"stop_name": "Puhova"
+},
+{
+	"latitude": "46.0901359980717",
+	"stop_id": "2234",
+	"longitude": "14.6135653766551",
+	"stop_name": "BERIÈEVO"
+},
+{
+	"latitude": "46.0910442724536",
+	"stop_id": "2232",
+	"longitude": "14.5960468499348",
+	"stop_name": "Reaktor"
+},
+{
+	"latitude": "46.091376962714",
+	"stop_id": "2230",
+	"longitude": "14.5824378546025",
+	"stop_name": "Šentjakob"
+},
+{
+	"latitude": "46.0914284680761",
+	"stop_id": "2228",
+	"longitude": "14.5746803012386",
+	"stop_name": "Belinka"
+},
+{
+	"latitude": "46.0974956006654",
+	"stop_id": "3031",
+	"longitude": "14.5580112653559",
+	"stop_name": "Nadgorica"
+},
+{
+	"latitude": "46.1006665289623",
+	"stop_id": "3029",
+	"longitude": "14.553127523703",
+	"stop_name": "Ježa"
+},
+{
+	"latitude": "46.1038500191469",
+	"stop_id": "3027",
+	"longitude": "14.5460313054314",
+	"stop_name": "Zasavska"
+},
+{
+	"latitude": "46.1051956225766",
+	"stop_id": "2262",
+	"longitude": "14.5346993029315",
+	"stop_name": "O.š. Maksa Peèarja"
+},
+{
+	"latitude": "46.1085069742204",
+	"stop_id": "2260",
+	"longitude": "14.531939335951",
+	"stop_name": "Pot v Hrastovec"
+},
+{
+	"latitude": "46.1092956143526",
+	"stop_id": "2258",
+	"longitude": "14.5276907438315",
+	"stop_name": "Pot v Smreèje"
+},
+{
+	"latitude": "46.1067526031311",
+	"stop_id": "2256",
+	"longitude": "14.5255175427248",
+	"stop_name": "Polanškova"
+},
+{
+	"latitude": "46.0974609029863",
+	"stop_id": "1908",
+	"longitude": "14.5162963269339",
+	"stop_name": "JEŽICA"
+},
+{
+	"latitude": "46.1171233425516",
+	"stop_id": "4440",
+	"longitude": "14.50592873643",
+	"stop_name": "Sp. Gameljne 1"
+},
+{
+	"latitude": "46.1202905637187",
+	"stop_id": "4442",
+	"longitude": "14.5040332911805",
+	"stop_name": "Sp. Gameljne 2"
+},
+{
+	"latitude": "46.1230390884135",
+	"stop_id": "4444",
+	"longitude": "14.5028654813111",
+	"stop_name": "Sp. Gameljne 3"
+},
+{
+	"latitude": "46.1259873523942",
+	"stop_id": "4438",
+	"longitude": "14.50026935014",
+	"stop_name": "GD Gameljne"
+},
+{
+	"latitude": "46.1258499368387",
+	"stop_id": "4437",
+	"longitude": "14.5000088387076",
+	"stop_name": "GD Gameljne"
+},
+{
+	"latitude": "46.1228516933863",
+	"stop_id": "4443",
+	"longitude": "14.5025510709617",
+	"stop_name": "Sp. Gameljne 3"
+},
+{
+	"latitude": "46.1198657794087",
+	"stop_id": "4441",
+	"longitude": "14.5037727797481",
+	"stop_name": "Sp. Gameljne 2"
+},
+{
+	"latitude": "46.1165548475625",
+	"stop_id": "4439",
+	"longitude": "14.5059107701243",
+	"stop_name": "Sp. Gameljne 1"
+},
+{
+	"latitude": "46.1032875491187",
+	"stop_id": "2255",
+	"longitude": "14.5301912886365",
+	"stop_name": "Primožièeva"
+},
+{
+	"latitude": "46.1073156650162",
+	"stop_id": "2257",
+	"longitude": "14.5258548641375",
+	"stop_name": "Polanškova"
+},
+{
+	"latitude": "46.1092300323796",
+	"stop_id": "2259",
+	"longitude": "14.5283180448258",
+	"stop_name": "Pot v Smreèje"
+},
+{
+	"latitude": "46.1078651301273",
+	"stop_id": "2261",
+	"longitude": "14.5325295828739",
+	"stop_name": "Pot v Hrastovec"
+},
+{
+	"latitude": "46.1050649100751",
+	"stop_id": "2263",
+	"longitude": "14.5345150799299",
+	"stop_name": "O.š. Maksa Peèarja"
+},
+{
+	"latitude": "46.1032936541066",
+	"stop_id": "3028",
+	"longitude": "14.5470762844263",
+	"stop_name": "Zasavska"
+},
+{
+	"latitude": "46.1001218585369",
+	"stop_id": "3030",
+	"longitude": "14.5538204214787",
+	"stop_name": "Ježa"
+},
+{
+	"latitude": "46.0965760067762",
+	"stop_id": "2227",
+	"longitude": "14.5587907666205",
+	"stop_name": "Nadgorica"
+},
+{
+	"latitude": "46.0911968501555",
+	"stop_id": "2229",
+	"longitude": "14.5757280921188",
+	"stop_name": "Belinka"
+},
+{
+	"latitude": "46.0911877497691",
+	"stop_id": "2231",
+	"longitude": "14.5819469985043",
+	"stop_name": "Šentjakob"
+},
+{
+	"latitude": "46.0908041860158",
+	"stop_id": "2233",
+	"longitude": "14.5973329665098",
+	"stop_name": "Reaktor"
+},
+{
+	"latitude": "46.0671138382894",
+	"stop_id": "2241",
+	"longitude": "14.505442213679",
+	"stop_name": "Samova"
+},
+{
+	"latitude": "46.0670750543992",
+	"stop_id": "2307",
+	"longitude": "14.496233611701",
+	"stop_name": "Drenikova"
+},
+{
+	"latitude": "46.0749701988413",
+	"stop_id": "2239",
+	"longitude": "14.4638432106842",
+	"stop_name": "Bratov Babnik"
+},
+{
+	"latitude": "46.0770029462891",
+	"stop_id": "2237",
+	"longitude": "14.4676108743937",
+	"stop_name": "Spar"
+},
+{
+	"latitude": "46.0794128450809",
+	"stop_id": "2235",
+	"longitude": "14.4651971684716",
+	"stop_name": "KAMNA GORICA"
+},
+{
+	"latitude": "46.0668381822726",
+	"stop_id": "2240",
+	"longitude": "14.4962090122151",
+	"stop_name": "Drenikova"
+},
+{
+	"latitude": "46.0667738851436",
+	"stop_id": "2242",
+	"longitude": "14.5049636004673",
+	"stop_name": "Samova"
+},
+{
+	"latitude": "46.0664026885602",
+	"stop_id": "2243",
+	"longitude": "14.5341802327549",
+	"stop_name": "Šola Jarše"
+},
+{
+	"latitude": "46.0457009959408",
+	"stop_id": "3372",
+	"longitude": "14.5442050044137",
+	"stop_name": "Bileèanska"
+},
+{
+	"latitude": "46.0407058849986",
+	"stop_id": "3373",
+	"longitude": "14.5565439364464",
+	"stop_name": "Krožna pot"
+},
+{
+	"latitude": "46.039508677188",
+	"stop_id": "3374",
+	"longitude": "14.5647766671709",
+	"stop_name": "Hruševska"
+},
+{
+	"latitude": "46.0378720155047",
+	"stop_id": "3364",
+	"longitude": "14.5719944841569",
+	"stop_name": "BIZOVIK"
+},
+{
+	"latitude": "46.0397776852003",
+	"stop_id": "3365",
+	"longitude": "14.5643275095289",
+	"stop_name": "Hruševska"
+},
+{
+	"latitude": "46.0410499572754",
+	"stop_id": "3362",
+	"longitude": "14.5564451217651",
+	"stop_name": "Krožna pot"
+},
+{
+	"latitude": "46.0459449524855",
+	"stop_id": "3367",
+	"longitude": "14.5442139875665",
+	"stop_name": "Bileèanska"
+},
+{
+	"latitude": "46.1425657938794",
+	"stop_id": "2286",
+	"longitude": "14.4065654380261",
+	"stop_name": "MEDVODE naselje"
+},
+{
+	"latitude": "46.1419251206964",
+	"stop_id": "2284",
+	"longitude": "14.4088994767071",
+	"stop_name": "Novo naselje"
+},
+{
+	"latitude": "46.140910741707",
+	"stop_id": "2283",
+	"longitude": "14.4106481444447",
+	"stop_name": "Medvode"
+},
+{
+	"latitude": "46.1385982714506",
+	"stop_id": "2281",
+	"longitude": "14.4126036903577",
+	"stop_name": "Medvode a.p."
+},
+{
+	"latitude": "46.1234578358888",
+	"stop_id": "2280",
+	"longitude": "14.4376783235048",
+	"stop_name": "Medno"
+},
+{
+	"latitude": "46.110308402471",
+	"stop_id": "2223",
+	"longitude": "14.4459923233628",
+	"stop_name": "Stanežièe"
+},
+{
+	"latitude": "46.071015",
+	"stop_id": "2128",
+	"longitude": "14.57993",
+	"stop_name": "ZADOBROVA"
+},
+{
+	"latitude": "46.115361261912",
+	"stop_id": "2224",
+	"longitude": "14.4427775507362",
+	"stop_name": "Stanežièe"
+},
+{
+	"latitude": "46.1238801145559",
+	"stop_id": "2279",
+	"longitude": "14.4376775698521",
+	"stop_name": "Medno"
+},
+{
+	"latitude": "46.1382196271512",
+	"stop_id": "2282",
+	"longitude": "14.4144292638562",
+	"stop_name": "Medvode a.p."
+},
+{
+	"latitude": "46.1410418750108",
+	"stop_id": "3855",
+	"longitude": "14.4119507016067",
+	"stop_name": "Medvode"
+},
+{
+	"latitude": "46.142044981352",
+	"stop_id": "2285",
+	"longitude": "14.4087060600543",
+	"stop_name": "Novo naselje"
+},
+{
+	"latitude": "46.0621495427638",
+	"stop_id": "2250",
+	"longitude": "14.544999032953",
+	"stop_name": "BTC-Emporium"
+},
+{
+	"latitude": "46.0634651599606",
+	"stop_id": "4450",
+	"longitude": "14.5471254753597",
+	"stop_name": "BTC-Merkur"
+},
+{
+	"latitude": "46.0656260766576",
+	"stop_id": "2252",
+	"longitude": "14.5485897737553",
+	"stop_name": "BTC-Kolosej"
+},
+{
+	"latitude": "46.0656605142907",
+	"stop_id": "2248",
+	"longitude": "14.5442369722116",
+	"stop_name": "BTC-tržnica"
+},
+{
+	"latitude": "46.0683627436705",
+	"stop_id": "2246",
+	"longitude": "14.54187936884",
+	"stop_name": "BTC-uprava"
+},
+{
+	"latitude": "46.0384886167281",
+	"stop_id": "3317",
+	"longitude": "14.5164664707207",
+	"stop_name": "Orlova"
+},
+{
+	"latitude": "46.0349717611473",
+	"stop_id": "3318",
+	"longitude": "14.5127596969969",
+	"stop_name": "Ižanska"
+},
+{
+	"latitude": "46.0331605568042",
+	"stop_id": "3320",
+	"longitude": "14.5130390305002",
+	"stop_name": "Galjevica"
+},
+{
+	"latitude": "46.0310197800233",
+	"stop_id": "3716",
+	"longitude": "14.5174631046781",
+	"stop_name": "Goluhova"
+},
+{
+	"latitude": "46.0290365700358",
+	"stop_id": "3322",
+	"longitude": "14.521880358945",
+	"stop_name": "Mihov štradon"
+},
+{
+	"latitude": "46.0258763313666",
+	"stop_id": "3325",
+	"longitude": "14.5287127283254",
+	"stop_name": "Jurèkova"
+},
+{
+	"latitude": "46.0245121322412",
+	"stop_id": "3799",
+	"longitude": "14.5315397051802",
+	"stop_name": "Bobrova"
+},
+{
+	"latitude": "46.0203070759981",
+	"stop_id": "3326",
+	"longitude": "14.5347886575055",
+	"stop_name": "NS Rudnik"
+},
+{
+	"latitude": "46.018421",
+	"stop_id": "3328",
+	"longitude": "14.535336",
+	"stop_name": "NS RUDNIK"
+},
+{
+	"latitude": "46.0681796083574",
+	"stop_id": "2245",
+	"longitude": "14.5420302286368",
+	"stop_name": "BTC-uprava"
+},
+{
+	"latitude": "46.0654937304734",
+	"stop_id": "2247",
+	"longitude": "14.5439740522248",
+	"stop_name": "BTC-tržnica"
+},
+{
+	"latitude": "46.0659349521535",
+	"stop_id": "2251",
+	"longitude": "14.5477370207839",
+	"stop_name": "BTC-Kolosej"
+},
+{
+	"latitude": "46.0637840765723",
+	"stop_id": "4451",
+	"longitude": "14.5476644645302",
+	"stop_name": "BTC-Merkur"
+},
+{
+	"latitude": "46.0617841842246",
+	"stop_id": "2249",
+	"longitude": "14.5449699852891",
+	"stop_name": "BTC-Emporium"
+},
+{
+	"latitude": "46.0201996502363",
+	"stop_id": "3327",
+	"longitude": "14.5351957555686",
+	"stop_name": "NS Rudnik"
+},
+{
+	"latitude": "46.0241304097288",
+	"stop_id": "3798",
+	"longitude": "14.5323392057831",
+	"stop_name": "Bobrova"
+},
+{
+	"latitude": "46.0265681277864",
+	"stop_id": "3324",
+	"longitude": "14.5276550152748",
+	"stop_name": "Jurèkova"
+},
+{
+	"latitude": "46.0293798924376",
+	"stop_id": "3323",
+	"longitude": "14.521560938484",
+	"stop_name": "Mihov štradon"
+},
+{
+	"latitude": "46.0315140794488",
+	"stop_id": "3715",
+	"longitude": "14.5172115763985",
+	"stop_name": "Goluhova"
+},
+{
+	"latitude": "46.0333866931329",
+	"stop_id": "3321",
+	"longitude": "14.5129519669234",
+	"stop_name": "Galjevica"
+},
+{
+	"latitude": "46.0353721580662",
+	"stop_id": "3319",
+	"longitude": "14.5130939713252",
+	"stop_name": "Ižanska"
+},
+{
+	"latitude": "46.0513129655706",
+	"stop_id": "2956",
+	"longitude": "14.7219982837307",
+	"stop_name": "TUJI GRM"
+},
+{
+	"latitude": "46.0321460253985",
+	"stop_id": "3426",
+	"longitude": "14.7170328281981",
+	"stop_name": "Volavlje"
+},
+{
+	"latitude": "46.0286983902983",
+	"stop_id": "3427",
+	"longitude": "14.7263393745416",
+	"stop_name": "Smrekarjevo"
+},
+{
+	"latitude": "46.0232605731104",
+	"stop_id": "3429",
+	"longitude": "14.7304267090843",
+	"stop_name": "Prežganje Š."
+},
+{
+	"latitude": "46.0200314188538",
+	"stop_id": "3431",
+	"longitude": "14.7410717452011",
+	"stop_name": "Prežganje Š.K."
+},
+{
+	"latitude": "46.0131218931371",
+	"stop_id": "3433",
+	"longitude": "14.7382600183618",
+	"stop_name": "Trebeljevo"
+},
+{
+	"latitude": "46.019597",
+	"stop_id": "3440",
+	"longitude": "14.718282",
+	"stop_name": "Šemnikar"
+},
+{
+	"latitude": "46.0205696244121",
+	"stop_id": "3444",
+	"longitude": "14.7102595309558",
+	"stop_name": "Besnica kamnolom"
+},
+{
+	"latitude": "46.0263518723917",
+	"stop_id": "3442",
+	"longitude": "14.7019590977306",
+	"stop_name": "Zg. Besnica"
+},
+{
+	"latitude": "46.0333035312973",
+	"stop_id": "3446",
+	"longitude": "14.6872985922937",
+	"stop_name": "Besnica ambulanta"
+},
+{
+	"latitude": "46.0317956404237",
+	"stop_id": "3448",
+	"longitude": "14.6684699039386",
+	"stop_name": "Blaževo"
+},
+{
+	"latitude": "46.0354933405747",
+	"stop_id": "3450",
+	"longitude": "14.6578608004331",
+	"stop_name": "Besnica/Lj.š"
+},
+{
+	"latitude": "46.0371199995033",
+	"stop_id": "3452",
+	"longitude": "14.6501263058369",
+	"stop_name": "Besnica/Lj."
+},
+{
+	"latitude": "46.0402981017245",
+	"stop_id": "3454",
+	"longitude": "14.6401819556417",
+	"stop_name": "Javor/K"
+},
+{
+	"latitude": "46.0354997114956",
+	"stop_id": "3466",
+	"longitude": "14.5988433001476",
+	"stop_name": "O.š. Sostro"
+},
+{
+	"latitude": "46.0474348077732",
+	"stop_id": "2637",
+	"longitude": "14.5944888196086",
+	"stop_name": "Vevèe Papirnica"
+},
+{
+	"latitude": "45.995581314965",
+	"stop_id": "3672",
+	"longitude": "14.4064852344779",
+	"stop_name": "Mostièek"
+},
+{
+	"latitude": "46.0022029879335",
+	"stop_id": "3670",
+	"longitude": "14.4135400038426",
+	"stop_name": "Erbežnik"
+},
+{
+	"latitude": "46.0117010767945",
+	"stop_id": "3668",
+	"longitude": "14.4129620876765",
+	"stop_name": "Japelj"
+},
+{
+	"latitude": "46.017984",
+	"stop_id": "3379",
+	"longitude": "14.415278",
+	"stop_name": "Šolska"
+},
+{
+	"latitude": "46.023983001709",
+	"stop_id": "3357",
+	"longitude": "14.4178838729858",
+	"stop_name": "Pri Poku"
+},
+{
+	"latitude": "46.029186",
+	"stop_id": "3377",
+	"longitude": "14.439165",
+	"stop_name": "Na Gmajnici"
+},
+{
+	"latitude": "46.031497",
+	"stop_id": "3417",
+	"longitude": "14.445909",
+	"stop_name": "Kozarje"
+},
+{
+	"latitude": "46.0337101762823",
+	"stop_id": "3378",
+	"longitude": "14.4529943236577",
+	"stop_name": "Dolgi most Rotar"
+},
+{
+	"latitude": "46.0768142988616",
+	"stop_id": "4496",
+	"longitude": "14.5754134236566",
+	"stop_name": "Trbeže"
+},
+{
+	"latitude": "46.0772456688173",
+	"stop_id": "4497",
+	"longitude": "14.5754942720322",
+	"stop_name": "Trbeže"
+},
+{
+	"latitude": "46.0900331742329",
+	"stop_id": "4475",
+	"longitude": "14.5829139617031",
+	"stop_name": "Šentjakob"
+},
+{
+	"latitude": "46.0978349469714",
+	"stop_id": "4477",
+	"longitude": "14.5871813538786",
+	"stop_name": "Podgorica"
+},
+{
+	"latitude": "46.0981974089861",
+	"stop_id": "4476",
+	"longitude": "14.5866782973195",
+	"stop_name": "Podgorica"
+},
+{
+	"latitude": "46.0903019345652",
+	"stop_id": "4474",
+	"longitude": "14.5825097198252",
+	"stop_name": "Šentjakob"
+},
+{
+	"latitude": "46.0768851769341",
+	"stop_id": "2236",
+	"longitude": "14.4670230843961",
+	"stop_name": "Spar"
+},
+{
+	"latitude": "46.0747447580168",
+	"stop_id": "2238",
+	"longitude": "14.4629982766378",
+	"stop_name": "Bratov Babnik"
+},
+{
+	"latitude": "46.063174381434",
+	"stop_id": "4452",
+	"longitude": "14.5484819314387",
+	"stop_name": "BTC-Atlantis"
+},
+{
+	"latitude": "46.0373871576994",
+	"stop_id": "3380",
+	"longitude": "14.5709704047329",
+	"stop_name": "BIZOVIK"
+},
+{
+	"latitude": "46.0380897155509",
+	"stop_id": "4493",
+	"longitude": "14.5824202828728",
+	"stop_name": "Dobrunje 2"
+},
+{
+	"latitude": "46.0381101263042",
+	"stop_id": "2584",
+	"longitude": "14.5892834838639",
+	"stop_name": "Pod Urhom"
+},
+{
+	"latitude": "46.0356935473513",
+	"stop_id": "4491",
+	"longitude": "14.5969729904755",
+	"stop_name": "Zadvor 2"
+},
+{
+	"latitude": "46.0352306825213",
+	"stop_id": "3263",
+	"longitude": "14.5987534686191",
+	"stop_name": "O.š. Sostro"
+},
+{
+	"latitude": "46.0472351730541",
+	"stop_id": "2636",
+	"longitude": "14.5942680336943",
+	"stop_name": "Vevèe Papirnica"
+},
+{
+	"latitude": "46.0360001125631",
+	"stop_id": "4490",
+	"longitude": "14.5966765464317",
+	"stop_name": "Zadvor 2"
+},
+{
+	"latitude": "46.038279042769",
+	"stop_id": "2585",
+	"longitude": "14.5891128039599",
+	"stop_name": "Pod Urhom"
+},
+{
+	"latitude": "46.0385339023432",
+	"stop_id": "4492",
+	"longitude": "14.582294518733",
+	"stop_name": "Dobrunje 2"
+},
+{
+	"latitude": "45.992198152971",
+	"stop_id": "2679",
+	"longitude": "14.6485887031089",
+	"stop_name": "MALI LIPOGLAV"
+},
+{
+	"latitude": "45.9890882542659",
+	"stop_id": "3459",
+	"longitude": "14.6575643563893",
+	"stop_name": "Pri Dogonivar"
+},
+{
+	"latitude": "45.9885006569594",
+	"stop_id": "2725",
+	"longitude": "14.6640839393246",
+	"stop_name": "Pance K."
+},
+{
+	"latitude": "45.991837097752",
+	"stop_id": "3461",
+	"longitude": "14.6589118293155",
+	"stop_name": "Primožev ovinek"
+},
+{
+	"latitude": "45.9993387529115",
+	"stop_id": "2837",
+	"longitude": "14.6572284972514",
+	"stop_name": "Selo pri Pancah K."
+},
+{
+	"latitude": "46.0053415685255",
+	"stop_id": "2967",
+	"longitude": "14.6532204707793",
+	"stop_name": "Veliki Lipoglav"
+},
+{
+	"latitude": "46.0125472843239",
+	"stop_id": "2519",
+	"longitude": "14.6529238030005",
+	"stop_name": "Javor pri Sostrem K."
+},
+{
+	"latitude": "46.0180099718159",
+	"stop_id": "3462",
+	"longitude": "14.6402089051002",
+	"stop_name": "Pri Dolencu"
+},
+{
+	"latitude": "46.0171693937782",
+	"stop_id": "2765",
+	"longitude": "14.6232744509884",
+	"stop_name": "Podlipoglav"
+},
+{
+	"latitude": "46.0217472777609",
+	"stop_id": "2835",
+	"longitude": "14.612207566341",
+	"stop_name": "Sadinja vas"
+},
+{
+	"latitude": "46.0320098466013",
+	"stop_id": "3465",
+	"longitude": "14.6045558476445",
+	"stop_name": "Sostro"
+},
+{
+	"latitude": "46.0402355424323",
+	"stop_id": "3455",
+	"longitude": "14.6405951806724",
+	"stop_name": "Javor/K"
+},
+{
+	"latitude": "46.0368196968669",
+	"stop_id": "3453",
+	"longitude": "14.650288002588",
+	"stop_name": "Besnica/Lj."
+},
+{
+	"latitude": "46.0351054378677",
+	"stop_id": "3451",
+	"longitude": "14.6584087727564",
+	"stop_name": "Besnica/Lj.š."
+},
+{
+	"latitude": "46.0316079332675",
+	"stop_id": "3449",
+	"longitude": "14.6686585501483",
+	"stop_name": "Blaževo"
+},
+{
+	"latitude": "46.0331783967008",
+	"stop_id": "3447",
+	"longitude": "14.6875321542676",
+	"stop_name": "Besnica ambulanta"
+},
+{
+	"latitude": "46.0259263597398",
+	"stop_id": "3443",
+	"longitude": "14.7017614683681",
+	"stop_name": "Zg. Besnica"
+},
+{
+	"latitude": "46.0201941327182",
+	"stop_id": "3445",
+	"longitude": "14.7103583456371",
+	"stop_name": "Besnica kamnolom"
+},
+{
+	"latitude": "46.019407",
+	"stop_id": "3441",
+	"longitude": "14.719019",
+	"stop_name": "Šemnikar"
+},
+{
+	"latitude": "46.0132658504525",
+	"stop_id": "3434",
+	"longitude": "14.7386373107811",
+	"stop_name": "Trebeljevo"
+},
+{
+	"latitude": "46.0202003909342",
+	"stop_id": "3432",
+	"longitude": "14.7408022506159",
+	"stop_name": "Prežganje Š.K."
+},
+{
+	"latitude": "46.0234921136995",
+	"stop_id": "3430",
+	"longitude": "14.7304806080013",
+	"stop_name": "Prežganje Š."
+},
+{
+	"latitude": "46.0289737084942",
+	"stop_id": "3428",
+	"longitude": "14.726653784891",
+	"stop_name": "Smrekarjevo"
+},
+{
+	"latitude": "46.0323024465404",
+	"stop_id": "3425",
+	"longitude": "14.7170507945038",
+	"stop_name": "Volavlje"
+},
+{
+	"latitude": "46.0451462300102",
+	"stop_id": "3419",
+	"longitude": "14.709738508091",
+	"stop_name": "Lanišèe"
+},
+{
+	"latitude": "46.0450774208624",
+	"stop_id": "3418",
+	"longitude": "14.7095318955757",
+	"stop_name": "Lanišèe"
+},
+{
+	"latitude": "46.0321224701476",
+	"stop_id": "3464",
+	"longitude": "14.6042055046836",
+	"stop_name": "Sostro"
+},
+{
+	"latitude": "46.0215908265544",
+	"stop_id": "2834",
+	"longitude": "14.6121357011182",
+	"stop_name": "Sadinja vas"
+},
+{
+	"latitude": "46.0169034042979",
+	"stop_id": "2764",
+	"longitude": "14.6233103835997",
+	"stop_name": "Podlipoglav"
+},
+{
+	"latitude": "46.0175218093691",
+	"stop_id": "3463",
+	"longitude": "14.640783826882",
+	"stop_name": "Pri Dolencu"
+},
+{
+	"latitude": "46.0122155516923",
+	"stop_id": "2518",
+	"longitude": "14.6529777019175",
+	"stop_name": "Javor pri Sostrem K."
+},
+{
+	"latitude": "46.0052288900644",
+	"stop_id": "2966",
+	"longitude": "14.6530408077225",
+	"stop_name": "Veliki Lipoglav"
+},
+{
+	"latitude": "45.9991540651452",
+	"stop_id": "2836",
+	"longitude": "14.6572823961684",
+	"stop_name": "Selo pri Pancah K."
+},
+{
+	"latitude": "45.9920249408104",
+	"stop_id": "3460",
+	"longitude": "14.6585525032019",
+	"stop_name": "Primožev ovinek"
+},
+{
+	"latitude": "45.9886759878044",
+	"stop_id": "2724",
+	"longitude": "14.6637425795166",
+	"stop_name": "Pance K."
+},
+{
+	"latitude": "45.9896893798418",
+	"stop_id": "3458",
+	"longitude": "14.6573846933325",
+	"stop_name": "Pri Dogonivar"
+},
+{
+	"latitude": "46.065303594963",
+	"stop_id": "3888",
+	"longitude": "14.3156475929478",
+	"stop_name": "Polhov Gradec"
+},
+{
+	"latitude": "46.0606886311198",
+	"stop_id": "3886",
+	"longitude": "14.3230586940418",
+	"stop_name": "Sr. vas pri Polh. G"
+},
+{
+	"latitude": "46.0600632673958",
+	"stop_id": "3884",
+	"longitude": "14.3260321176322",
+	"stop_name": "Podreber/Polh.G"
+},
+{
+	"latitude": "46.0600882820816",
+	"stop_id": "3903",
+	"longitude": "14.3419322981611",
+	"stop_name": "D. vas pri Polh. G"
+},
+{
+	"latitude": "46.0633901204884",
+	"stop_id": "3882",
+	"longitude": "14.3460196327039",
+	"stop_name": "Dvor pri Polh. G."
+},
+{
+	"latitude": "46.0683675163699",
+	"stop_id": "3880",
+	"longitude": "14.352011395649",
+	"stop_name": "Belica"
+},
+{
+	"latitude": "46.0728442855807",
+	"stop_id": "3878",
+	"longitude": "14.3628989768925",
+	"stop_name": "Log pri Polh.G."
+},
+{
+	"latitude": "46.0729443209415",
+	"stop_id": "3876",
+	"longitude": "14.3771282909929",
+	"stop_name": "Hrastenice"
+},
+{
+	"latitude": "46.076370421886",
+	"stop_id": "3874",
+	"longitude": "14.3841710828204",
+	"stop_name": "Žirovnik"
+},
+{
+	"latitude": "46.074644894154",
+	"stop_id": "3872",
+	"longitude": "14.3925074486571",
+	"stop_name": "Hruševo"
+},
+{
+	"latitude": "46.0727755111643",
+	"stop_id": "3870",
+	"longitude": "14.3996760046243",
+	"stop_name": "Gabrje pri Dob. Brvièar"
+},
+{
+	"latitude": "46.0681174067526",
+	"stop_id": "3866",
+	"longitude": "14.4085154270201",
+	"stop_name": "Gabrje pri Dobrovi"
+},
+{
+	"latitude": "46.0628148144576",
+	"stop_id": "3868",
+	"longitude": "14.4123422501304",
+	"stop_name": "Šujica"
+},
+{
+	"latitude": "46.0542414267461",
+	"stop_id": "3864",
+	"longitude": "14.4175389243951",
+	"stop_name": "Dobrova"
+},
+{
+	"latitude": "46.0506788286924",
+	"stop_id": "3862",
+	"longitude": "14.4247479842041",
+	"stop_name": "Razori K."
+},
+{
+	"latitude": "46.0487054219258",
+	"stop_id": "3945",
+	"longitude": "14.4349258963732",
+	"stop_name": "Razori Rogovilc"
+},
+{
+	"latitude": "46.044814694232",
+	"stop_id": "3953",
+	"longitude": "14.4426154752052",
+	"stop_name": "Gmajna"
+},
+{
+	"latitude": "46.0374578380059",
+	"stop_id": "3951",
+	"longitude": "14.4422741153973",
+	"stop_name": "Kozarje GD"
+},
+{
+	"latitude": "46.05782",
+	"stop_id": "3718",
+	"longitude": "14.51054",
+	"stop_name": "LJUBLJANA AP"
+},
+{
+	"latitude": "46.0374077879885",
+	"stop_id": "3952",
+	"longitude": "14.4433970095024",
+	"stop_name": "Kozarje GD"
+},
+{
+	"latitude": "46.045177506867",
+	"stop_id": "3954",
+	"longitude": "14.4430646328473",
+	"stop_name": "Gmajna"
+},
+{
+	"latitude": "46.0493371700076",
+	"stop_id": "3946",
+	"longitude": "14.4353930203209",
+	"stop_name": "Razori Rogovilc"
+},
+{
+	"latitude": "46.0509853102231",
+	"stop_id": "3863",
+	"longitude": "14.4242179781864",
+	"stop_name": "Razori K."
+},
+{
+	"latitude": "46.0540969390565",
+	"stop_id": "3865",
+	"longitude": "14.417873",
+	"stop_name": "Dobrova"
+},
+{
+	"latitude": "46.063258801165",
+	"stop_id": "3869",
+	"longitude": "14.4126836099384",
+	"stop_name": "Šujica"
+},
+{
+	"latitude": "46.0683487581882",
+	"stop_id": "3867",
+	"longitude": "14.4087040732297",
+	"stop_name": "Gabrje pri Dobrovi"
+},
+{
+	"latitude": "46.0731631476572",
+	"stop_id": "3871",
+	"longitude": "14.3995592236374",
+	"stop_name": "Gabrje pri Dob. Brvièar"
+},
+{
+	"latitude": "46.0749699977335",
+	"stop_id": "3873",
+	"longitude": "14.3923637182116",
+	"stop_name": "Hruševo"
+},
+{
+	"latitude": "46.0766204938636",
+	"stop_id": "3875",
+	"longitude": "14.3837578577897",
+	"stop_name": "Žirovnik"
+},
+{
+	"latitude": "46.0730443561198",
+	"stop_id": "3877",
+	"longitude": "14.376445571377",
+	"stop_name": "Hrastenice"
+},
+{
+	"latitude": "46.0734444950083",
+	"stop_id": "3879",
+	"longitude": "14.3623420214163",
+	"stop_name": "Log pri Polh. G."
+},
+{
+	"latitude": "46.0685175815928",
+	"stop_id": "3881",
+	"longitude": "14.3513017265745",
+	"stop_name": "Belica"
+},
+{
+	"latitude": "46.0632212813006",
+	"stop_id": "3883",
+	"longitude": "14.3451123342669",
+	"stop_name": "Dvor pri Polh. G."
+},
+{
+	"latitude": "46.0606511094974",
+	"stop_id": "3904",
+	"longitude": "14.3418963655497",
+	"stop_name": "D. vas pri Polh. G."
+},
+{
+	"latitude": "46.060425979224",
+	"stop_id": "3885",
+	"longitude": "14.3259602524094",
+	"stop_name": "Podreber/Polh.G."
+},
+{
+	"latitude": "46.0610075638741",
+	"stop_id": "3887",
+	"longitude": "14.3231844581816",
+	"stop_name": "Sr. vas pri Polh. G"
+},
+{
+	"latitude": "46.07679082523",
+	"stop_id": "4366",
+	"longitude": "14.4898894026019",
+	"stop_name": "Litostrojska"
+},
+{
+	"latitude": "46.0374692088567",
+	"stop_id": "3457",
+	"longitude": "14.6087044539712",
+	"stop_name": "Križišèe Sostro"
+},
+{
+	"latitude": "46.037600589908",
+	"stop_id": "3456",
+	"longitude": "14.6084080099275",
+	"stop_name": "Križišèe Sostro"
+},
+{
+	"latitude": "46.1061209792757",
+	"stop_id": "4473",
+	"longitude": "14.5947900843351",
+	"stop_name": "O.Š. DRAGOMELJ"
+},
+{
+	"latitude": "46.110400980101",
+	"stop_id": "4478",
+	"longitude": "14.5922298857754",
+	"stop_name": "Škotin"
+},
+{
+	"latitude": "46.0831907263733",
+	"stop_id": "4488",
+	"longitude": "14.4595487183109",
+	"stop_name": "Zapuže"
+},
+{
+	"latitude": "46.0837220618547",
+	"stop_id": "4484",
+	"longitude": "14.4561980023011",
+	"stop_name": "Kamnogoriška"
+},
+{
+	"latitude": "46.0821405422719",
+	"stop_id": "4482",
+	"longitude": "14.4501972562032",
+	"stop_name": "Dolnice"
+},
+{
+	"latitude": "46.0779771144638",
+	"stop_id": "4486",
+	"longitude": "14.4554254511568",
+	"stop_name": "Krivec"
+},
+{
+	"latitude": "46.0784459847456",
+	"stop_id": "4487",
+	"longitude": "14.4554613837682",
+	"stop_name": "Krivec"
+},
+{
+	"latitude": "46.0819780119822",
+	"stop_id": "4483",
+	"longitude": "14.4506284475396",
+	"stop_name": "Dolnice"
+},
+{
+	"latitude": "46.083428265225",
+	"stop_id": "4485",
+	"longitude": "14.456090204467",
+	"stop_name": "Kamnogoriška"
+},
+{
+	"latitude": "46.0827781564473",
+	"stop_id": "4489",
+	"longitude": "14.4598990612717",
+	"stop_name": "Zapuže"
+},
+{
+	"latitude": "46.0494035927199",
+	"stop_id": "4433",
+	"longitude": "14.5923937305478",
+	"stop_name": "Vevèe"
+},
+{
+	"latitude": "46.0518431482064",
+	"stop_id": "3369",
+	"longitude": "14.5394530435319",
+	"stop_name": "KODELJEVO"
+},
+{
+	"latitude": "46.0705309169549",
+	"stop_id": "4481",
+	"longitude": "14.5256737063749",
+	"stop_name": "Kranjèeva"
+},
+{
+	"latitude": "46.0495849841701",
+	"stop_id": "4480",
+	"longitude": "14.592097286504",
+	"stop_name": "Vevèe"
+},
+{
+	"latitude": "46.0610486972271",
+	"stop_id": "4479",
+	"longitude": "14.5400371081539",
+	"stop_name": "Tovorni kolodvor"
+},
+{
+	"latitude": "46.0743854351065",
+	"stop_id": "3525",
+	"longitude": "14.5231674067323",
+	"stop_name": "Štajerska"
+},
+{
+	"latitude": "46.0500189493823",
+	"stop_id": "4498",
+	"longitude": "14.5071863778278",
+	"stop_name": "MESTNA HIŠA"
+},
+{
+	"latitude": "46.0482425523785",
+	"stop_id": "4499",
+	"longitude": "14.5097016606233",
+	"stop_name": "Ljubljanski grad"
+},
+{
+	"latitude": "46.0402981017245",
+	"stop_id": "4500",
+	"longitude": "14.5119294825279",
+	"stop_name": "Špica"
+},
+{
+	"latitude": "46.0418683166066",
+	"stop_id": "4501",
+	"longitude": "14.5097106437761",
+	"stop_name": "Trnovski pristan"
+},
+{
+	"latitude": "46.0437012197922",
+	"stop_id": "4502",
+	"longitude": "14.5027307340186",
+	"stop_name": "Pleènikova hiša"
+},
+{
+	"latitude": "46.0469089292579",
+	"stop_id": "4503",
+	"longitude": "14.5027770173903",
+	"stop_name": "Križanke"
+},
+{
+	"latitude": "46.0499501463434",
+	"stop_id": "4504",
+	"longitude": "14.5026409024901",
+	"stop_name": "Kongresni trg"
+},
+{
+	"latitude": "46.0514387746543",
+	"stop_id": "4505",
+	"longitude": "14.5004939289611",
+	"stop_name": "Parlament"
+},
+{
+	"latitude": "46.0530587066387",
+	"stop_id": "4506",
+	"longitude": "14.4999818892491",
+	"stop_name": "Opera"
+},
+{
+	"latitude": "46.0500752427136",
+	"stop_id": "4507",
+	"longitude": "14.5069079000896",
+	"stop_name": "MESTNA HIŠA"
+},
+{
+	"latitude": "46.1627398662093",
+	"stop_id": "3733",
+	"longitude": "14.4921934957358",
+	"stop_name": "Polje obraèališèe"
+},
+{
+	"latitude": "46.1868222764032",
+	"stop_id": "3743",
+	"longitude": "14.4913041636045",
+	"stop_name": "VODICE"
+},
+{
+	"latitude": "46.1805078330595",
+	"stop_id": "3745",
+	"longitude": "14.4714334295198",
+	"stop_name": "Zapoge obraèališèe"
+},
+{
+	"latitude": "46.1808697477521",
+	"stop_id": "3788",
+	"longitude": "14.4785301202644",
+	"stop_name": "Dobruša lipa"
+},
+{
+	"latitude": "46.1767138243928",
+	"stop_id": "3740",
+	"longitude": "14.4843242538469",
+	"stop_name": "Repnje kapelica"
+},
+{
+	"latitude": "46.1711908244581",
+	"stop_id": "3738",
+	"longitude": "14.4808477736974",
+	"stop_name": "Repnje samostan"
+},
+{
+	"latitude": "46.1691936701157",
+	"stop_id": "3736",
+	"longitude": "14.4808926894616",
+	"stop_name": "Repnje Benk"
+},
+{
+	"latitude": "46.1629083988248",
+	"stop_id": "3734",
+	"longitude": "14.4905585619187",
+	"stop_name": "Polje obraèališèe"
+},
+{
+	"latitude": "46.1509662651267",
+	"stop_id": "3732",
+	"longitude": "14.4814496449378",
+	"stop_name": "Skaruèna"
+},
+{
+	"latitude": "46.1415859391248",
+	"stop_id": "3730",
+	"longitude": "14.478206726762",
+	"stop_name": "Povodje"
+},
+{
+	"latitude": "46.1243320966165",
+	"stop_id": "3728",
+	"longitude": "14.4763382309711",
+	"stop_name": "Šmartno pod Šmarno g."
+},
+{
+	"latitude": "46.1244507769985",
+	"stop_id": "3727",
+	"longitude": "14.4766346750149",
+	"stop_name": "Šmartno pod Šmarno g."
+},
+{
+	"latitude": "46.141966844579",
+	"stop_id": "3729",
+	"longitude": "14.4785031708058",
+	"stop_name": "Povodje"
+},
+{
+	"latitude": "46.1493804432692",
+	"stop_id": "3768",
+	"longitude": "14.486695806197",
+	"stop_name": "Vojsko/Vodicah"
+},
+{
+	"latitude": "46.1585888063105",
+	"stop_id": "3758",
+	"longitude": "14.5045273645868",
+	"stop_name": "Vesca/Vodicah"
+},
+{
+	"latitude": "46.1605676215466",
+	"stop_id": "3756",
+	"longitude": "14.5121450781961",
+	"stop_name": "Selo mali Dunaj"
+},
+{
+	"latitude": "46.1636948774937",
+	"stop_id": "3754",
+	"longitude": "14.5169690312718",
+	"stop_name": "Selo pri Vodicah"
+},
+{
+	"latitude": "46.1627148983703",
+	"stop_id": "3766",
+	"longitude": "14.5280632250307",
+	"stop_name": "Šinkov Turn hrib"
+},
+{
+	"latitude": "46.1645312788999",
+	"stop_id": "3764",
+	"longitude": "14.5311174969967",
+	"stop_name": "Šinkov Turn"
+},
+{
+	"latitude": "46.1684759249462",
+	"stop_id": "3762",
+	"longitude": "14.5380435078373",
+	"stop_name": "Koseze Stare"
+},
+{
+	"latitude": "46.1700050228697",
+	"stop_id": "3760",
+	"longitude": "14.5272727075806",
+	"stop_name": "Koseze"
+},
+{
+	"latitude": "46.169118775408",
+	"stop_id": "3752",
+	"longitude": "14.5138339109303",
+	"stop_name": "Utik"
+},
+{
+	"latitude": "46.1733252024774",
+	"stop_id": "3750",
+	"longitude": "14.5090009747017",
+	"stop_name": "Bukovica Anzel"
+},
+{
+	"latitude": "46.1765266131969",
+	"stop_id": "3748",
+	"longitude": "14.506207214168",
+	"stop_name": "Bukovica Plevec"
+},
+{
+	"latitude": "46.1851938188703",
+	"stop_id": "3746",
+	"longitude": "14.4954543802172",
+	"stop_name": "Vodice O.Š."
+},
+{
+	"latitude": "46.1509163186829",
+	"stop_id": "3731",
+	"longitude": "14.4819077857326",
+	"stop_name": "Skaruèna"
+},
+{
+	"latitude": "46.1694807655441",
+	"stop_id": "3735",
+	"longitude": "14.481153200894",
+	"stop_name": "Repnje Benk"
+},
+{
+	"latitude": "46.1714529455472",
+	"stop_id": "3737",
+	"longitude": "14.4814586280906",
+	"stop_name": "Repnje samostan"
+},
+{
+	"latitude": "46.1766576611014",
+	"stop_id": "3739",
+	"longitude": "14.4845847652793",
+	"stop_name": "Repnje kapelica"
+},
+{
+	"latitude": "46.1809758257421",
+	"stop_id": "3787",
+	"longitude": "14.4787277496269",
+	"stop_name": "Dobruša lipa"
+},
+{
+	"latitude": "46.1867411666405",
+	"stop_id": "3744",
+	"longitude": "14.4915736581897",
+	"stop_name": "VODICE"
+},
+{
+	"latitude": "46.1851002278816",
+	"stop_id": "3804",
+	"longitude": "14.4952028519376",
+	"stop_name": "Vodice O.š."
+},
+{
+	"latitude": "46.1763206801405",
+	"stop_id": "3747",
+	"longitude": "14.505982635347",
+	"stop_name": "Bukovica Plevec"
+},
+{
+	"latitude": "46.1731005350327",
+	"stop_id": "3749",
+	"longitude": "14.5088662274091",
+	"stop_name": "Bukovica Anzel"
+},
+{
+	"latitude": "46.168713093958",
+	"stop_id": "3751",
+	"longitude": "14.5141573044325",
+	"stop_name": "Utik"
+},
+{
+	"latitude": "46.1636511845312",
+	"stop_id": "3753",
+	"longitude": "14.5165558062411",
+	"stop_name": "Selo pri Vodicah"
+},
+{
+	"latitude": "46.1609234261526",
+	"stop_id": "3755",
+	"longitude": "14.5122888086416",
+	"stop_name": "Selo mali Dunaj"
+},
+{
+	"latitude": "46.1587573517236",
+	"stop_id": "3757",
+	"longitude": "14.5042758363072",
+	"stop_name": "Vesca/Vodicah"
+},
+{
+	"latitude": "46.1697741006199",
+	"stop_id": "3759",
+	"longitude": "14.5270391456068",
+	"stop_name": "Koseze"
+},
+{
+	"latitude": "46.1681076868095",
+	"stop_id": "3761",
+	"longitude": "14.537890794239",
+	"stop_name": "Koseze Stare"
+},
+{
+	"latitude": "46.1647185311927",
+	"stop_id": "3763",
+	"longitude": "14.5309558002456",
+	"stop_name": "Šinkov Turn"
+},
+{
+	"latitude": "46.162927124639",
+	"stop_id": "3765",
+	"longitude": "14.5279105114324",
+	"stop_name": "Šinkov Turn hrib"
+},
+{
+	"latitude": "46.1804641535379",
+	"stop_id": "3777",
+	"longitude": "14.4716939409522",
+	"stop_name": "Zapoge obraèališèe"
+},
+{
+	"latitude": "46.1496801296639",
+	"stop_id": "3767",
+	"longitude": "14.4862196990964",
+	"stop_name": "Vojsko/Vodicah"
+},
+{
+	"latitude": "46.0529708862305",
+	"stop_id": "3341",
+	"longitude": "14.4983015012048",
+	"stop_name": "701011"
+},
+{
+	"latitude": "46.052978515625",
+	"stop_id": "3340",
+	"longitude": "14.4979228973389",
+	"stop_name": "701012"
+},
+{
+	"latitude": "46.0368196968669",
+	"stop_id": "4460",
+	"longitude": "14.4653428518935",
+	"stop_name": "Dolgi most Gruda"
+},
+{
+	"latitude": "46.0743402097077",
+	"stop_id": "4512",
+	"longitude": "14.455677911197",
+	"stop_name": "Pod Kamno Gorico"
+},
+{
+	"latitude": "46.1434175913373",
+	"stop_id": "4529",
+	"longitude": "14.3675163174528",
+	"stop_name": "SORA obraèališèe"
+},
+{
+	"latitude": "46.1416504642791",
+	"stop_id": "4528",
+	"longitude": "14.3734182488695",
+	"stop_name": "Sora"
+},
+{
+	"latitude": "46.1418003288597",
+	"stop_id": "4524",
+	"longitude": "14.3828775088113",
+	"stop_name": "Rakovnik"
+},
+{
+	"latitude": "46.1425496456048",
+	"stop_id": "4522",
+	"longitude": "14.3922828698361",
+	"stop_name": "Gorièane kopališèe"
+},
+{
+	"latitude": "46.1396896981904",
+	"stop_id": "4520",
+	"longitude": "14.3994244763448",
+	"stop_name": "Gorièane pod gradom"
+},
+{
+	"latitude": "46.1368420910902",
+	"stop_id": "4518",
+	"longitude": "14.4025775629921",
+	"stop_name": "Vaše"
+},
+{
+	"latitude": "46.1346500820421",
+	"stop_id": "4514",
+	"longitude": "14.4112642717895",
+	"stop_name": "Preska"
+},
+{
+	"latitude": "46.1348187012405",
+	"stop_id": "4513",
+	"longitude": "14.4110756255798",
+	"stop_name": "Preska"
+},
+{
+	"latitude": "46.1359553059841",
+	"stop_id": "4515",
+	"longitude": "14.4068625268973",
+	"stop_name": "Vaše Helios"
+},
+{
+	"latitude": "46.1398645464281",
+	"stop_id": "4519",
+	"longitude": "14.4001970274891",
+	"stop_name": "Gorièane pod gradom"
+},
+{
+	"latitude": "46.1428556136577",
+	"stop_id": "4521",
+	"longitude": "14.3916360828315",
+	"stop_name": "Gorièane kopališèe"
+},
+{
+	"latitude": "46.1420688352067",
+	"stop_id": "4523",
+	"longitude": "14.382724795213",
+	"stop_name": "Rakovnik"
+},
+{
+	"latitude": "46.1422374315417",
+	"stop_id": "4525",
+	"longitude": "14.3760772621105",
+	"stop_name": "Sora OŠ"
+},
+{
+	"latitude": "46.0360554290211",
+	"stop_id": "3346",
+	"longitude": "14.462638433127",
+	"stop_name": "Dolgi most P+R"
+},
+{
+	"latitude": "45.9562480522795",
+	"stop_id": "3559",
+	"longitude": "14.6531356620387",
+	"stop_name": "Grosuplje - lokalno"
+},
+{
+	"latitude": "45.9572191957816",
+	"stop_id": "3552",
+	"longitude": "14.654132792004",
+	"stop_name": "Adamièev spomenik"
+},
+{
+	"latitude": "45.9590298627594",
+	"stop_id": "3578",
+	"longitude": "14.6576452047649",
+	"stop_name": "Ljubljanska"
+},
+{
+	"latitude": "45.9625476492833",
+	"stop_id": "3553",
+	"longitude": "14.6572589291928",
+	"stop_name": "O.š. Brinje"
+},
+{
+	"latitude": "45.9668983672322",
+	"stop_id": "3786",
+	"longitude": "14.6599538750451",
+	"stop_name": "Kongo"
+},
+{
+	"latitude": "45.9627982399239",
+	"stop_id": "3719",
+	"longitude": "14.6612474490543",
+	"stop_name": "Dom starejših"
+},
+{
+	"latitude": "45.9586602158612",
+	"stop_id": "3720",
+	"longitude": "14.6600437065735",
+	"stop_name": "Dom obrtnikov"
+},
+{
+	"latitude": "45.9563796275637",
+	"stop_id": "3555",
+	"longitude": "14.6611755838316",
+	"stop_name": "Vodièar"
+},
+{
+	"latitude": "45.9526014121468",
+	"stop_id": "3556",
+	"longitude": "14.6608881229406",
+	"stop_name": "Krpan"
+},
+{
+	"latitude": "45.9519246894727",
+	"stop_id": "3557",
+	"longitude": "14.6560821361706",
+	"stop_name": "Mrzle njive"
+},
+{
+	"latitude": "45.9560914146265",
+	"stop_id": "3558",
+	"longitude": "14.6525158244926",
+	"stop_name": "GROSUPLJE"
+},
+{
+	"latitude": "45.9591238403886",
+	"stop_id": "3551",
+	"longitude": "14.6502700362823",
+	"stop_name": "Pod gozdom"
+},
+{
+	"latitude": "45.9617050298871",
+	"stop_id": "3575",
+	"longitude": "14.6446645489094",
+	"stop_name": "Stara pošta"
+},
+{
+	"latitude": "45.9639227513772",
+	"stop_id": "3549",
+	"longitude": "14.6406041638252",
+	"stop_name": "Brvace"
+},
+{
+	"latitude": "45.9672429018339",
+	"stop_id": "3547",
+	"longitude": "14.6324384778926",
+	"stop_name": "Cikava"
+},
+{
+	"latitude": "45.9731059236475",
+	"stop_id": "3545",
+	"longitude": "14.6207244465877",
+	"stop_name": "Sap"
+},
+{
+	"latitude": "45.975783538309",
+	"stop_id": "3543",
+	"longitude": "14.6131067329784",
+	"stop_name": "Šmarje"
+},
+{
+	"latitude": "45.9777940124352",
+	"stop_id": "3541",
+	"longitude": "14.6056956318842",
+	"stop_name": "Razdrto"
+},
+{
+	"latitude": "45.9816487814778",
+	"stop_id": "3539",
+	"longitude": "14.5999284477603",
+	"stop_name": "Mali Vrh"
+},
+{
+	"latitude": "45.9852026955683",
+	"stop_id": "3537",
+	"longitude": "14.5943588929988",
+	"stop_name": "Špilar"
+},
+{
+	"latitude": "45.9861451488006",
+	"stop_id": "3535",
+	"longitude": "14.5879808544815",
+	"stop_name": "Reber pri Škofljici"
+},
+{
+	"latitude": "45.9858821402207",
+	"stop_id": "3533",
+	"longitude": "14.5811267088637",
+	"stop_name": "Škofljica Javornik"
+},
+{
+	"latitude": "45.9831775554409",
+	"stop_id": "3577",
+	"longitude": "14.57585262032",
+	"stop_name": "Škofljica"
+},
+{
+	"latitude": "45.9854719695683",
+	"stop_id": "3532",
+	"longitude": "14.5810817930995",
+	"stop_name": "Škofljica Javornik"
+},
+{
+	"latitude": "45.9851807778591",
+	"stop_id": "3534",
+	"longitude": "14.5884839110406",
+	"stop_name": "Reber pri Škofljici"
+},
+{
+	"latitude": "45.9858101257475",
+	"stop_id": "3536",
+	"longitude": "14.5941522804834",
+	"stop_name": "Špilar"
+},
+{
+	"latitude": "45.9814734282305",
+	"stop_id": "3538",
+	"longitude": "14.5993714922841",
+	"stop_name": "Mali Vrh"
+},
+{
+	"latitude": "45.9775121746956",
+	"stop_id": "3540",
+	"longitude": "14.6057495308013",
+	"stop_name": "Razdrto"
+},
+{
+	"latitude": "45.9753607657095",
+	"stop_id": "3542",
+	"longitude": "14.6140589471795",
+	"stop_name": "Šmarje"
+},
+{
+	"latitude": "45.9733188849048",
+	"stop_id": "3544",
+	"longitude": "14.6194757883427",
+	"stop_name": "Sap"
+},
+{
+	"latitude": "45.9672616945683",
+	"stop_id": "3546",
+	"longitude": "14.6318186403465",
+	"stop_name": "Cikava"
+},
+{
+	"latitude": "45.9637254153747",
+	"stop_id": "3548",
+	"longitude": "14.6398405958337",
+	"stop_name": "Brvace"
+},
+{
+	"latitude": "45.9609876968912",
+	"stop_id": "3576",
+	"longitude": "14.6452125212328",
+	"stop_name": "Stara pošta"
+},
+{
+	"latitude": "45.9582341790693",
+	"stop_id": "3550",
+	"longitude": "14.6512042841778",
+	"stop_name": "Pod gozdom"
+}]
